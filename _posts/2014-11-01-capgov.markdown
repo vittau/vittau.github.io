@@ -1,0 +1,16 @@
+---
+title: CAPGov
+subtitle: Centro de Apoio a Políticas de Governo
+layout: default
+modal-id: 2
+date: 2014-11-01
+img: capgov-thumbnail.png
+thumbnail: capgov-thumbnail.png
+alt: CAPGov
+project-start-date: November 2014
+project-end-date: Current
+client: CAPGov
+category: Developer
+description: Data mining and quality analysis.
+
+---

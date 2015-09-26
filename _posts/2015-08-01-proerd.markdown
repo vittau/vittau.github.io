@@ -1,0 +1,16 @@
+---
+title: PROERD/RJ
+subtitle: Programa Educacional de Resistência às Drogas
+layout: default
+modal-id: 3
+date: 2015-08-01
+img: proerd.png
+thumbnail: proerd-thumbnail.png
+alt: PROERD/RJ
+project-start-date: August 2015
+project-end-date: October 2015
+client: PROERD/RJ
+category: Web developer
+description: <a href="http://www.proerdpmerj.com.br">http://www.proerdpmerj.com.br</a></br>Developed with GetSimple CMS. Website for the Programa Educacional de Resistência às Drogas, a drug education and prevention program of the Rio de Janeiro's military police.
+
+---

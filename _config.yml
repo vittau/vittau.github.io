@@ -1,0 +1,30 @@
+url: https://vittau.github.io
+baseurl: 
+
+# Site settings
+title: Vitor Machado
+email: vmachado@cos.ufrj.br
+description: "Vitor Machado's personal homepage."
+
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  primary: 088da5
+  secondary: 044652
+  secondary-dark: 333
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: envelope
+    url: mailto:vmachado@cos.ufrj.br
+  - title: twitter
+    url: https://twitter.com/VittauMach
+  - title: facebook
+    url: https://www.facebook.com/vittau
+  - title: github
+    url: https://github.com/vittau
+  - title: flickr
+    url: https://www.flickr.com/photos/vitormach
+
+# Build settings
+markdown: kramdown
+permalink: pretty

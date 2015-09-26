@@ -1,0 +1,16 @@
+---
+title: Kognitus
+subtitle: Automação e Processamento de Imagens
+layout: default
+modal-id: 1
+date: 2011-07-01
+img: kognitus-thumbnail.jpg
+thumbnail: kognitus-thumbnail.jpg
+alt: Kognitus
+project-start-date: July 2011
+project-end-date: March 2012
+client: Kognitus
+category: Image processing
+description: Development of solutions for automation and industrial processes inspection.
+
+---

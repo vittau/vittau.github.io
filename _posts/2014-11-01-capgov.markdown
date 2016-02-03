@@ -8,7 +8,7 @@ img: capgov-thumbnail.png
 thumbnail: capgov-thumbnail.png
 alt: CAPGov
 project-start-date: November 2014
-project-end-date: Current
+project-end-date: Ongoing
 client: CAPGov
 category: Developer
 description: Data mining and quality analysis.

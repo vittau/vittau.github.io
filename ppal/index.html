@@ -133,11 +133,87 @@
 				<section>
 					
 					<section>
-						<h2>Lembrando alguns conceitos</h2>
-                        <h3>Lógica proposicional</h3>
-                        <p>
-                            Relembrar...
-                        </p>
+	               <h2>Lógica proposicional clássica</h2>
+	               <p>
+	                   A lógica com a qual estamos acostumados a lidar na computação. Contém os conectivos $\neg$ (negação), $\land$ (conjunção), $\lor$ (disjunção) and $\to$ (implicação). Sua semântica é definida por tabelas verdade para cada conectivo, que evalua cada possível entrada em T (<i>verdadeiro</i>) ou F (<i>falso</i>).
+	               </p>
+	               <small>
+	                  <table>
+								<thead>
+									<tr>
+										<th>P</th>
+										<th>Q</th>
+										<th>P $\to$ Q</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>T</td>
+										<td>T</td>
+										<td>T</td>
+									</tr>
+									<tr>
+										<td>T</td>
+										<td>F</td>
+										<td>F</td>
+									</tr>
+									<tr>
+										<td>F</td>
+										<td>T</td>
+										<td>T</td>
+									</tr>
+									<tr>
+										<td>F</td>
+										<td>F</td>
+										<td>T</td>
+									</tr>
+								</tbody>
+							</table>
+						</small>
+					</section>
+
+					<section>
+						<h2>Lógica fuzzy</h2>
+						<p>Proposições podem assumir infinitos valores, não apenas <i>T</i>/<i>F</i>. Pode ser usada em controladores industriais por exemplo, quando não existe um modelo matemático claro para o problema, e se torna mais fácil traduzir conhecimento profissional em regras de controlador.</p>
+						<img src="img/fuzzy.png" height="200px" />
+						<br />
+						<small>$F_\to (x, y) = min \{1, 1 - x + y\}$</small>
+					</section>
+
+					<section>
+						<h2>Lógica modal</h2>
+
+						<p>
+							Operadores modais qualificam uma sentença: $\Box P$ é lido "<i>necessariamente $P$</i>" e $\Diamond P$ é lido "<i>possivelmente $P$</i>". Semântica possui estados, e relações binárias de acessibilidade entre eles. Por exemplo, $w \sim u$ significa que o estado $u$ é acessível a partir de $w$.
+						</p>
+						<ul>
+							<li>$w \models \Diamond P$ se para algum estado $u \in W$ vale que $w \sim u$ e $u \models P$</li>
+							<li>$\Box P \leftrightarrow \neg \Diamond \neg P$</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Lógica epistêmica multi-agente</h2>
+						<p>
+							O operador característico da lógica epistêmica é $K$, o operador de conhecimento. Existem modalidades para os agentes da lógica, e expressões como $K_a \varphi$ (agente $a$ sabe $\varphi$) podem ser escritas.
+							<br />
+							${\cal M},s \models K_a \phi$ se e somente se para todo $s' \in S$, $s \sim_a s' \Rightarrow {\cal M},s' \models \phi$
+						</p>
+						<img src="img/multiagent.png" height="200px" />
+						<br />
+						<small>Modelo $Hexa$: jogo de cartas</small>
+					</section>
+
+					<section>
+						<h2>Lógica de anúncios públicos</h2>
+						<p>
+							Operador $[ \phi ]$ de anúncio público altera o modelo, reduzindo as arestas entre os estados. $[ \phi ] \varphi$ tem o significado de "após anúncio de $\phi$, $\varphi$ é verdadeiro".
+						</p>
+						<img src="img/announcement.png" height="200px" />
+						<br />
+						<small>Modelo $Hexa_2 := Hexa | \neg 1_a$</small>
+						<br />
+						<small>Para o anúncio $Hexa, 012 \models [ \neg 1_a ] K_c 0_a$, podemos checar em $Hexa_2$.</small>
 					</section>
 
 				</section>

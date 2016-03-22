@@ -222,11 +222,45 @@
 
 					<section>
 						<h2>Populational Announcement Logic (PPAL)</h2>
-						<p>Nesta lógica, introduzimos conceitos de populações e grupos ao invés de agentes. Anúncios agem sobre frações de populações/grupos, criando novos grupos a partir deles.</p>
-						<p><b>Definição:</b> Uma população representa um conjunto de indivíduos. Uma população $P$ possui tamanho $\overline{P} \in \mathbb R_{>0}$.</p>
-						<p><b>Definição:</b> Um grupo pode ser vazio, uma população ou um conjunto disjunto de grupos:
-						<br />
-						$G := \emptyset \  | \  P \  | \  \{ G_0, G_1, \dots, G_n \}$</p>
+						<p>
+							Nesse trabalho a Lógica de Anúncios Populacionais foi especificada, e nos próximos slides veremos mais detalhes sobre sua sintaxe e semântica, bem como exemplos.
+						</p>
+					</section>
+
+					<section>
+						<h2>Populações e grupos</h2>
+						<p>
+							Nesta lógica, introduzimos conceitos de populações e grupos ao invés de agentes. Anúncios agem sobre frações de populações/grupos, criando novos grupos a partir deles.
+						</p>
+						<p>
+							<b>Definição:</b> Uma população representa um conjunto de indivíduos. Uma população $P$ possui tamanho $\overline{P} \in \mathbb R_{>0}$.
+						</p>
+						<p>
+							<b>Definição:</b> Um grupo pode ser vazio, uma população ou um conjunto disjunto de grupos:
+							<br />
+							$G := \emptyset \  | \  P \  | \  \{ G_0, G_1, \dots, G_n \}$
+						</p>
+					</section>
+
+					<section>
+						<h2>Modelo (População)</h2>
+						<p>
+							Como veremos adiante, anúncios agem sobre frações de populações/grupos, dessa forma criando diferentes "mundos" para quem recebeu ou não o anúncio. Por esse motivo, o conceito de "muitos mundos" é aplicado.</p>
+						<p>
+							<b>Definição:</b> Um modelo para uma população $P$ é composto de:
+							<ul>
+								<li>Um conjunto de estados $T$;</li>
+								<li>uma função de valoração $V : \Phi \to 2^T$ que indica proposições verdadeiras para cada estado;</li>
+								<li>Uma família de relações binárias $\stackrel{M_P, G}{\sim}$ para cada grupo $G$ conhecido por esta população.</li>
+							</ul>
+						</p>
+					</section>
+
+					<section>
+						<h2>Modelo (Grupo)</h2>
+						<p>
+							<b>Definição:</b> Um modelo para um grupo $G= \{ G_0, G_1, \dots, G_n \}$ é definido como o conjunto de modelos de cada um dos seus grupos. Isto é, $M_G = \{ M_{G_0}, M_{G_1}, \dots, M_{G_n} \}$.
+						</p>
 					</section>
 
 				</section>

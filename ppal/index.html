@@ -317,11 +317,13 @@
 						<h2>Negação Fuzzy</h2>
 						<p>
 							Um operador unário $NOT : U \rightarrow U$ é uma negação fuzzy se:
-							<ul>
-								<li>$NOT(0) = 1$;</li>
-								<li>$NOT(1) = 0$;</li>
-								<li>$x \leq y \rightarrow NOT(y) \leq NOT(x)$.</li>
-							</ul>
+							<small>
+								<ul>
+									<li>$NOT(0) = 1$;</li>
+									<li>$NOT(1) = 0$;</li>
+									<li>$x \leq y \rightarrow NOT(y) \leq NOT(x)$.</li>
+								</ul>
+							</small>
 							<br />
 							Por exemplo, uma possível função de negação é $NOT(x) = 1 - x$.
 						</p>
@@ -331,12 +333,14 @@
 						<h2>Conjunção Fuzzy</h2>
 						<p>
 							Um operador binário $AND : U \rightarrow U$ é uma conjunção fuzzy se:
-							<ul>
-								<li>$AND(x, y) = AND(y, x) \  \text{(Symmetry)}$;</li>
-								<li>$AND(x, AND(y, z)) = AND(AND(x, y), z) \  \text{(Associativity)}$;</li>
-								<li>$y \leq z \rightarrow AND(x, y) \leq AND(x, z) \  \text{(Right monotonicity)}$;</li>
-								<li>$AND(x, 1) = x \  \text{(1-Identity)}$.</li>
-							</ul>
+							<small>
+								<ul>
+									<li>$AND(x, y) = AND(y, x)$ (Simetria);</li>
+									<li>$AND(x, AND(y, z)) = AND(AND(x, y), z)$ (Associatividade);</li>
+									<li>$y \leq z \rightarrow AND(x, y) \leq AND(x, z)$ (Monotonicidade à direita);</li>
+									<li>$AND(x, 1) = x$ (1-Identidade).</li>
+								</ul>
+							</small>
 							<br />
 							Por exemplo, uma possível função de conjunção é $AND(x, y) = min\{x, y\}$.
 						</p>

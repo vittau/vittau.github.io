@@ -290,7 +290,7 @@
 				<section>
 					
 					<section>
-						<h2>Semântica (Prop.)</h2>
+						<h2>Semântica (Proposição)</h2>
 						<p>
 							Definimos valorações para cada expressão da linguagem, começando pela proposição simples:
 							\[
@@ -332,7 +332,7 @@
 					<section>
 						<h2>Conjunção Fuzzy</h2>
 						<p>
-							Um operador binário $AND : U \rightarrow U$ é uma conjunção fuzzy se:
+							Um operador binário $AND : U \times U \rightarrow U$ é uma conjunção fuzzy se:
 							<small>
 								<ul>
 									<li>$AND(x, y) = AND(y, x)$ (Simetria);</li>
@@ -343,6 +343,41 @@
 							</small>
 							<br />
 							Por exemplo, uma possível função de conjunção é $AND(x, y) = min\{x, y\}$.
+						</p>
+					</section>
+
+					<section>
+						<h2>Disjunção Fuzzy</h2>
+						<p>
+							Um operador binário $OR : U \times U \rightarrow U$ é uma disjunção fuzzy se:
+							<small>
+								<ul>
+									<li>$OR(x, y) = OR(y, x)$ (Simetria);</li>
+									<li>$OR(x, OR(y, z)) = OR(OR(x, y), z)$ (Associatividade);</li>
+									<li>$y \leq z \rightarrow OR(x, y) \leq OR(x, z)$ (Monotonicidade à direita);</li>
+									<li>$OR(x, 0) = x$ (0-Identidade).</li>
+								</ul>
+							</small>
+							<br />
+							Por exemplo, uma possível função de disjunção é $OR(x, y) = max\{x, y\}$.
+						</p>
+					</section>
+
+					<section>
+						<h2>Implicação Fuzzy</h2>
+						<p>
+							Um operador binário $IMP : U \times U \rightarrow U$ é uma implicação fuzzy se:
+							<small>
+								<ul>
+									<li>$x \leq y \rightarrow IMP(x, z) \geq IMP(y, z)$;</li>
+									<li>$y \geq z \rightarrow IMP(x, y) \geq IMP(x, z)$;</li>
+									<li>$IMP(0, x) = 1$;</li>
+									<li>$IMP(x, 1) = 1$;</li>
+									<li>$IMP(1, 0) = 0$;</li>
+								</ul>
+							</small>
+							<br />
+							Por exemplo, uma possível função de disjunção é $IMP(x, y) = min\{1, 1 - x + y\}$, também conhecida como implicação de Łukasiewicz.
 						</p>
 					</section>
 

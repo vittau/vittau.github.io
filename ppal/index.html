@@ -428,6 +428,80 @@
 						</p>
 					</section>
 
+					<section>
+						<h2>Conhecimento Fuzzy</h2>
+						<p>
+							Um operador ternário $K : \phi \times (M_S, S) \times G \rightarrow U$ é uma checagem de conhecimento fuzzy se:
+							<small>
+								<ul>
+									<li>Se $G = P$:
+										<ul>
+											<li>$\forall s' \in T ~~ | ~~ s  \stackrel{M_S, P}{\sim} s' (E_{M_S, s'}(\varphi) = 1) \rightarrow K(\varphi, (M_S, s), P) = 1$;</li>
+											<li>$\forall s' \in T ~~| ~~s  \stackrel{M_S, P}{\sim} s' (E_{M_S, s'}(\neg \varphi) = 1) \rightarrow K(\varphi, (M_S, s), P) = 0$;</li>
+										</ul>
+									</li>
+									<li>$K(\varphi, (M_S, s), G) \leq max_{G' \in G} \{K(\varphi, (M_S, s), G')\}$;</li>
+									<li>$K(\varphi, (M_S, s), G) \geq min_{G' \in G} \{K(\varphi, (M_S, s), G')\}$.</li>
+								</ul>
+							</small>
+						</p>
+					</section>
+
+					<section>
+						<h2>Conhecimento Fuzzy (Função)</h2>
+						<p>
+							Por exemplo, uma possível função de checagem de conhecimento é
+							<small>
+								$$K(\varphi, (M_S, s), G) = \left\{
+								\begin{array}{ll}
+									\sum_{G' \in G} \frac{\overline{G'}}{\overline{G}} K(\varphi, (M_S, s), G') & \text{se} \  G = \{ G_0, G_1, \dots, G_n \} \text{,} \\
+									1 & \text{se} \  G = P \  \text{e} \  \forall s' \in T ~| ~s \stackrel{M_S, P}{\sim} s' \rightarrow E_{M_S, s'}(\varphi) \text{,} \\
+									0  &  \text{caso contrário.}
+								\end{array}
+								\right.$$
+							</small>
+							Intuitivamente, significa que o conhecimento de um grupo é igual à média ponderada dos grupos contidos nele, e é igual a $1$ quando o grupo é igual a uma única população e $\varphi$ é verdadeiro em cada estado conectado ao estado $s$ via $ \stackrel{M_S, G}{\sim}$, e $0$ caso contrário. Uma única população sabe algo apenas quando é verdadeiro em todo mundo concebível que essa população contempla.
+						</p>
+					</section>
+
+					<section>
+						<h2>Crença Fuzzy</h2>
+						<p>
+							Um operador ternário $B : \phi \times (M_S, S) \times G \rightarrow U$ é uma checagem de crença fuzzy se:
+							<small>
+								<ul>
+									<li>Se $G = P$:
+										<ul>
+											<li>$\exists s' \in T~~ |~~ s  \stackrel{M_S, P}{\sim} s' (E_{M_S, s'}(\varphi) = 1) \rightarrow B(\varphi, (M_S, s), P) > 0$;</li>
+											<li>$\exists s' \in T ~~| ~~s  \stackrel{M_S, P}{\sim} s' (E_{M_S, s'}(\neg \varphi) = 1) \rightarrow B(\varphi, (M_S, s), P) < 1$;</li>
+										</ul>
+									</li>
+									<li>$B(\varphi, (M_S, s), G) \leq max_{G' \in G} \{B(\varphi, (M_S, s), G')\}$;</li>
+									<li>$B(\varphi, (M_S, s), G) \geq min_{G' \in G} \{B(\varphi, (M_S, s), G')\}$.</li>
+								</ul>
+							</small>
+						</p>
+					</section>
+
+					<section>
+						<h2>Crença Fuzzy (Função)</h2>
+						<p>
+							Por exemplo, uma possível função de checagem de crença é
+							<small>
+								$$B(\varphi, (M_S, s), G) = \left\{
+								\begin{array}{ll}
+									\sum_{G' \in G} \frac{\overline{G'}}{\overline{G}} B(\varphi, (M_S, s), G') & \text{se} \  G = \{ G_0, G_1, \dots, G_n \} \text{,} \\
+									\sum_{s' \in N_s} \frac{E_{M_S, s'}(\varphi)}{\overline{N_s}} & \text{se} \  G = P \text{,} \\
+									0  &  \text{caso contrário.}
+								\end{array}
+								\right.$$
+							</small>
+							onde $N_s = \bigcup_{s' \in T | s  \stackrel{M_S, G}{\sim} s'} s'$ são os vizinhos de $s$ via relação $\stackrel{M_S, G}{\sim}$.
+							<br />
+							É funcionalmente similar a $K$, mas permite qualquer número no intervalo $[0, 1]$. Por exemplo, se em metade dos estados conectados ao estado $s$ via $ \stackrel{M_S, P}{\sim}$, $\varphi$ evaluar para $1$ e na outra metade para $0$, então $B(\varphi, (M_S, s), P) = 0,5$. Também similar a $K$, a crença de um grupo é igual à média ponderada dos seus grupos constituintes.
+						</p>
+					</section>
+
 				</section>
 
 				<section>

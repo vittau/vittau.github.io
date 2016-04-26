@@ -330,6 +330,17 @@
 					</section>
 
 					<section>
+						<h2>Exemplos de negação</h2>
+						<p>
+							<ul>
+								<li>$NOT(0.2) = 0.8$;</li>
+								<li>$NOT(0.8) = 0.2$;</li>
+								<li>$NOT(0.5) = 0.5$.</li>
+							</ul>
+						</p>
+					</section>
+
+					<section>
 						<h2>Conjunção Fuzzy</h2>
 						<p>
 							Um operador binário $AND : U \times U \rightarrow U$ é uma conjunção fuzzy se:
@@ -343,6 +354,18 @@
 							</small>
 							<br />
 							Por exemplo, uma possível função de conjunção é $AND(x, y) = min\{x, y\}$.
+						</p>
+					</section>
+
+					<section>
+						<h2>Exemplos de conjunção</h2>
+						<p>
+							<ul>
+								<li>$AND(0, 1) = 0$;</li>
+								<li>$AND(0.5, 1) = 0.5$;</li>
+								<li>$AND(0.2, 0.8) = 0.2$;</li>
+								<li>$AND(0.8, 0.2) = 0.2$.</li>
+							</ul>
 						</p>
 					</section>
 
@@ -364,6 +387,18 @@
 					</section>
 
 					<section>
+						<h2>Exemplos de disjunção</h2>
+						<p>
+							<ul>
+								<li>$OR(1, 0) = 1$;</li>
+								<li>$OR(0.5, 0) = 0.5$;</li>
+								<li>$OR(0.2, 0.8) = 0.8$;</li>
+								<li>$OR(0.8, 0.2) = 0.8$.</li>
+							</ul>
+						</p>
+					</section>
+
+					<section>
 						<h2>Implicação Fuzzy</h2>
 						<p>
 							Um operador binário $IMP : U \times U \rightarrow U$ é uma implicação fuzzy se:
@@ -378,6 +413,18 @@
 							</small>
 							<br />
 							Por exemplo, uma possível função de disjunção é $IMP(x, y) = min\{1, 1 - x + y\}$, também conhecida como implicação de Łukasiewicz (originária da lógica fuzzy de mesmo nome).
+						</p>
+					</section>
+
+					<section>
+						<h2>Exemplos de implicação</h2>
+						<p>
+							<ul>
+								<li>$IMP(0.2, 0.8) = 1$;</li>
+								<li>$IMP(0.5, 0.5) = 1$;</li>
+								<li>$IMP(0.8, 0.2) = 0.4$;</li>
+								<li>$IMP(1, 0.1) = 0.1$.</li>
+							</ul>
 						</p>
 					</section>
 

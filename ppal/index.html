@@ -321,7 +321,7 @@
 								<ul>
 									<li>$NOT(0) = 1$;</li>
 									<li>$NOT(1) = 0$;</li>
-									<li>$x \leq y \rightarrow NOT(y) \leq NOT(x)$.</li>
+									<li>$\color{red}{x} \leq \color{blue}{y} \rightarrow NOT(\color{blue}{y}) \leq NOT(\color{red}{x})$.</li>
 								</ul>
 							</small>
 							<br />
@@ -335,10 +335,10 @@
 							Um operador binário $AND : U \times U \rightarrow U$ é uma conjunção fuzzy se:
 							<small>
 								<ul>
-									<li>$AND(x, y) = AND(y, x)$ (Simetria);</li>
-									<li>$AND(x, AND(y, z)) = AND(AND(x, y), z)$ (Associatividade);</li>
-									<li>$y \leq z \rightarrow AND(x, y) \leq AND(x, z)$ (Monotonicidade à direita);</li>
-									<li>$AND(x, 1) = x$ (1-Identidade).</li>
+									<li>$AND(\color{red}{x}, \color{blue}{y}) = AND(\color{blue}{y}, \color{red}{x})$ (Simetria);</li>
+									<li>$AND(\color{red}{x}, AND(\color{blue}{y}, \color{green}{z})) = AND(AND(\color{red}{x}, \color{blue}{y}), \color{green}{z})$ (Associatividade);</li>
+									<li>$\color{blue}{y} \leq \color{green}{z} \rightarrow AND(\color{red}{x}, \color{blue}{y}) \leq AND(\color{red}{x}, \color{green}{z})$ (Monotonicidade à direita);</li>
+									<li>$AND(\color{red}{x}, 1) = \color{red}{x}$ (1-Identidade).</li>
 								</ul>
 							</small>
 							<br />
@@ -352,10 +352,10 @@
 							Um operador binário $OR : U \times U \rightarrow U$ é uma disjunção fuzzy se:
 							<small>
 								<ul>
-									<li>$OR(x, y) = OR(y, x)$ (Simetria);</li>
-									<li>$OR(x, OR(y, z)) = OR(OR(x, y), z)$ (Associatividade);</li>
-									<li>$y \leq z \rightarrow OR(x, y) \leq OR(x, z)$ (Monotonicidade à direita);</li>
-									<li>$OR(x, 0) = x$ (0-Identidade).</li>
+									<li>$OR(\color{red}{x}, \color{blue}{y}) = OR(\color{blue}{y}, \color{red}{x})$ (Simetria);</li>
+									<li>$OR(\color{red}{x}, OR(\color{blue}{y}, \color{green}{z})) = OR(OR(\color{red}{x}, \color{blue}{y}), \color{green}{z})$ (Associatividade);</li>
+									<li>$\color{blue}{y} \leq \color{green}{z} \rightarrow OR(\color{red}{x}, \color{blue}{y}) \leq OR(\color{red}{x}, \color{green}{z})$ (Monotonicidade à direita);</li>
+									<li>$OR(\color{red}{x}, 0) = \color{red}{x}$ (0-Identidade).</li>
 								</ul>
 							</small>
 							<br />
@@ -369,15 +369,15 @@
 							Um operador binário $IMP : U \times U \rightarrow U$ é uma implicação fuzzy se:
 							<small>
 								<ul>
-									<li>$x \leq y \rightarrow IMP(x, z) \geq IMP(y, z)$;</li>
-									<li>$y \geq z \rightarrow IMP(x, y) \geq IMP(x, z)$;</li>
-									<li>$IMP(0, x) = 1$;</li>
-									<li>$IMP(x, 1) = 1$;</li>
+									<li>$\color{red}{x} \leq \color{blue}{y} \rightarrow IMP(\color{red}{x}, \color{green}{z}) \geq IMP(\color{blue}{y}, \color{green}{z})$;</li>
+									<li>$\color{blue}{y} \geq \color{green}{z} \rightarrow IMP(\color{red}{x}, \color{blue}{y}) \geq IMP(\color{red}{x}, \color{green}{z})$;</li>
+									<li>$IMP(0, \color{red}{x}) = 1$;</li>
+									<li>$IMP(\color{red}{x}, 1) = 1$;</li>
 									<li>$IMP(1, 0) = 0$;</li>
 								</ul>
 							</small>
 							<br />
-							Por exemplo, uma possível função de disjunção é $IMP(x, y) = min\{1, 1 - x + y\}$, também conhecida como implicação de Łukasiewicz.
+							Por exemplo, uma possível função de disjunção é $IMP(x, y) = min\{1, 1 - x + y\}$, também conhecida como implicação de Łukasiewicz (originária da lógica fuzzy de mesmo nome).
 						</p>
 					</section>
 

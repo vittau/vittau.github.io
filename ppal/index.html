@@ -506,7 +506,32 @@
 				</section>
 
 				<section>
-					<h2>Em construção...</h2>
+
+					<section>
+						<h2>Decidibilidade</h2>
+						<p>
+							Um aspecto importante da verificação de modelos é a decidibilidade, que está relacionada com o problema de parada: existe alguma fórmula na linguagem que pode fazer o verificador ficar preso em um loop?
+						</p>
+					</section>
+
+					<section>
+						<h2>Decidibilidade (Indução)</h2>
+						<p>
+							É mostrado que a lógica é decidível através de indução no tamanho $s$ da expressão BNF.
+							<br />
+							O tamanho $s$ para cada expressão é definido como:
+							<ul>
+								<li>$s(p) = 1$;</li>
+								<li>$s(\varphi_1 \wedge \varphi_2) = s(\varphi_1) + s(\varphi_2) + 1$;</li>
+								<li>$s(\varphi_1 \vee \varphi_2) = s(\varphi_1) + s(\varphi_2) + 1$;</li>
+								<li>$s(\varphi_1 \rightarrow \varphi_2) = s(\varphi_1) + s(\varphi_2) + 1$;</li>
+								<li>$s(K_G \varphi) = s(\varphi) + 1 + \overline{G}$;</li>
+								<li>$s(B_G \varphi) = s(\varphi) + 1 + \overline{G}$;</li>
+								<li>$s([\varphi_1]_G^r \varphi_2) = s(\varphi_1) + s(\varphi_2) + 1 + \overline{G}$.</li>
+							</ul>
+						</p>
+					</section>
+
 				</section>
 
 			</div>

@@ -615,10 +615,9 @@
 
 			var elements = document.querySelectorAll('section');
 			Array.prototype.forEach.call(elements, function(el, i){
-				var h_value = Math.random() + golden_ratio_conjugate;
-				h_value = h_value % 1;
-
+				var h_value = (Math.random() + golden_ratio_conjugate) % 1;
 				var result = hsvToRgb(h_value, s_value, v_value);
+				
 				el.setAttribute('data-background', rgbToHex(Math.round(result[0]), Math.round(result[1]), Math.round(result[2])));
 			});
 		</script>

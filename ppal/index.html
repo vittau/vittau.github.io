@@ -544,18 +544,20 @@
 					</section>
 
 					<section>
-						<h2>Passo indutivo (1)</h2>
+						<h2>Passo indutivo ($\neg$, $\wedge$, $\vee$, $\rightarrow$)</h2>
 						<p>
 							$E_{M_G, s}(\neg \varphi)$, $E_{M_G, s}(\varphi \wedge \psi)$, $E_{M_G, s}(\varphi \vee \psi)$ e $E_{M_G, s}(\varphi \rightarrow \psi)$ são trivialmente decidíveis pois são fórmulas simples e $E_{M_G, s}(\varphi)$ e $E_{M_G, s}(\psi)$ são decidíveis por hipótese.
 						</p>
 					</section>
 
 					<section>
-						<h2>Passo indutivo (2)</h2>
+						<h2>Passo indutivo ($K$)</h2>
 						<p>
 							$E_{M_G, s}(K_{G'} \varphi)$
 							<ul>
 								<li>Trivialmente decidível quando $G' = \emptyset$, evalua sempre para $0$;</li>
+								<li>Decidível quando $G' = P$ já que a fórmula é resolvida por cálculos de $E_{M_G, s}(\varphi)$, decidível por hipótese;</li>
+								<li>Quando $G' = \{ G'_0, G'_1, \dots, G'_n \}$, a soma itera sobre todo $G'_i \in G'$, e os tamanhos $\overline{G'_i}$ são estritamente menores que $\overline{G}$ já que por definição $G'$ é composto de um conjunto disjunto de grupos.</li>
 							</ul>
 						</p>
 					</section>

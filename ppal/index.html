@@ -568,7 +568,18 @@
 							$E_{M_G, s}(B_{G'} \varphi)$
 							<ul>
 								<li>Trivialmente decidível quando $G' = \emptyset$, evalua sempre para $0$;</li>
+								<li>Quando $G' = P$ a soma itera sobre todo vizinho $s'$ do estado $s$. Como o modelo é finito e $E_{M_G, s}(\varphi)$ é decidível por hipótese, é decidível;</li>
+								<li>Decidível quando $G' = \{ G'_0, G'_1, \dots, G'_n \}$ já que a fórmula é resolvida por cálculos de $E_{M_G, s}(\varphi)$, decidível por hipótese.</li>
 							</ul>
+						</p>
+					</section>
+
+					<section>
+						<h2>Passo indutivo (anúncio)</h2>
+						<p>
+							$E_{M_G, s}([ \varphi ]^r_{G'} \psi)$
+							<br />
+							$M_G$ é finito e portanto $M_{G'}$ também é, já que contém exatamente o dobro de elementos de $M_G$. Para definir $M_{G'}$ precisamos calcular $E_{M_G, s}(\varphi)$ para cada $s \in T$, que são decidíveis por hipótese. $E_{M_{G'}, s}(\psi)$ também é decidível por hipótese. Portanto, a fórmula é decidível.
 						</p>
 					</section>
 

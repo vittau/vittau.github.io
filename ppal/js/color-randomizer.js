@@ -38,15 +38,14 @@ function rgbToHex(r, g, b) {
 	return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
-var golden_ratio_conjugate = 0.618033988749895;
-var s_value = 0.02;
-var v_value = 0.95;
+function randomize(s_value, v_value) {
+	var golden_ratio_conjugate = 0.618033988749895;
 
+	var elements = document.querySelectorAll('section');
+	Array.prototype.forEach.call(elements, function(el, i){
+		var h_value = (Math.random() + golden_ratio_conjugate) % 1;
+		var result = hsvToRgb(h_value, s_value, v_value);
 
-var elements = document.querySelectorAll('section');
-Array.prototype.forEach.call(elements, function(el, i){
-	var h_value = (Math.random() + golden_ratio_conjugate) % 1;
-	var result = hsvToRgb(h_value, s_value, v_value);
-
-	el.setAttribute('data-background', rgbToHex(Math.round(result[0]), Math.round(result[1]), Math.round(result[2])));
-});
+		el.setAttribute('data-background', rgbToHex(Math.round(result[0]), Math.round(result[1]), Math.round(result[2])));
+	});
+}

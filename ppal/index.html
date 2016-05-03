@@ -588,7 +588,7 @@
 				<section>
 					
 					<section>
-						<h2>Exemplo da PPAL</h2>
+						<h2>Exemplo básico da PPAL</h2>
 						<p>
 							Será mostrado agora um exemplo básico para demonstrar como o modelo evoluí, e para mostrar passo-a-passo a resolução das evaluações.
 							<br />
@@ -599,8 +599,20 @@
 					<section>
 						<h2>Modelo inicial</h2>
 						<p>
-							Suponha um modelo inicial composto de uma única população $P$, duas proposições $a$ e $b$ e um estado real $\{a, b\}$.
-							<img src="img/basic-initial.png" />
+							Suponha um modelo inicial composto de uma única população $P$, duas proposições $a$ e $b$ e um estado real $\{a, b\}$. A população está em dúvida entre todos os estados possíveis, ou seja, o modelo é um grafo completo.
+							<br />
+							<img src="img/basic-initial.png" height="200px" />
+						</p>
+					</section>
+
+					<section>
+						<h2>Modelo inicial (asserções)</h2>
+						<p>
+							<img src="img/basic-initial.png" height="200px" />
+							<ul>
+								<li>$E_{M_P, \{ a, b \}}(a) = e(a, (M_P, \{a, b\})) = 1.0$ porque a proposição $a$ vale no estado $\{a, b\}$;</li>
+								<li>$E_{M_P, \{ a, b \}}(K_P a) = 0.0$, porque os estados $ \{ \neg a, b \}$ e $\{ \neg a, \neg b \}$ estão conectados a $\{ a, b \}$ via $\stackrel{M_S, P}{\sim}$, e a proposição $a$ não vale neles.</li>
+							</ul>
 						</p>
 					</section>
 

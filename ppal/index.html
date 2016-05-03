@@ -632,7 +632,28 @@
 						<p>
 							<img src="img/basic-after.png" height="200px" />
 							<br />
-							O anúncio é processado sobre o modelo $M_G = \{P^1, P^2\}$, onde o modelo de $P^1$ é o mesmo que $P$, mas sem as arestas $a$, e com tamanho $r\overline{P}$. O modelo de $P^2$ é igual o de $P$, mas com tamanho $(1-r) \overline{P}$.
+							O anúncio é processado sobre o modelo $M_G = \{P^1, P^2\}$, onde o modelo de $P^1$ é o mesmo que $P$, mas sem as arestas $a$, e com tamanho $r\overline{P}$. O modelo de $P^2$ é igual o de $P$, mas com tamanho $(1-r) \overline{P}$. Estamos efetivamente perguntando:
+							\begin{equation}
+								E_{M_G, \{ a, b \}}(K_G a)
+							\end{equation}
+						</p>
+					</section>
+
+					<section>
+						<h2>Anúncio (passo-a-passo 2)</h2>
+						<p>
+							$E_{M_G, \{ a, b \}}(K_G a)$ que é igual a $K(a, M_G, \{ a, b \}, G)$ de acordo com as regras da semântica. Expandindo:
+							<small>
+								\begin{equation}
+									\begin{split}
+										&K(a, M_G, \{ a, b \}, G) =
+										\\ &\frac{\overline{P^1} K(a, M_G, \{ a, b \}, P^1) + \overline{P^2} K(a, M_G, \{ a, b \}, P^2)}{\overline{P^1} + \overline{P^2} } =
+										\\ &\frac{\overline{P^1}}{\overline{P^1} + \overline{P^2}} = \frac{r \overline{P}}{\overline{P}} = r
+									\end{split}
+								\end{equation}
+							</small>
+							<br />
+							O que faz sentido, já que o anúncio foi feito para fração $r$ da população.
 						</p>
 					</section>
 

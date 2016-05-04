@@ -629,9 +629,8 @@
 
 					<section>
 						<h2>Anúncio (passo-a-passo)</h2>
+						<img src="img/basic-after.png" height="200px" />
 						<p>
-							<img src="img/basic-after.png" height="200px" />
-							<br />
 							O anúncio é processado sobre o modelo $M_G = \{P^1, P^2\}$, onde o modelo de $P^1$ é o mesmo que $P$, mas sem as arestas $a$, e com tamanho $r\overline{P}$. O modelo de $P^2$ é igual o de $P$, mas com tamanho $(1-r) \overline{P}$. Estamos efetivamente perguntando:
 							\begin{equation}
 								E_{M_G, \{ a, b \}}(K_G a)
@@ -684,6 +683,22 @@
 							Um programa de TV foi visto por 30% da população, e revelou que o político praticou lavagem de dinheiro e pagamento de propina. Isso é equivalente ao anúncio $[l]^{0.3}_G$, onde $G = \{P^1, P^2\}$ é um grupo contendo as populações resultantes do anúncio: $P^1$ recebeu o mesmo, e $P^2$ não.
 							<br />
 							<img src="img/corrupt-after1.png" height="200px" />
+						</p>
+					</section>
+
+					<section>
+						<h2>Primeiro anúncio ($K$)</h2>
+						<img src="img/corrupt-after1.png" height="200px" />
+						<p>
+							Se perguntarmos agora $E_{M_P, \{ l, b \}}([l]^{0.3}_G K_G(l \land b))$, a evaluação nesse momento será $0$, já que ainda existem arestas $p_1$ e $p_2$ conectando o estado $\{l, b\}$ a outros. Isto é, ambas as populações estão em dúvida quanto ao estado $\{l, b\}$ ser o real ou não.
+						</p>
+					</section>
+
+					<section>
+						<h2>Primeiro anúncio ($B$)</h2>
+						<img src="img/corrupt-after1.png" height="200px" />
+						<p>
+							Podemos também verificar a crença da população, isto é, evaluar $E_{M_P, \{ l, b \}}([l]^{0.3}_G B_G(l \land b))$. Essa expressão resultará em $0.325$, demonstrando baixa crença no momento de o político ser de fato corrupto.
 						</p>
 					</section>
 

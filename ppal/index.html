@@ -759,9 +759,12 @@
 		</div>
 
 		<!-- Randomize slide background colors -->
-		<script src="js/color-randomizer.js"></script>
+		<script src="js/Please-compressed.js"></script>
 		<script type="text/javascript">
-			randomize(0.025, 0.95);
+			var elements = document.querySelectorAll('section');
+			Array.prototype.forEach.call(elements, function(el, i){
+				el.setAttribute('data-background', Please.make_color({saturation: .05, value: .95}));
+			});
 		</script>
 
 		<script src="lib/js/head.min.js"></script>

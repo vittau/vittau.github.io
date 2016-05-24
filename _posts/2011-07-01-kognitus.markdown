@@ -11,6 +11,6 @@ project-start-date: July 2011
 project-end-date: March 2012
 client: Kognitus
 category: Image processing
-description: Development of solutions for automation and industrial processes inspection.
+description: Development of solutions for automation and industrial processes inspection using <a href="http://www.cognex.com/" target="_blank">Cognex</a> computer vision hardware and software.
 
 ---

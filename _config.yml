@@ -16,14 +16,16 @@ color:
 social:
   - title: envelope
     url: mailto:vmachado@cos.ufrj.br
-  - title: twitter
-    url: https://twitter.com/VittauMach
   - title: facebook
     url: https://www.facebook.com/vittau
-  - title: github
-    url: https://github.com/vittau
   - title: flickr
     url: https://www.flickr.com/photos/vitormach
+  - title: github
+    url: https://github.com/vittau
+  - title: linkedin
+    url: https://www.linkedin.com/in/vitormach
+  - title: twitter
+    url: https://twitter.com/VittauMach
 
 # Build settings
 markdown: kramdown

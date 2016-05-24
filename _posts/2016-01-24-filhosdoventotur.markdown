@@ -11,6 +11,6 @@ project-start-date: January 2016
 project-end-date: Ongoing
 client: Filhos do Vento Tur
 category: Web developer
-description: <a href="http://filhosdoventotur.com.br">http://filhosdoventotur.com.br</a><br />Tourism site, with events, pictures, projects and services. Based on Rio de Janeiro.
+description: <a href="http://filhosdoventotur.com.br" target="_blank">http://filhosdoventotur.com.br</a><br />Tourism site, with events, pictures, projects and services. Based on Rio de Janeiro.
 
 ---

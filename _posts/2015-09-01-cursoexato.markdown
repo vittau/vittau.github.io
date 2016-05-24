@@ -8,9 +8,9 @@ img: cursoexato.png
 thumbnail: cursoexato-thumbnail.png
 alt: Curso Exato
 project-start-date: September 2015
-project-end-date: Ongoing
+project-end-date: March 2016
 client: Curso Exato
 category: Web developer
-description: <a href="http://www.exatocursos.com">http://www.exatocursos.com</a><br />I assumed this project nearly at the end, mostly to provide assistance during the payment homologation process and to fix some bugs. I also provide maintenance for the site. It's a preparation course for law public tender exams.
+description: <a href="http://www.exatocursos.com" target="_blank">http://www.exatocursos.com</a><br />I assumed this project nearly at the end, mostly to provide assistance during the payment homologation process and to fix some bugs. I also provided maintenance for the site. It's a preparation course for law public tender exams.
 
 ---

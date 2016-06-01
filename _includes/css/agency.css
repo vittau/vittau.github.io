@@ -723,6 +723,7 @@ footer {
 footer span.themeurl {
     text-transform: uppercase;
     text-transform: none;
+    font-size: 0.7em;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     line-height: 40px;
 }

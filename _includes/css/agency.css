@@ -7,6 +7,7 @@
 body {
     overflow-x: hidden;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-image: url('img/diagonal-noise.png');
     color: #{{ site.color.secondary-dark }};
 }
 
@@ -59,10 +60,6 @@ h6 {
 
 .img-centered {
     margin: 0 auto;
-}
-
-.bg-light-gray {
-    background-color: #f7f7f7;
 }
 
 .bg-darkest-gray {

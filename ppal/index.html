@@ -45,7 +45,6 @@
 					<h1>PPAL</h1>
 					<h2>Populational Announcement Logic</h2>
 					<p>Uma lógica dinâmica epistêmica</p>
-					<p><i>-- Apresentação em construção --</i></p>
 					<p>
 						<small>Dissertação de mestrado de <a href="http://vitormachado.me">Vitor Machado</a>, orientado pelo Prof. <a href="http://www.cos.ufrj.br/~mario/">Mario Benevides</a></small>
 					</p>
@@ -592,94 +591,21 @@
 				</section>
 
 				<section>
-					
+
 					<section>
-						<h2>Exemplo básico da PPAL</h2>
+						<h2>Exemplo</h2>
 						<p>
-							Será mostrado agora um exemplo básico para demonstrar como o modelo evolui, e para mostrar passo-a-passo a resolução das evaluações.
-							<br />
-							Os estados são nomeados como o conjunto de proposições que são válidas nos mesmos, para facilitar a visualização.
+							Veremos agora um exemplo para demonstrar como o modelo evolui, e mostrar passo-a-passo a resolução das evaluações. Os estados são nomeados como o conjunto de proposições que são válidas nos mesmos, para facilitar a visualização.
+						</p>
+						<p>
+							A motivação para o exemplo é a seguinte: considere um político famoso que está sob investigação por lavagem de dinheiro e pagamento de propina. As eleições estão chegando, e para ser reeleito o político precisa que as pessoas não saibam de ambas as acusações sendo feitas sobre ele.
 						</p>
 					</section>
 
 					<section>
 						<h2>Modelo inicial</h2>
 						<p>
-							Suponha um modelo inicial composto de uma única população $P$, duas proposições $a$ e $b$ e um estado real $\{a, b\}$. A população está em dúvida entre todos os estados possíveis, ou seja, o modelo é um grafo completo.
-							<br />
-							<img src="img/basic-initial.png" height="200px" />
-						</p>
-					</section>
-
-					<section>
-						<h2>Modelo inicial (asserções)</h2>
-						<p>
-							<img src="img/basic-initial.png" height="200px" />
-							<ul>
-								<li>$E_{M_P, \{ a, b \}}(a) = e(a, (M_P, \{a, b\})) = 1.0$ porque a proposição $a$ vale no estado $\{a, b\}$;</li>
-								<li>$E_{M_P, \{ a, b \}}(K_P a) = 0.0$, porque os estados $ \{ \neg a, b \}$ e $\{ \neg a, \neg b \}$ estão conectados a $\{ a, b \}$ via $\stackrel{M_S, P}{\sim}$, e a proposição $a$ não vale neles.</li>
-							</ul>
-						</p>
-					</section>
-
-					<section>
-						<h2>Anúncio</h2>
-						<p>
-							Anúncio de $a$ para fração $r$ da população $P$, obtendo grupo $G$, e queremos saber se $G$ sabe $a$, isto é, se $K_G a$ após o anúncio. Portanto:
-							\begin{equation}
-								E_{M_P, \{ a, b \}}([a]^r_G K_G a)
-							\end{equation}
-							<img src="img/basic-after.png" height="200px" />
-						</p>
-					</section>
-
-					<section>
-						<h2>Anúncio (passo-a-passo)</h2>
-						<img src="img/basic-after.png" height="200px" />
-						<p>
-							O anúncio é processado sobre o modelo $M_G = \{P^1, P^2\}$, onde o modelo de $P^1$ é o mesmo que $P$, mas sem as arestas $a$, e com tamanho $r\overline{P}$. O modelo de $P^2$ é igual o de $P$, mas com tamanho $(1-r) \overline{P}$. Estamos efetivamente perguntando:
-							\begin{equation}
-								E_{M_G, \{ a, b \}}(K_G a)
-							\end{equation}
-						</p>
-					</section>
-
-					<section>
-						<h2>Anúncio (passo-a-passo 2)</h2>
-						<p>
-							$E_{M_G, \{ a, b \}}(K_G a)$ que é igual a $K(a, M_G, \{ a, b \}, G)$ de acordo com as regras da semântica. Expandindo:
-							<small>
-								\begin{equation}
-									\begin{split}
-										&K(a, M_G, \{ a, b \}, G) =
-										\\ &\frac{\overline{P^1} K(a, M_G, \{ a, b \}, P^1) + \overline{P^2} K(a, M_G, \{ a, b \}, P^2)}{\overline{P^1} + \overline{P^2} } =
-										\\ &\frac{\overline{P^1}}{\overline{P^1} + \overline{P^2}} = \frac{r \overline{P}}{\overline{P}} = r
-									\end{split}
-								\end{equation}
-							</small>
-							<br />
-							O que faz sentido, já que o anúncio foi feito para fração $r$ da população.
-						</p>
-					</section>
-
-				</section>
-
-				<section>
-
-					<section>
-						<h2>Exemplo (político corrupto)</h2>
-						<p>
-							Agora será mostrado um exemplo um pouco mais extenso, sem o passo-a-passo matemático do exemplo anterior. A motivação para o exemplo é a seguinte:
-						</p>
-						<p>
-							Considere um político famoso que está sob investigação por lavagem de dinheiro e pagamento de propina. As eleições estão chegando, e para ser reeleito o político precisa que as pessoas não saibam de ambas as acusações sendo feitas sobre ele.
-						</p>
-					</section>
-
-					<section>
-						<h2>Modelo inicial</h2>
-						<p>
-							Novamente temos um modelo inicial composto de uma única população $P$, duas proposições $l$ (lavagem de dinheiro) e $b$ (pagamento de propina) e um estado real $\{l, b\}$.
+							Temos um modelo inicial composto de uma única população $P$, duas proposições $l$ (lavagem de dinheiro) e $b$ (pagamento de propina) e um estado real $\{l, b\}$.
 							<br />
 							<img src="img/corrupt-initial.png" height="200px" />
 							<br />
@@ -708,7 +634,21 @@
 						<h2>Primeiro anúncio ($B$)</h2>
 						<img src="img/corrupt-after1.png" height="200px" />
 						<p>
-							Podemos também verificar a crença da população, isto é, evaluar $E_{M_P, \{ l, b \}}([l]^{0.3}_G B_G(l \land b))$. Essa expressão resultará em $0.325$, demonstrando baixa crença no momento de o político ser de fato corrupto.
+							Podemos também verificar a crença da população, isto é, evaluar $E_{M_P, \{ l, b \}}([l]^{0.3}_G B_G(l \land b))$.
+						</p>
+					</section>
+
+					<section>
+						<h2>Primeiro anúncio ($B$)</h2>
+						<img src="img/corrupt-after1.png" height="200px" />
+						<p>
+							\begin{equation}
+								\begin{aligned}
+									B(\varphi, (M_G, r), G) &=  \sum_{G' \in G} \frac{\overline{G'}}{\overline{G}} B(\varphi, (M_G, r), G') \\
+									= 0.3 \sum_{r' \in N_r} \frac{E_{M_{P^1}, r}(\varphi)}{\overline{N_r}} &+ 0.7 \sum_{r' \in N_r} \frac{E_{M_{P^2}, r}(\varphi)}{\overline{N_r}} \\
+									= 0.3 \cdot 1/2 + 0.7 \cdot 1/4 &= 0.325
+								\end{aligned}
+							\end{equation}
 						</p>
 					</section>
 

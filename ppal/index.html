@@ -644,8 +644,8 @@
 						<p style="font-size: .8em">
 							\begin{equation}
 								\begin{aligned}
-									B(\varphi, (M_G, r), G) &=  \sum_{G' \in G} \frac{\overline{G'}}{\overline{G}} B(\varphi, (M_G, r), G') \\
-									= 0.3 \sum_{r' \in N_r} \frac{E_{M_{P^1}, r}(\varphi)}{\overline{N_r}} &+ 0.7 \sum_{r' \in N_r} \frac{E_{M_{P^2}, r}(\varphi)}{\overline{N_r}} \\
+									B(l \land b, (M_G, \{ l, b \}), G) &=  \sum_{G' \in G} \frac{\overline{G'}}{\overline{G}} B(l \land b, (M_G, \{ l, b \}), G') \\
+									= 0.3 \sum_{s' \in N_{\{ l, b \}}} \frac{E_{M_{P^1}, \{ l, b \}}(l \land b)}{\overline{N_{\{ l, b \}}}} &+ 0.7 \sum_{s' \in N_{\{ l, b \}}} \frac{E_{M_{P^2}, \{ l, b \}}(l \land b)}{\overline{N_{\{ l, b \}}}} \\
 									= 0.3 \cdot 1/2 + 0.7 \cdot 1/4 &= 0.325
 								\end{aligned}
 							\end{equation}
@@ -684,7 +684,14 @@
 						<h2>Segundo anúncio ($K$)</h2>
 						<img src="img/corrupt-after2.png" height="300px" style="float: left" />
 						<p style="font-size: .8em">
-							$E_{M_P, \{ l, b \}}([l]^{0.3}_G [b]^{0.4}_{G'} K_{G'}(l \land b)) = 0.12$ já que não há mais arestas conectando o estado $\{l, b\}$ a outros para a população $P^{11}$ em $G^1$.
+							\begin{equation}
+								\begin{aligned}
+									&K(l \land b, (M_G, \{ l, b \}), G) \\
+									&= \sum_{G' \in G} \frac{\overline{G'}}{\overline{G}} K(l \land b, (M_G, \{ l, b \}), G') \\
+									&= 0.3 ( 0.4 \cdot 1 + 0.6 \cdot 0) + 0.7 ( 0.4 \cdot 0 + 0.6 \cdot 0) \\
+									&= 0.3 \cdot 0.4 = 0.12
+								\end{aligned}
+							\end{equation}
 						</p>
 					</section>
 

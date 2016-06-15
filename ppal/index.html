@@ -724,39 +724,105 @@
 				<section>
 					<h2>Exemplo de modelo</h2>
 					<small>
-					<pre><code style="min-height: 470px; min-width: 850px" data-trim>
-<model version="0.4" name="Cards game">
-	<agentsdef>
-		<a id="A" prefix="A">Alice</a>
-		<a id="B" prefix="B">Bob</a>
-		<a id="C" prefix="C">Carol</a>
-	</agentsdef>
-
-	<propositions>
-		<generic id="has0">
-			<name>AGENT.pre has 0</name>
-			<agents>A and B and C</agents>
-		</generic>
-		<generic id="has1">
-			<name>AGENT.pre has 1</name>
-			<agents>A and B and C</agents>
-		</generic>
-		<generic id="has2">
-			<name>AGENT.pre has 2</name>
-			<agents>A and B and C</agents>
-		</generic>
-	</propositions>
-
-	<restrictions>
-
-		<rule>!AGENT.has0 and !AGENT.has1 and !AGENT.has2</rule> <!-- Agents must have at least one card -->
-		<mutex>AGENT.has0 and AGENT.has1 and AGENT.has2</mutex> <!-- Agents must have at most one card -->
-		<!-- ...Therefore, agents have exactly one card -->
-		<mutex>AGENT_0.has0 and AGENT_1.has0</mutex> <!-- Different agents can't have the same card -->
-	</restrictions>
-
-	<realstate>A.has0 and B.has1 and C.has2</realstate>
-</model>
+					<pre><code style="font-size: 1.2em; min-height: 470px; min-width: 850px" data-trim>
+&lt;model version = "0.1" name = "Cards game (pop)"&gt;
+	&lt;societies&gt;
+		&lt;socdef id = "a" name = "Alderaaneans" size="3" /&gt;
+		&lt;socdef id = "b" name = "Bespians" size="5" /&gt;
+		&lt;socdef id = "c" name = "Coruscanti" size="7" /&gt;
+	&lt;/societies&gt;
+	&lt;propositions&gt;
+		&lt;propdef id = "ah0" name = "a has 0"&gt;
+			&lt;soc id = "a"/&gt;
+		&lt;/propdef&gt;
+		&lt;propdef id = "bh0" name = "b has 0"&gt;
+			&lt;soc id = "b"/&gt;
+		&lt;/propdef&gt;
+		&lt;propdef id = "ch0" name = "c has 0"&gt;
+			&lt;soc id = "c"/&gt;
+		&lt;/propdef&gt;
+		&lt;propdef id = "ah1" name = "a has 1"&gt;
+			&lt;soc id = "a"/&gt;
+		&lt;/propdef&gt;
+		&lt;propdef id = "bh1" name = "b has 1"&gt;
+			&lt;soc id = "b"/&gt;
+		&lt;/propdef&gt;
+		&lt;propdef id = "ch1" name = "c has 1"&gt;
+			&lt;soc id = "c"/&gt;
+		&lt;/propdef&gt;
+		&lt;propdef id = "ah2" name = "a has 2"&gt;
+			&lt;soc id = "a"/&gt;
+		&lt;/propdef&gt;
+		&lt;propdef id = "bh2" name = "b has 2"&gt;
+			&lt;soc id = "b"/&gt;
+		&lt;/propdef&gt;
+		&lt;propdef id = "ch2" name = "c has 2"&gt;
+			&lt;soc id = "c"/&gt;
+		&lt;/propdef&gt;
+	&lt;/propositions&gt;
+	&lt;states&gt;
+		&lt;comb&gt;
+			&lt;restrictions&gt;
+				&lt;!-- Societies must have at least one card --&gt;
+				&lt;atleast&gt;
+					&lt;prop id = "ah0"/&gt;
+					&lt;prop id = "bh0"/&gt;
+					&lt;prop id = "ch0"/&gt;
+				&lt;/atleast&gt;
+				&lt;atleast&gt;
+					&lt;prop id = "ah1"/&gt;
+					&lt;prop id = "bh1"/&gt;
+					&lt;prop id = "ch1"/&gt;
+				&lt;/atleast&gt;
+				&lt;atleast&gt;
+					&lt;prop id = "ah2"/&gt;
+					&lt;prop id = "bh2"/&gt;
+					&lt;prop id = "ch2"/&gt;
+				&lt;/atleast&gt;
+				&lt;!-- Different societies can't have the same card --&gt;
+				&lt;mutex&gt;
+					&lt;prop id = "ah0"/&gt;
+					&lt;prop id = "bh0"/&gt;
+					&lt;prop id = "ch0"/&gt;
+				&lt;/mutex&gt;
+				&lt;mutex&gt;
+					&lt;prop id = "ah1"/&gt;
+					&lt;prop id = "bh1"/&gt;
+					&lt;prop id = "ch1"/&gt;
+				&lt;/mutex&gt;
+				&lt;mutex&gt;
+					&lt;prop id = "ah2"/&gt;
+					&lt;prop id = "bh2"/&gt;
+					&lt;prop id = "ch2"/&gt;
+				&lt;/mutex&gt;
+				&lt;!-- Societies must have at most one card --&gt;
+				&lt;mutex&gt;
+					&lt;prop id = "ah0"/&gt;
+					&lt;prop id = "ah1"/&gt;
+					&lt;prop id = "ah2"/&gt;
+				&lt;/mutex&gt;
+				&lt;mutex&gt;
+					&lt;prop id = "bh0"/&gt;
+					&lt;prop id = "bh1"/&gt;
+					&lt;prop id = "bh2"/&gt;
+				&lt;/mutex&gt;
+				&lt;mutex&gt;
+					&lt;prop id = "ch0"/&gt;
+					&lt;prop id = "ch1"/&gt;
+					&lt;prop id = "ch2"/&gt;
+				&lt;/mutex&gt;
+			&lt;/restrictions&gt;
+		&lt;/comb&gt;
+		&lt;!--
+		Could have &lt;state&gt; as well declaring specific states.
+		--&gt;
+	&lt;/states&gt;
+	&lt;realstate&gt;
+		&lt;prop id = "ah0"/&gt;
+		&lt;prop id = "bh1"/&gt;
+		&lt;prop id = "ch2"/&gt;
+	&lt;/realstate&gt;
+&lt;/model&gt;
 					</code></pre>
 					</small>
 				</section>

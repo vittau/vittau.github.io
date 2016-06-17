@@ -58,7 +58,7 @@
 							É a área que estuda modelos e sistemas para representar e raciocinar sobre conhecimento.
 						</p>
 						<blockquote>
-							&ldquo;Representação de conhecimento é a aplicação de lógica e ontologia à tarefa de construir modelos computáveis para algum domínio&rdquo; - Sowa, inventor dos gráficos conceituais
+							&ldquo;Representação de conhecimento é a aplicação de lógica e ontologia à tarefa de construir modelos computáveis para algum domínio&rdquo; - John Sowa, inventor dos gráficos conceituais
 						</blockquote>
 					</section>
 
@@ -98,7 +98,7 @@
 					<section>
 						<h2>Objetivo</h2>
 						<p>
-							Especificar uma variante de PAL, onde o conhecimento é representado sobre populações e grupos, ao invés de sobre agentes discretos como é comumente feito na literatura.
+							Especificar uma variante de Public Announcement Logic (PAL), onde o conhecimento é representado sobre populações e grupos, ao invés de sobre agentes discretos como é comumente feito na literatura.
 						</p>
 						<h2>Motivação</h2>
 						<p>
@@ -115,7 +115,7 @@
 							<b>2.</b> Foi construída também uma prova de decidibilidade da linguagem para modelos finitos, um resultado importante para verificação de modelos;
 						</p>
 						<p>
-							<b>3.</b> Foi desenvolvida ainda uma biblioteca e verificador de modelos desenvolvidos em Java que implementam a linguagem PPAL.
+							<b>3.</b> Foi desenvolvida ainda uma biblioteca e verificador de modelos desenvolvidos em Java que implementam a linguagem da lógica.
 						</p>
 						</ol>
 					</section>
@@ -140,7 +140,13 @@
 					<section>
 	               <h2>Lógica proposicional clássica</h2>
 	               <p>
-	                   A lógica com a qual estamos acostumados a lidar na computação. Contém os conectivos $\neg$ (negação), $\land$ (conjunção), $\lor$ (disjunção) and $\to$ (implicação). Sua semântica é definida por tabelas verdade para cada conectivo, que evalua cada possível entrada em T (<i>verdadeiro</i>) ou F (<i>falso</i>).
+	                   A lógica com a qual estamos acostumados a lidar na computação.
+	               </p>
+	               <p>
+	                   Contém os conectivos $\neg$ (negação), $\land$ (conjunção), $\lor$ (disjunção) and $\to$ (implicação).
+	               </p>
+	               <p>
+	                   Semântica definida por tabelas verdade para cada conectivo, que evalua as possíveis entradas em T (<i>verdadeiro</i>) ou F (<i>falso</i>).
 	               </p>
 	               <small>
 	                  <table>
@@ -193,6 +199,7 @@
 						</p>
 						<ul>
 							<li>$w \models \Diamond P$ se para algum estado $u \in W$ vale que $w \sim u$ e $u \models P$</li>
+							<li>$w \models \Box P$ se para todo estado $u \in W$, se $w \sim u$ então $u \models P$</li>
 							<li>$\Box P \leftrightarrow \neg \Diamond \neg P$</li>
 						</ul>
 					</section>
@@ -204,6 +211,16 @@
 							<br />
 							${\cal M},s \models K_a \phi$ se e somente se para todo $s' \in S$, $s \sim_a s' \Rightarrow {\cal M},s' \models \phi$
 						</p>
+					</section>
+
+					<section>
+						<h2>Exemplo (jogo de cartas)</h2>
+						<p>
+							Suponha três jogadores, $x$, $y$ e $z$, e cartas $0$, $1$ e $2$. Usamos, por exemplo $1_x$ para dizer que o jogador $x$ possui a carta $1$.
+						</p>
+						<p>
+							Os estados serão nomeados como a carta de cada jogador, em ordem. Por exemplo, no estado $012$, jogador $x$ tem a carta $0$, $y$ tem $1$ e $z$ tem $2$. O estado real é sublinhado.
+						</p>
 						<img src="img/multiagent.png" height="200px" />
 						<br />
 						<small>Modelo $Hexa$: jogo de cartas</small>
@@ -212,13 +229,13 @@
 					<section>
 						<h2>Lógica de anúncios públicos (PAL)</h2>
 						<p>
-							Operador $[ \phi ]$ de anúncio público altera o modelo, reduzindo as arestas entre os estados. $[ \phi ] \varphi$ tem o significado de "após anúncio de $\phi$, $\varphi$ é verdadeiro".
+							Operador $[ \dots ]$ de anúncio público altera o modelo, reduzindo as arestas entre os estados. $[ \phi ] \varphi$ tem o significado de "após anúncio de $\phi$, $\varphi$ é verdadeiro".
 						</p>
 						<img src="img/announcement.png" height="200px" />
 						<br />
 						<small>Modelo $Hexa_2 := Hexa | \neg 1_a$</small>
 						<br />
-						<small>Para o anúncio $Hexa, 012 \models [ \neg 1_a ] K_c 0_a$, podemos checar em $Hexa_2$.</small>
+						<small>Para o anúncio $Hexa, 012 \models [ \neg 1_a ] K_c 0_a$, precisamos checar $K_c 0_a$ em $Hexa_2$.</small>
 					</section>
 
 				</section>

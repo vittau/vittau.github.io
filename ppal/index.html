@@ -531,87 +531,7 @@
 					</section>
 
 				</section>
-
-				<section>
-
-					<section>
-						<h2>Decidibilidade</h2>
-						<p>
-							Um aspecto importante da verificação de modelos é a decidibilidade, que está relacionada com o problema de parada: existe alguma fórmula na linguagem que pode fazer o verificador ficar preso em um loop?
-						</p>
-					</section>
-
-					<section>
-						<h2>Decidibilidade (Indução)</h2>
-						<p>
-							É mostrado que a lógica é decidível através de indução no tamanho $s$ da expressão BNF.
-							<br />
-							O tamanho $s$ para cada expressão é definido como:
-							<ul style="font-size: .8em">
-								<li>$s(p) = 1$;</li>
-								<li>$s(\varphi_1 \wedge \varphi_2) = s(\varphi_1) + s(\varphi_2) + 1$;</li>
-								<li>$s(\varphi_1 \vee \varphi_2) = s(\varphi_1) + s(\varphi_2) + 1$;</li>
-								<li>$s(\varphi_1 \rightarrow \varphi_2) = s(\varphi_1) + s(\varphi_2) + 1$;</li>
-								<li>$s(K_G \varphi) = s(\varphi) + 1 + \overline{G}$;</li>
-								<li>$s(B_G \varphi) = s(\varphi) + 1 + \overline{G}$;</li>
-								<li>$s([\varphi_1]_G^r \varphi_2) = s(\varphi_1) + s(\varphi_2) + 1 + \overline{G}$.</li>
-							</ul>
-						</p>
-					</section>
-
-					<section>
-						<h2>Base $s = 1$</h2>
-						<p>
-							$E_{M_G, s}(p) = e(p, (M_G, s))$ evalua para $1$ ou $0$ em um modelo finito, e portanto é decidível.
-						</p>
-						<h2>Hipótese de indução</h2>
-						<p>
-							Consideramos a hipótese de indução como sendo "qualquer fórmula de tamanho $s$ é decidível". Agora ainda é necessário realizar o passo indutivo e mostrar que qualquer fórmula com tamanho $s + \delta$ são decidíveis, onde $\delta \in \mathbb R_{>0}$.
-						</p>
-					</section>
-
-					<section>
-						<h2>Passo indutivo ($\neg$, $\wedge$, $\vee$, $\rightarrow$)</h2>
-						<p>
-							$E_{M_G, s}(\neg \varphi)$, $E_{M_G, s}(\varphi \wedge \psi)$, $E_{M_G, s}(\varphi \vee \psi)$ e $E_{M_G, s}(\varphi \rightarrow \psi)$ são trivialmente decidíveis pois são fórmulas simples e $E_{M_G, s}(\varphi)$ e $E_{M_G, s}(\psi)$ são decidíveis por hipótese.
-						</p>
-					</section>
-
-					<section>
-						<h2>Passo indutivo ($K$)</h2>
-						<p>
-							$E_{M_G, s}(K_{G'} \varphi)$
-							<ul>
-								<li>Trivialmente decidível quando $G' = \emptyset$, evalua sempre para $0$;</li>
-								<li>Decidível quando $G' = P$ já que a fórmula é resolvida por cálculos de $E_{M_G, s}(\varphi)$, decidível por hipótese;</li>
-								<li>Quando $G' = \{ G'_0, G'_1, \dots, G'_n \}$, a soma itera sobre todo $G'_i \in G'$, e os tamanhos $\overline{G'_i}$ são estritamente menores que $\overline{G}$ já que por definição $G'$ é composto de um conjunto disjunto de grupos.</li>
-							</ul>
-						</p>
-					</section>
-
-					<section>
-						<h2>Passo indutivo ($B$)</h2>
-						<p>
-							$E_{M_G, s}(B_{G'} \varphi)$
-							<ul>
-								<li>Trivialmente decidível quando $G' = \emptyset$, evalua sempre para $0$;</li>
-								<li>Quando $G' = P$ a soma itera sobre todo vizinho $s'$ do estado $s$. Como o modelo é finito e $E_{M_G, s}(\varphi)$ é decidível por hipótese, é decidível;</li>
-								<li>Decidível quando $G' = \{ G'_0, G'_1, \dots, G'_n \}$ já que a fórmula é resolvida por cálculos de $E_{M_G, s}(\varphi)$, decidível por hipótese.</li>
-							</ul>
-						</p>
-					</section>
-
-					<section>
-						<h2>Passo indutivo (anúncio)</h2>
-						<p>
-							$E_{M_G, s}([ \varphi ]^r_{G'} \psi)$
-							<br />
-							$M_G$ é finito e portanto $M_{G'}$ também é, já que contém exatamente o dobro de elementos de $M_G$. Para definir $M_{G'}$ precisamos calcular $E_{M_G, s}(\varphi)$ para cada $s \in T$, que são decidíveis por hipótese. $E_{M_{G'}, s}(\psi)$ também é decidível por hipótese. Portanto, a fórmula é decidível.
-						</p>
-					</section>
-
-				</section>
-
+				
 				<section>
 
 					<section>
@@ -721,33 +641,113 @@
 				</section>
 
 				<section>
+
+					<section>
+						<h2>Decidibilidade</h2>
+						<p>
+							Um aspecto importante da verificação de modelos é a decidibilidade, que está relacionada com o problema de parada: existe alguma fórmula na linguagem que pode fazer o verificador ficar preso em um loop?
+						</p>
+					</section>
+
+					<section>
+						<h2>Decidibilidade (Indução)</h2>
+						<p>
+							É mostrado que a lógica é decidível através de indução no tamanho $s$ da expressão BNF.
+							<br />
+							O tamanho $s$ para cada expressão é definido como:
+							<ul style="font-size: .8em">
+								<li>$s(p) = 1$;</li>
+								<li>$s(\varphi_1 \wedge \varphi_2) = s(\varphi_1) + s(\varphi_2) + 1$;</li>
+								<li>$s(\varphi_1 \vee \varphi_2) = s(\varphi_1) + s(\varphi_2) + 1$;</li>
+								<li>$s(\varphi_1 \rightarrow \varphi_2) = s(\varphi_1) + s(\varphi_2) + 1$;</li>
+								<li>$s(K_G \varphi) = s(\varphi) + 1 + \overline{G}$;</li>
+								<li>$s(B_G \varphi) = s(\varphi) + 1 + \overline{G}$;</li>
+								<li>$s([\varphi_1]_G^r \varphi_2) = s(\varphi_1) + s(\varphi_2) + 1 + \overline{G}$.</li>
+							</ul>
+						</p>
+					</section>
+
+					<section>
+						<h2>Base $s = 1$</h2>
+						<p>
+							$E_{M_G, s}(p) = e(p, (M_G, s))$ evalua para $1$ ou $0$ em um modelo finito, e portanto é decidível.
+						</p>
+						<h2>Hipótese de indução</h2>
+						<p>
+							Consideramos a hipótese de indução como sendo "qualquer fórmula de tamanho $s$ é decidível". Agora ainda é necessário realizar o passo indutivo e mostrar que qualquer fórmula com tamanho $s + \delta$ são decidíveis, onde $\delta \in \mathbb R_{>0}$.
+						</p>
+					</section>
+
+					<section>
+						<h2>Passo indutivo ($\neg$, $\wedge$, $\vee$, $\rightarrow$)</h2>
+						<p>
+							$E_{M_G, s}(\neg \varphi)$, $E_{M_G, s}(\varphi \wedge \psi)$, $E_{M_G, s}(\varphi \vee \psi)$ e $E_{M_G, s}(\varphi \rightarrow \psi)$ são trivialmente decidíveis pois são fórmulas simples e $E_{M_G, s}(\varphi)$ e $E_{M_G, s}(\psi)$ são decidíveis por hipótese.
+						</p>
+					</section>
+
+					<section>
+						<h2>Passo indutivo ($K$)</h2>
+						<p>
+							$E_{M_G, s}(K_{G'} \varphi)$
+							<ul>
+								<li>Trivialmente decidível quando $G' = \emptyset$, evalua sempre para $0$;</li>
+								<li>Decidível quando $G' = P$ já que a fórmula é resolvida por cálculos de $E_{M_G, s}(\varphi)$, decidível por hipótese;</li>
+								<li>Quando $G' = \{ G'_0, G'_1, \dots, G'_n \}$, a soma itera sobre todo $G'_i \in G'$, e os tamanhos $\overline{G'_i}$ são estritamente menores que $\overline{G}$ já que por definição $G'$ é composto de um conjunto disjunto de grupos.</li>
+							</ul>
+						</p>
+					</section>
+
+					<section>
+						<h2>Passo indutivo ($B$)</h2>
+						<p>
+							$E_{M_G, s}(B_{G'} \varphi)$
+							<ul>
+								<li>Trivialmente decidível quando $G' = \emptyset$, evalua sempre para $0$;</li>
+								<li>Quando $G' = P$ a soma itera sobre todo vizinho $s'$ do estado $s$. Como o modelo é finito e $E_{M_G, s}(\varphi)$ é decidível por hipótese, é decidível;</li>
+								<li>Decidível quando $G' = \{ G'_0, G'_1, \dots, G'_n \}$ já que a fórmula é resolvida por cálculos de $E_{M_G, s}(\varphi)$, decidível por hipótese.</li>
+							</ul>
+						</p>
+					</section>
+
+					<section>
+						<h2>Passo indutivo (anúncio)</h2>
+						<p>
+							$E_{M_G, s}([ \varphi ]^r_{G'} \psi)$
+							<br />
+							$M_G$ é finito e portanto $M_{G'}$ também é, já que contém exatamente o dobro de elementos de $M_G$. Para definir $M_{G'}$ precisamos calcular $E_{M_G, s}(\varphi)$ para cada $s \in T$, que são decidíveis por hipótese. $E_{M_{G'}, s}(\psi)$ também é decidível por hipótese. Portanto, a fórmula é decidível.
+						</p>
+					</section>
+
+				</section>
+
+				<section>
 					
-				<section>
-					<h2>Verificador de modelos</h2>
-					<p>
-						Uma biblioteca e verificador de modelos para a PPAL foram implementados em Java. A biblioteca foi coberta extensivamente por testes unitários e de integração para garantir consistência com a especificação da lógica.
-					</p>
-					<h2>Objetivos</h2>
-					<p>
-						<ul>
-							<li>Implementar um verificador de modelos básico para a lógica PPAL;</li>
-							<li>Desenvolver um formato para especificação de modelos (estruturas de Kripke) simples e conciso.</li>
-						</ul>
-					</p>
-				</section>
+					<section>
+						<h2>Verificador de modelos</h2>
+						<p>
+							Uma biblioteca e verificador de modelos para a PPAL foram implementados em Java. A biblioteca foi coberta extensivamente por testes unitários e de integração para garantir consistência com a especificação da lógica.
+						</p>
+						<h2>Objetivos</h2>
+						<p>
+							<ul>
+								<li>Implementar um verificador de modelos básico para a lógica PPAL;</li>
+								<li>Desenvolver um formato para especificação de modelos (estruturas de Kripke) simples e conciso.</li>
+							</ul>
+						</p>
+					</section>
 
-				<section>
-					<h2>Formato de especificação</h2>
-					<p>
-						Um dos problemas recorrentes em outros verificadores é o de especificar modelos de entrada. A dificuldade vem da necessidade de se especificar todos os estados e arestas do modelo, e também por constantemente essa especificação ser difícil de ler e pouco intuitiva.
-					</p>
-					<p>Foi definida uma especificação com estrutura XML para a declaração de modelos, visando intuitividade e escalabilidade.
-				</section>
+					<section>
+						<h2>Formato de especificação</h2>
+						<p>
+							Um dos problemas recorrentes em outros verificadores é o de especificar modelos de entrada. A dificuldade vem da necessidade de se especificar todos os estados e arestas do modelo, e também por constantemente essa especificação ser difícil de ler e pouco intuitiva.
+						</p>
+						<p>Foi definida uma especificação com estrutura XML para a declaração de modelos, visando intuitividade e escalabilidade.
+					</section>
 
-				<section>
-					<h2>Exemplo de modelo</h2>
-					<small>
-					<pre><code style="font-size: 1.2em; min-height: 470px; min-width: 850px" data-trim>
+					<section>
+						<h2>Exemplo de modelo</h2>
+						<small>
+						<pre><code style="font-size: 1.2em; min-height: 470px; min-width: 850px" data-trim>
 &lt;model version = "0.1" name = "Cards game (pop)"&gt;
 	&lt;societies&gt;
 		&lt;socdef id = "a" name = "Alderaaneans" size="3" /&gt;
@@ -843,9 +843,9 @@
 		&lt;prop id = "ch2"/&gt;
 	&lt;/realstate&gt;
 &lt;/model&gt;
-					</code></pre>
-					</small>
-				</section>
+						</code></pre>
+						</small>
+					</section>
 
 				</section>
 

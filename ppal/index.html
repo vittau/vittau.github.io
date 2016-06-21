@@ -72,25 +72,6 @@
 						</p>
 					</section>
 
-					<section>
-						<h2>Trabalhos importantes</h2>
-						<ul>
-							<li>Survey of Symbolic Logic - Lewis, C. I.</li>
-							<ul>
-								<li>Primeira obra sistemâtica relativa ao tema</li>
-							</ul>
-							<li>An Essay in Modal Logic - Von Wright, G. H.</li>
-							<ul>
-								<li>Introduziu o conceito de "modalidades"</li>
-							</ul>
-							<li>Logics of public communications - Plaza, J. A.</li>
-							<li>Reasoning about Information Change - Gerbrandy, J. e Groeneveld, P. W.</li>
-							<ul>
-								<li>Lógicas de anúncios públicos</li>
-							</ul>
-						</ul>
-					</section>
-
 				</section>
 
 				<section>
@@ -138,88 +119,39 @@
 				<section>
 					
 					<section>
-	               <h2>Lógica proposicional clássica</h2>
-	               <p>
-	                   A lógica com a qual estamos acostumados a lidar na computação.
-	               </p>
-	               <p>
-	                   Contém os conectivos $\neg$ (negação), $\land$ (conjunção), $\lor$ (disjunção) e $\to$ (implicação).
-	               </p>
-	               <p>
-	                   Semântica definida por tabelas verdade para cada conectivo, que evalua as possíveis entradas em T (<i>verdadeiro</i>) ou F (<i>falso</i>).
-	               </p>
-	               <small>
-	                  <table>
-								<thead>
-									<tr>
-										<th>P</th>
-										<th>Q</th>
-										<th>P $\to$ Q</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>T</td>
-										<td>T</td>
-										<td>T</td>
-									</tr>
-									<tr>
-										<td>T</td>
-										<td>F</td>
-										<td>F</td>
-									</tr>
-									<tr>
-										<td>F</td>
-										<td>T</td>
-										<td>T</td>
-									</tr>
-									<tr>
-										<td>F</td>
-										<td>F</td>
-										<td>T</td>
-									</tr>
-								</tbody>
-							</table>
-						</small>
-					</section>
-
-					<section>
-						<h2>Lógica fuzzy</h2>
-						<p>Proposições podem assumir infinitos valores, não apenas <i>T</i>/<i>F</i>. Pode ser usada em controladores industriais por exemplo, quando não existe um modelo matemático claro para o problema, e se torna mais fácil traduzir conhecimento profissional em regras de controlador.</p>
-						<img src="img/fuzzy.png" height="200px" />
-						<br />
-						<small>$F_\to (x, y) = min \{1, 1 - x + y\}$</small>
-					</section>
-
-					<section>
-						<h2>Lógica modal</h2>
-
-						<p>
-							Operadores modais qualificam uma sentença: $\Box P$ é lido "<i>necessariamente $P$</i>" e $\Diamond P$ é lido "<i>possivelmente $P$</i>". Semântica possui estados, e relações binárias de acessibilidade entre eles. Por exemplo, $w \sim u$ significa que o estado $u$ é acessível a partir de $w$.
-						</p>
-						<ul>
-							<li>$w \models \Diamond P$ se para algum estado $u \in W$ vale que $w \sim u$ e $u \models P$</li>
-							<li>$w \models \Box P$ se para todo estado $u \in W$, se $w \sim u$ então $u \models P$</li>
-							<li>$\Box P \leftrightarrow \neg \Diamond \neg P$</li>
-						</ul>
-					</section>
-
-					<section>
 						<h2>Lógica epistêmica multi-agente</h2>
 						<p>
-							O operador característico da lógica epistêmica é $K$, o operador de conhecimento. Existem modalidades para os agentes da lógica, e expressões como $K_a \varphi$ (agente $a$ sabe $\varphi$) podem ser escritas.
-							<br />
-							${\cal M},s \models K_a \phi$ se e somente se para todo $s' \in S$, $s \sim_a s' \Rightarrow {\cal M},s' \models \phi$
+							É uma generalização da lógica modal onde existem agentes, e operadores de conhecimento para os mesmos ($K$ e $B$, conhecimento e crença respectivamente), e expressões como $K_a \varphi$ (agente $a$ sabe $\varphi$) podem ser escritas.
+						</p>
+					</section>
+
+					<section>
+						<h2>Linguagem</h2>
+						<p>
+							$$
+								\varphi ::= p \  | \neg \varphi \  | \  \varphi_1 \land \varphi_2 \  | \  \varphi_1 \lor \varphi_2 \  | \  \varphi_1 \to \varphi_2 \  | \  K_a \varphi
+							$$
+						</p>
+						<h2>Semântica</h2>
+						<p>
+						\[\begin{aligned}
+							{\cal M},s \models p &amp; \leftrightarrow s \in V(p) \\
+							{\cal M},s \models \neg \phi &amp; \leftrightarrow {\cal M},s \not \models \phi \\
+							{\cal M},s \models \phi \land \psi &amp; \leftrightarrow {\cal M},s \models \phi \  \text{and} \  {\cal M},s \models \psi \\
+							{\cal M},s \models \phi \lor \psi &amp; \leftrightarrow {\cal M},s \models \phi \  \text{or} \  {\cal M},s \models \psi \\
+							{\cal M},s \models \phi \to \psi &amp; \leftrightarrow {\cal M},s \not\models \phi \  \text{or} \  {\cal M},s \models \psi \\
+							{\cal M},s \models K_a \phi &amp; \leftrightarrow \forall s' \in S: s \sim_a s' \Rightarrow {\cal M},s' \models \phi \\
+							\end{aligned} \]
 						</p>
 					</section>
 
 					<section>
 						<h2>Exemplo (jogo de cartas)</h2>
 						<p>
-							Suponha três jogadores, $x$, $y$ e $z$, e cartas $0$, $1$ e $2$. Usamos, por exemplo $1_x$ para dizer que o jogador $x$ possui a carta $1$.
+							Suponha três jogadores, $a$, $b$ e $c$, e cartas $0$, $1$ e $2$. Usamos, por exemplo $1_a$ para dizer que o jogador $a$ possui a carta $1$.
 						</p>
 						<p>
-							Os estados serão nomeados como a carta de cada jogador, em ordem. Por exemplo, no estado $012$, jogador $x$ tem a carta $0$, $y$ tem $1$ e $z$ tem $2$. O estado real é sublinhado.
+							Os estados serão nomeados como a carta de cada jogador, em ordem. Por exemplo, no estado $012$, jogador $a$ tem a carta $0$, $b$ tem $1$ e $c$ tem $2$. O estado real é sublinhado.
 						</p>
 						<img src="img/multiagent.png" height="200px" />
 						<br />
@@ -231,9 +163,9 @@
 						<p>
 							Operador $[ \dots ]$ de anúncio público altera o modelo, reduzindo as arestas entre os estados. $[ \phi ] \varphi$ tem o significado de "após anúncio de $\phi$, $\varphi$ é verdadeiro".
 						</p>
-						<img src="img/announcement.png" height="200px" />
+						<img src="img/multiagent.png" height="200px" style="margin-right: 100px;" /> <img src="img/announcement.png" height="200px" />
 						<br />
-						<small>Modelo $Hexa_2 := Hexa | \neg 1_a$</small>
+						<small>Modelo $Hexa$ (esquerda); Modelo $Hexa_2 := Hexa | \neg 1_a$ (direita)</small>
 						<br />
 						<small>Para o anúncio $Hexa, 012 \models [ \neg 1_a ] K_c 0_a$, precisamos checar $K_c 0_a$ em $Hexa_2$.</small>
 					</section>
@@ -299,7 +231,7 @@
 						<h2>Operadores de conhecimento e anúncio</h2>
 						<ul>
 							<li>$K_G \varphi$ e $B_G \varphi$: "o grupo $G$ sabe/acredita que $\varphi$ vale";</li>
-							<li>$[\varphi_1]_G^r \varphi_2$: "$\varphi_2$ vale no grupo $G$ após anúncio de $\varphi_1$ para fração $r$ dos indivíduos em $G$", onde $G = \{ P_1, P_2 \}$ e $\overline{P_1} = \overline{G}r$.
+							<li>$[\varphi_1]_G^r \varphi_2$: "$\varphi_2$ vale no grupo $G$ após anúncio de $\varphi_1$ para fração $r$ dos indivíduos em $G$", onde $G = \{ P_1, P_2 \}$ e $\overline{P_1} = \overline{G} \cdot r$.
 							<ul>
 								<li>Essa expressão descreve um anúncio parcial que define duas novas populações, uma delas com conhecimento adicional e outra que não recebeu nenhuma nova informação.</li>
 							</ul>
@@ -357,17 +289,6 @@
 					</section>
 
 					<section>
-						<h2>Exemplos de negação</h2>
-						<p>
-							<ul>
-								<li>$NOT(0.2) = 0.8$;</li>
-								<li>$NOT(0.8) = 0.2$;</li>
-								<li>$NOT(0.5) = 0.5$.</li>
-							</ul>
-						</p>
-					</section>
-
-					<section>
 						<h2>Conjunção Fuzzy</h2>
 						<p>
 							Um operador binário $AND : U \times U \rightarrow U$ é uma conjunção fuzzy se:
@@ -381,18 +302,6 @@
 							</small>
 							<br />
 							Por exemplo, uma possível função de conjunção é $AND(x, y) = min\{x, y\}$.
-						</p>
-					</section>
-
-					<section>
-						<h2>Exemplos de conjunção</h2>
-						<p>
-							<ul>
-								<li>$AND(0, 1) = 0$;</li>
-								<li>$AND(0.5, 1) = 0.5$;</li>
-								<li>$AND(0.2, 0.8) = 0.2$;</li>
-								<li>$AND(0.8, 0.2) = 0.2$.</li>
-							</ul>
 						</p>
 					</section>
 
@@ -414,18 +323,6 @@
 					</section>
 
 					<section>
-						<h2>Exemplos de disjunção</h2>
-						<p>
-							<ul>
-								<li>$OR(1, 0) = 1$;</li>
-								<li>$OR(0.5, 0) = 0.5$;</li>
-								<li>$OR(0.2, 0.8) = 0.8$;</li>
-								<li>$OR(0.8, 0.2) = 0.8$.</li>
-							</ul>
-						</p>
-					</section>
-
-					<section>
 						<h2>Implicação Fuzzy</h2>
 						<p>
 							Um operador binário $IMP : U \times U \rightarrow U$ é uma implicação fuzzy se:
@@ -439,19 +336,7 @@
 								</ul>
 							</small>
 							<br />
-							Por exemplo, uma possível função de disjunção é $IMP(x, y) = min\{1, 1 - x + y\}$, também conhecida como implicação de Łukasiewicz (originária da lógica fuzzy de mesmo nome).
-						</p>
-					</section>
-
-					<section>
-						<h2>Exemplos de implicação</h2>
-						<p>
-							<ul>
-								<li>$IMP(0.2, 0.8) = 1$;</li>
-								<li>$IMP(0.5, 0.5) = 1$;</li>
-								<li>$IMP(0.8, 0.2) = 0.4$;</li>
-								<li>$IMP(1, 0.1) = 0.1$.</li>
-							</ul>
+							Por exemplo, uma possível função de implicação é $IMP(x, y) = min\{1, 1 - x + y\}$, também conhecida como implicação de Łukasiewicz (originária da lógica fuzzy de mesmo nome).
 						</p>
 					</section>
 
@@ -487,7 +372,10 @@
 								\end{array}
 								\right.$$
 							</small>
-							Intuitivamente, significa que o conhecimento de um grupo é igual à média ponderada dos grupos contidos nele, e é igual a $1$ quando o grupo é igual a uma única população e $\varphi$ é verdadeiro em cada estado conectado ao estado $s$ via <small>$\stackrel{M_S, G}{\sim}$</small>, e $0$ caso contrário. Uma única população sabe algo apenas quando é verdadeiro em todo mundo concebível que essa população contempla.
+						</p>
+						<p>
+							<br />
+							Intuitivamente, significa que o conhecimento de um grupo é igual à média ponderada dos conhecimentos dos grupos contidos nele. Uma única população sabe algo apenas quando é verdadeiro em todo mundo concebível que essa população contempla.
 						</p>
 					</section>
 
@@ -523,10 +411,12 @@
 								\end{array}
 								\right.$$
 							</small>
+						</p>
+						<p>
 							<br />
 							onde <small>$N_s = \bigcup_{s' \in T | s  \stackrel{M_S, G}{\sim} s'} s'$</small> são os vizinhos de <small>$s$</small> via relação <small>$\stackrel{M_S, G}{\sim}$</small>.
 							<br />
-							É funcionalmente similar a $K$, mas permite qualquer número no intervalo $[0, 1]$. Por exemplo, se em metade dos estados conectados ao estado $s$ via <small>$\stackrel{M_S, P}{\sim}$</small>, $\varphi$ evaluar para $1$ e na outra metade para $0$, então $B(\varphi, (M_S, s), P) = 0,5$. Também similar a $K$, a crença de um grupo é igual à média ponderada dos seus grupos constituintes.
+							Permite qualquer número no intervalo $[0, 1]$. Por exemplo, se em metade dos estados conectados ao estado $s$ via <small>$\stackrel{M_S, P}{\sim}$</small>, $\varphi$ evaluar para $1$ e na outra metade para $0$, então $B(\varphi, (M_S, s), P) = 0,5$.
 						</p>
 					</section>
 
@@ -635,86 +525,6 @@
 									&= 0.3 \cdot 0.4 = 0.12
 								\end{aligned}
 							\end{equation}
-						</p>
-					</section>
-
-				</section>
-
-				<section>
-
-					<section>
-						<h2>Decidibilidade</h2>
-						<p>
-							Um aspecto importante da verificação de modelos é a decidibilidade, que está relacionada com o problema de parada: existe alguma fórmula na linguagem que pode fazer o verificador ficar preso em um loop?
-						</p>
-					</section>
-
-					<section>
-						<h2>Decidibilidade (Indução)</h2>
-						<p>
-							É mostrado que a lógica é decidível através de indução no tamanho $s$ da expressão BNF.
-							<br />
-							O tamanho $s$ para cada expressão é definido como:
-							<ul style="font-size: .8em">
-								<li>$s(p) = 1$;</li>
-								<li>$s(\varphi_1 \wedge \varphi_2) = s(\varphi_1) + s(\varphi_2) + 1$;</li>
-								<li>$s(\varphi_1 \vee \varphi_2) = s(\varphi_1) + s(\varphi_2) + 1$;</li>
-								<li>$s(\varphi_1 \rightarrow \varphi_2) = s(\varphi_1) + s(\varphi_2) + 1$;</li>
-								<li>$s(K_G \varphi) = s(\varphi) + 1 + \overline{G}$;</li>
-								<li>$s(B_G \varphi) = s(\varphi) + 1 + \overline{G}$;</li>
-								<li>$s([\varphi_1]_G^r \varphi_2) = s(\varphi_1) + s(\varphi_2) + 1 + \overline{G}$.</li>
-							</ul>
-						</p>
-					</section>
-
-					<section>
-						<h2>Base $s = 1$</h2>
-						<p>
-							$E_{M_G, s}(p) = e(p, (M_G, s))$ evalua para $1$ ou $0$ em um modelo finito, e portanto é decidível.
-						</p>
-						<h2>Hipótese de indução</h2>
-						<p>
-							Consideramos a hipótese de indução como sendo "qualquer fórmula de tamanho $s$ é decidível". Agora ainda é necessário realizar o passo indutivo e mostrar que qualquer fórmula com tamanho $s + \delta$ são decidíveis, onde $\delta \in \mathbb R_{>0}$.
-						</p>
-					</section>
-
-					<section>
-						<h2>Passo indutivo ($\neg$, $\wedge$, $\vee$, $\rightarrow$)</h2>
-						<p>
-							$E_{M_G, s}(\neg \varphi)$, $E_{M_G, s}(\varphi \wedge \psi)$, $E_{M_G, s}(\varphi \vee \psi)$ e $E_{M_G, s}(\varphi \rightarrow \psi)$ são trivialmente decidíveis pois são fórmulas simples e $E_{M_G, s}(\varphi)$ e $E_{M_G, s}(\psi)$ são decidíveis por hipótese.
-						</p>
-					</section>
-
-					<section>
-						<h2>Passo indutivo ($K$)</h2>
-						<p>
-							$E_{M_G, s}(K_{G'} \varphi)$
-							<ul>
-								<li>Trivialmente decidível quando $G' = \emptyset$, evalua sempre para $0$;</li>
-								<li>Decidível quando $G' = P$ já que a fórmula é resolvida por cálculos de $E_{M_G, s}(\varphi)$, decidível por hipótese;</li>
-								<li>Quando $G' = \{ G'_0, G'_1, \dots, G'_n \}$, a soma itera sobre todo $G'_i \in G'$, e os tamanhos $\overline{G'_i}$ são estritamente menores que $\overline{G}$ já que por definição $G'$ é composto de um conjunto disjunto de grupos.</li>
-							</ul>
-						</p>
-					</section>
-
-					<section>
-						<h2>Passo indutivo ($B$)</h2>
-						<p>
-							$E_{M_G, s}(B_{G'} \varphi)$
-							<ul>
-								<li>Trivialmente decidível quando $G' = \emptyset$, evalua sempre para $0$;</li>
-								<li>Quando $G' = P$ a soma itera sobre todo vizinho $s'$ do estado $s$. Como o modelo é finito e $E_{M_G, s}(\varphi)$ é decidível por hipótese, é decidível;</li>
-								<li>Decidível quando $G' = \{ G'_0, G'_1, \dots, G'_n \}$ já que a fórmula é resolvida por cálculos de $E_{M_G, s}(\varphi)$, decidível por hipótese.</li>
-							</ul>
-						</p>
-					</section>
-
-					<section>
-						<h2>Passo indutivo (anúncio)</h2>
-						<p>
-							$E_{M_G, s}([ \varphi ]^r_{G'} \psi)$
-							<br />
-							$M_G$ é finito e portanto $M_{G'}$ também é, já que contém exatamente o dobro de elementos de $M_G$. Para definir $M_{G'}$ precisamos calcular $E_{M_G, s}(\varphi)$ para cada $s \in T$, que são decidíveis por hipótese. $E_{M_{G'}, s}(\psi)$ também é decidível por hipótese. Portanto, a fórmula é decidível.
 						</p>
 					</section>
 
@@ -847,6 +657,16 @@
 &lt;/model&gt;
 						</code></pre>
 						</small>
+					</section>
+
+					<section>
+						<h2>Decidibilidade</h2>
+						<p>
+							Um aspecto importante da verificação de modelos é a decidibilidade, que está relacionada com o problema de parada: existe alguma fórmula na linguagem que pode fazer o verificador ficar preso em um loop?
+						</p>
+						<p>
+							É possível mostrar através de indução no tamanho das expressões BNF que a lógica é de fato decidível.
+						</p>
 					</section>
 
 				</section>

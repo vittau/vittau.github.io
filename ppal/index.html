@@ -129,11 +129,11 @@
 						<h2>Linguagem</h2>
 						<p>
 							$$
-								\varphi ::= p \  | \neg \varphi \  | \  \varphi_1 \land \varphi_2 \  | \  \varphi_1 \lor \varphi_2 \  | \  \varphi_1 \to \varphi_2 \  | \  K_a \varphi
+								\varphi ::= p \  | \neg \varphi \  | \  \varphi_1 \land \varphi_2 \  | \  \varphi_1 \lor \varphi_2 \  | \  \varphi_1 \to \varphi_2 \  | \  K_a \varphi \  | \  B_a \varphi
 							$$
 						</p>
 						<h2>Semântica</h2>
-						<p>
+						<p style="font-size: .8em">
 						\[\begin{aligned}
 							{\cal M},s \models p &amp; \leftrightarrow s \in V(p) \\
 							{\cal M},s \models \neg \phi &amp; \leftrightarrow {\cal M},s \not \models \phi \\
@@ -141,6 +141,7 @@
 							{\cal M},s \models \phi \lor \psi &amp; \leftrightarrow {\cal M},s \models \phi \  \text{or} \  {\cal M},s \models \psi \\
 							{\cal M},s \models \phi \to \psi &amp; \leftrightarrow {\cal M},s \not\models \phi \  \text{or} \  {\cal M},s \models \psi \\
 							{\cal M},s \models K_a \phi &amp; \leftrightarrow \forall s' \in S: s \sim_a s' \Rightarrow {\cal M},s' \models \phi \\
+							{\cal M},s \models B_a \phi &amp; \leftrightarrow \exists s' \in S: s \sim_a s' \  \text{and} \  {\cal M},s' \models \phi
 							\end{aligned} \]
 						</p>
 					</section>
@@ -161,7 +162,7 @@
 					<section>
 						<h2>Lógica de anúncios públicos (PAL)</h2>
 						<p>
-							Operador $[ \dots ]$ de anúncio público altera o modelo, reduzindo as arestas entre os estados. $[ \phi ] \varphi$ tem o significado de "após anúncio de $\phi$, $\varphi$ é verdadeiro".
+							Operador $[ \dots ]$ de anúncio público altera o modelo, reduzindo as arestas entre os estados. $[ \varphi ] \psi$ tem o significado de "após anúncio de $\varphi$, $\psi$ é verdadeiro".
 						</p>
 						<img src="img/multiagent.png" height="200px" style="margin-right: 100px;" /> <img src="img/announcement.png" height="200px" />
 						<br />
@@ -498,16 +499,24 @@
 							<br />
 							<img src="img/corrupt-after2.png" height="400px" style="float: left" />
 							<br />
-							<p>
-								Modelo $G^1$ à esquerda: acima recebeu ambos os anúncios ($P^{11}$), abaixo apenas o primeiro ($P^{12}$); <br /> Modelo $G^2$ à direita: acima recebeu apenas segundo anúncio ($P^{21}$), abaixo nenhum ($P^{22}$).
-							</p>
+							<ul style="font-size: .8em">
+								<li>Modelo $G^1$ à esquerda:</li>
+								<ul>
+									<li>Acima recebeu ambos<br />os anúncios ($P^{11}$);</li>
+									<li>Abaixo apenas o <br />primeiro ($P^{12}$);
+								</ul>
+								<li>Modelo $G^2$ à direita:</li>
+								<ul>
+									<li>Acima recebeu apenas<br />o segundo anúncio ($P^{21}$);</li>
+									<li>Abaixo nenhum ($P^{22}$).</li>
+							</ul>
 						</p>
 					</section>
 
 					<section>
 						<h2>Segundo anúncio, $K$</h2>
 						<img src="img/corrupt-after2.png" height="400px" style="float: left" />
-						<p>
+						<p style="font-size: .8em">
 							Poderíamos perguntar agora $E_{M_P, \{ l, b \}}([l]^{0.3}_G [b]^{0.4}_{G'} K_{G'}(l \land b))$.
 						</p>
 					</section>

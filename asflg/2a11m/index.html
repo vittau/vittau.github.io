@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css">
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Para Kalisia</h1>
+					<h2>de Vitor</h2>
+					<p>>>></p>
+				</section>
+				<section>
+					<img src="img/flg.jpg" class="stretch">
+					<p>As nossas conchinhas...</p>
+				</section>
+				<section>
+					<img src="img/flg2.jpg" class="stretch">
+					<p>As nossas viagens...</p>
+				</section>
+				<section>
+					<img src="img/flg3.jpg" class="stretch">
+					<p>Os nossos momentos...</p>
+				</section>
+				<section>
+					<img src="img/flg4.jpg" class="stretch">
+					<p>Obrigado por todas as coisas boas, e por ter ficado ao meu lado nas ruins também. Que venham muitas coisas boas mais para nós. Te amo!</p>
+				</section>
+			</div>
+		</div>
+		<audio id="background-music">
+			<source src="ogg/music.ogg" type="audio/ogg">
+			Your browser does not support the audio element.
+		</audio>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true
+			});
+			
+			isPlaying = false;
+			var musicEl = document.getElementById("background-music");
+			Reveal.addEventListener('slidechanged', function(event) {
+				if(!isPlaying) {
+					isPlaying = true;
+					musicEl.play();
+				}
+			});
+		</script>
+	</body>
+</html>

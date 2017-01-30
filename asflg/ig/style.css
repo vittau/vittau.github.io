@@ -12,7 +12,7 @@ html, body {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: contain;
-	height: 95%;
+	height: 90%;
 	image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
 	image-rendering: -moz-crisp-edges;          /* Firefox                        */
 	image-rendering: -o-crisp-edges;            /* Opera                          */
@@ -23,6 +23,6 @@ html, body {
 }
 
 .audio-container {
-	height: 5%;
+	height: 10%;
 	text-align: center;
 }

@@ -772,3 +772,9 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: #{{ site.color.primary }};
 }
+
+.social-buttons > li {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 4px;
+}

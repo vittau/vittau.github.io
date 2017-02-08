@@ -17,7 +17,7 @@ $(function() {
 
 // Highlight the top nav as scrolling occurs
 $('body').scrollspy({
-    offset: 59,
+    offset: 61,
     target: '.navbar-fixed-top'
 })
 

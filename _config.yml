@@ -32,6 +32,8 @@ social:
     url: http://www.lastfm.com.br/user/VitorMach
   - title: spotify
     url: https://open.spotify.com/user/vittau
+  - title: steam
+    url: http://steamcommunity.com/id/vittau
 
 # Build settings
 markdown: kramdown

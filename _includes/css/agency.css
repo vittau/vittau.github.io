@@ -170,6 +170,9 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default {
     border-color: transparent;
     background-color: white;
+    box-shadow: 0px 0px 10px #777;
+    -moz-box-shadow: 0px 0px 10px #777;
+    -webkit-box-shadow: 0px 0px 10px #777;
 }
 
 .navbar-default .navbar-brand {
@@ -270,9 +273,9 @@ header img {
     height: auto;
     border-radius: 50%;
     margin-top: 30px;
-    box-shadow: 0px 0px 10px #555;
-    -moz-box-shadow: 0px 0px 10px #555;
-    -webkit-box-shadow: 0px 0px 10px #555;
+    box-shadow: 0px 0px 10px #777;
+    -moz-box-shadow: 0px 0px 10px #777;
+    -webkit-box-shadow: 0px 0px 10px #777;
 }
 
 section {

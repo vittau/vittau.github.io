@@ -30,6 +30,8 @@ social:
     url: https://twitter.com/VittauMach
   - title: lastfm
     url: http://www.lastfm.com.br/user/VitorMach
+  - title: spotify
+    url: https://open.spotify.com/user/vittau
 
 # Build settings
 markdown: kramdown

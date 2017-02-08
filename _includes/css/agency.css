@@ -4,11 +4,14 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-body {
+html {
     overflow-x: hidden;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
     background-image: url('img/diagonal-noise.png');
     color: #{{ site.color.secondary-dark }};
+}
+body {
+    margin-top: 80px;
 }
 
 .text-muted {
@@ -261,7 +264,6 @@ fieldset[disabled] .btn-xl.active {
 
 header {
     text-align: center;
-    margin-top: 60px;
 }
 
 header img {

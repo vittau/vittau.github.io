@@ -11,6 +11,6 @@ project-start-date: November 2014
 project-end-date: Ongoing
 client: CAPGov
 category: Developer
-description: I work in government-related projects, which involve (but are not limited to) data mining, quality analysis, database migration and management, and sometimes a bit of web designing.
+description: I work in government-related projects, which involve (but are not limited to) data mining, quality analysis, database migration and management, and some web designing.
 
 ---

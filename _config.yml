@@ -28,6 +28,8 @@ social:
     url: https://www.linkedin.com/in/vitormach
   - title: twitter
     url: https://twitter.com/VittauMach
+  - title: lastfm
+    url: http://www.lastfm.com.br/user/VitorMach
 
 # Build settings
 markdown: kramdown

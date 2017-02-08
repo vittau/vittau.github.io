@@ -243,8 +243,8 @@ fieldset[disabled] .btn-xl.active {
     }
 
     .navbar-default .navbar-brand {
-        font-size: 3em;
-        line-height: 0.6em;
+        font-size: 2.5em;
+        line-height: 0.7em;
         -webkit-transition: all .3s;
         -moz-transition: all .3s;
         transition: all .3s;

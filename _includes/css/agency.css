@@ -673,7 +673,7 @@ footer span.themeurl {
     text-transform: none;
     font-size: 0.7em;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    line-height: 40px;
+    line-height: 1;
 }
 
 footer ul.quicklinks {

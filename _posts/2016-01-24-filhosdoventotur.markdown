@@ -11,6 +11,6 @@ project-start-date: January 2016
 project-end-date: December 2016
 client: Filhos do Vento Tur
 category: Web developer
-description: <a href="http://filhosdoventotur.github.io/" target="_blank">http://filhosdoventotur.github.io/</a><br />Tourism site, with events, pictures, projects and services. Based on Rio de Janeiro.
+description: <a href="https://filhosdoventotur.github.io/" target="_blank">https://filhosdoventotur.github.io/</a><br />Tourism site, with events, pictures, projects and services. Based on Rio de Janeiro.
 
 ---

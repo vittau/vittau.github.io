@@ -8,9 +8,9 @@ img: filhosdoventotur.png
 thumbnail: filhosdoventotur-thumbnail.png
 alt: Filhos do Vento Tur
 project-start-date: January 2016
-project-end-date: Ongoing
+project-end-date: December 2016
 client: Filhos do Vento Tur
 category: Web developer
-description: <a href="http://filhosdoventotur.com.br" target="_blank">http://filhosdoventotur.com.br</a><br />Tourism site, with events, pictures, projects and services. Based on Rio de Janeiro.
+description: <a href="http://filhosdoventotur.github.io/" target="_blank">http://filhosdoventotur.github.io/</a><br />Tourism site, with events, pictures, projects and services. Based on Rio de Janeiro.
 
 ---

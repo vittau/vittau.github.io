@@ -1,0 +1,21 @@
+# Site settings
+title: Travelog
+subtitle: "Journal of [name]"
+email: your-email@domain.com
+description: "Make the footer happy by entering a short description about yourself here"
+baseurl: ""
+url: "http://yourdomain.com"
+twitter_username: "rowanoulton"
+github_username:  "rowanoulton"
+instagram_username: "rowanoulton"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Pagination
+paginate: 5
+
+# Sass
+sass:
+    style: :compressed

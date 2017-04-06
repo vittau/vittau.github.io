@@ -3,8 +3,8 @@ title: Vitor Machado's blog
 subtitle: "Ramblings of a software developer"
 email: vmachado@cos.ufrj.br
 description: "IT Guy"
-baseurl: "http://www.vitormachado.me/blog"
-url: "http://www.vitormachado.me/blog"
+baseurl: "/blog"
+url: "http://www.vitormachado.me"
 twitter_username: "VittauMach"
 github_username:  "vittau"
 instagram_username: "vitor.p.mach"

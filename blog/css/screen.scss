@@ -22,9 +22,9 @@ $icon-instagram: '{{ site.baseurl }}/img/icon-instagram.png';
 $icon-instagram-2x: '{{ site.baseurl }}/img/icon-instagram@2x.png';
 $icon-instagram-3x: '{{ site.baseurl }}/img/icon-instagram@3x.png';
 
-@import "blog/sass/vendor/normalize";
-@import "blog/sass/utils";
-@import "blog/sass/variables";
-@import "blog/sass/base";
-@import "blog/sass/layout";
-@import "blog/sass/modules";
+@import "blog/_sass/vendor/normalize";
+@import "blog/_sass/utils";
+@import "blog/_sass/variables";
+@import "blog/_sass/base";
+@import "blog/_sass/layout";
+@import "blog/_sass/modules";

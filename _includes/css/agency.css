@@ -269,7 +269,7 @@ header {
     color: #fff;
     background-attachment: scroll;
     background-image: url(../img/photo.jpg);
-    background-position: center center;
+    background-position: center top;
     background-size: cover;
     height: 500px;
 }

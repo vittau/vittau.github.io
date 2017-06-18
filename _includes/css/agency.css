@@ -6,7 +6,7 @@
 
 body {
     overflow-x: hidden;
-    font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Lato", sans-serif;
     background-image: url('img/diagonal-noise.png');
     color: #{{ site.color.secondary-dark }};
 }
@@ -176,7 +176,7 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-brand {
-    font-family: "Satisfy", cursive;
+    font-family: "Handlee", cursive;
     font-size: 2em;
     line-height: 0.8em;
     color: black;
@@ -209,7 +209,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .nav li a {
     text-transform: uppercase;
-    font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
     color: black;

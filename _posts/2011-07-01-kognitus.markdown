@@ -4,8 +4,8 @@ subtitle: Automação e Processamento de Imagens
 layout: default
 modal-id: 1
 date: 2011-07-01
-img: kognitus-thumbnail.jpg
-thumbnail: kognitus-thumbnail.jpg
+img: kognitus-thumbnail.png
+thumbnail: kognitus-thumbnail.png
 alt: Kognitus
 project-start-date: July 2011
 project-end-date: March 2012

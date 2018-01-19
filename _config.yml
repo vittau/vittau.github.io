@@ -14,26 +14,36 @@ color:
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
-  - title: envelope
+  - title: email
     url: mailto:vmachado@cos.ufrj.br
+    fa: fas fa-envelope
   - title: facebook
     url: https://www.facebook.com/vittau
+    fa: fab fa-facebook
   - title: flickr
     url: https://www.flickr.com/photos/vitormach
+    fa: fab fa-flickr
   - title: instagram
     url: https://www.instagram.com/vitor.p.mach
+    fa: fab fa-instagram
   - title: github
     url: https://github.com/vittau
+    fa: fab fa-github
   - title: linkedin
     url: https://www.linkedin.com/in/vitormach
+    fa: fab fa-linkedin
   - title: twitter
     url: https://twitter.com/VittauMach
+    fa: fab fa-twitter
   - title: lastfm
     url: http://www.lastfm.com.br/user/VitorMach
+    fa: fab fa-lastfm
   - title: spotify
     url: https://open.spotify.com/user/vittau
+    fa: fab fa-spotify
   - title: steam
     url: http://steamcommunity.com/id/vittau
+    fa: fab fa-steam
 
 # Build settings
 markdown: kramdown

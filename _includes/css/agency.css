@@ -7,7 +7,7 @@
 body {
     overflow-x: hidden;
     font-family: "Lato", sans-serif;
-    background-image: #{{ site.color.background }};
+    background-color: #{{ site.color.background }};
     color: #{{ site.color.secondary-dark }};
 }
 
@@ -261,7 +261,7 @@ fieldset[disabled] .btn-xl.active {
 
     .navbar-default.navbar-shrink {
         padding: 10px 0;
-        background-color: white;
+        background-color: #{{ site.color.navbar }};
     }
 
     .navbar-default.navbar-shrink .navbar-brand {

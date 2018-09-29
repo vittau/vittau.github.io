@@ -169,7 +169,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default {
     border-color: transparent;
-    background-color: white;
+    background-color: #{{ site.color.navbar }};
     box-shadow: 0px 0px 10px #777;
     -moz-box-shadow: 0px 0px 10px #777;
     -webkit-box-shadow: 0px 0px 10px #777;
@@ -204,7 +204,7 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #fff;
+    background-color: #{{ site.color.navbar }};
 }
 
 .navbar-default .navbar-toggle:hover,
@@ -241,7 +241,7 @@ fieldset[disabled] .btn-xl.active {
 @media(min-width:768px) {
     .navbar-default {
         border: 0;
-        background-color: white;
+        background-color: #{{ site.color.navbar }};
         -webkit-transition: padding .3s;
         -moz-transition: padding .3s;
         transition: padding .3s;

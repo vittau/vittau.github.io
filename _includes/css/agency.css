@@ -179,7 +179,12 @@ fieldset[disabled] .btn-xl.active {
     font-family: "Handlee", cursive;
     font-size: 2em;
     line-height: 0.8em;
-    color: black;
+	color: black;
+	padding: 5px 0 0 5px;
+}
+
+.navbar-default .navbar-brand img {
+    height: 50px;
 }
 
 .navbar-default .navbar-brand:hover,

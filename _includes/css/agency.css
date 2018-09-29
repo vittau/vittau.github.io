@@ -7,7 +7,7 @@
 body {
     overflow-x: hidden;
     font-family: "Lato", sans-serif;
-    background-image: url('img/diagonal-noise.png');
+    background-image: #{{ site.color.background }};
     color: #{{ site.color.secondary-dark }};
 }
 

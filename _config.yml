@@ -8,6 +8,7 @@ description: "Vitor Machado's personal homepage."
 
 # Color settings (hex-codes without the leading hash-tag)
 color:
+  background: fff
   primary: 088da5
   secondary: 044652
   secondary-dark: 333

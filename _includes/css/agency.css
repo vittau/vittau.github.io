@@ -177,11 +177,11 @@ fieldset[disabled] .btn-xl.active {
     font-size: 2em;
     line-height: 0.8em;
 	color: black;
-	padding: 5px 0 0 5px;
+	padding: 12.5px 0 0 5px;
 }
 
 .navbar-default .navbar-brand img {
-    height: 50px;
+    height: 35px;
 }
 
 .navbar-default .navbar-brand:hover,

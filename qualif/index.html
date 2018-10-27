@@ -147,10 +147,65 @@
 				<section>
 					<h2>Número de Dunbar</h2>
 					<p>
-						É definido o número de Dunbar $\lambda$ [Dunbar, 1992], como o tamanho máximo da rede social que um agente pode possuir.
+						O número de Dunbar $\lambda$ [Dunbar, 1992] é definido como o tamanho máximo da rede social que um agente pode possuir.
 					</p>
 					<p>
 						A motivação é a própria limitação cognitiva de uma pessoa em conseguir manter relacionamentos sustentáveis com tamanho número de indivíduos.
+					</p>
+				</section>
+
+				<section>
+					<h2>Modelando redes sociais na PPAL</h2>
+					<p>
+						Inspirando-se nas ideias anteriores, a métrica de distância usada na definição das redes socais para PPAL são os interesses dos grupos.
+					</p>
+					<p>
+						Para isso, definimos a matriz de interesses:
+						\[
+						\mathcal{I}_{M, w}(G) = \{p_j \mid g_i = G \ \text{and} \ \mathcal{I}_{M, w}^{i, j} = True\}
+						\]
+						Exemplo:
+						<table class="interests">
+							<thead>
+								<tr>
+									<th>Grupo</th>
+									<th>a</th>
+									<th>l</th>
+									<th>m</th>
+									<th>p</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>A</td>
+									<td>True</td>
+									<td>True</td>
+									<td>True</td>
+									<td>False</td>
+								</tr>
+								<tr>
+									<td>B</td>
+									<td>False</td>
+									<td>True</td>
+									<td>False</td>
+									<td>True</td>
+								</tr>
+								<tr>
+									<td>C</td>
+									<td>True</td>
+									<td>False</td>
+									<td>True</td>
+									<td>False</td>
+								</tr>
+								<tr>
+									<td>D</td>
+									<td>False</td>
+									<td>False</td>
+									<td>True</td>
+									<td>False</td>
+								</tr>
+							</tbody>
+						</table>
 					</p>
 				</section>
 

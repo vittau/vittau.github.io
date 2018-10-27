@@ -62,6 +62,98 @@
 					</p>
 				</section>
 
+				<section>
+					<h2>Populações e grupos</h2>
+					<p>
+						Nesta lógica, introduzimos conceitos de populações e grupos ao invés de agentes. Anúncios agem sobre frações de populações/grupos, criando novos grupos a partir deles.
+					</p>
+					<p>
+						<b>Definição:</b> Uma população representa um conjunto de indivíduos. Uma população $P$ possui tamanho $\overline{P} \in \mathbb R_{>0}$.
+					</p>
+					<p>
+						<b>Definição:</b> Um grupo pode ser vazio, uma população ou um conjunto disjunto de grupos:
+						<br />
+						$G := \emptyset \ | \ P \ | \ \{ G_0, G_1, \dots, G_n \}$
+					</p>
+				</section>
+
+				<section>
+					<h2>Modelo (População)</h2>
+					<p>
+						Como veremos adiante, anúncios agem sobre frações de populações/grupos, dessa forma criando diferentes "mundos" para quem recebeu ou não o anúncio. Por esse motivo, o conceito de "muitos mundos" é aplicado.</p>
+					<p>
+						<b>Definição:</b> Um modelo para uma população $P$ é composto de:
+						<ul>
+							<li>Um conjunto de estados $T$;</li>
+							<li>uma função de valoração $V : \Phi \to 2^T$ que indica proposições verdadeiras para cada estado;</li>
+							<li>Uma família de relações binárias $\stackrel{M_P, G}{\sim}$ para cada grupo $G$ conhecido por esta população.</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h2>Modelo (Grupo)</h2>
+					<p>
+						<b>Definição:</b> Um modelo para um grupo $G= \{ G_0, G_1, \dots, G_n \}$ é definido como o conjunto de modelos de cada um dos seus grupos. Isto é, $M_G = \{ M_{G_0}, M_{G_1}, \dots, M_{G_n} \}$.
+					</p>
+				</section>
+
+				<section>
+					<h2>Linguagem</h2>
+					<p>
+						\[
+						\varphi ::= p \ | \ \neg \varphi \ | \ \varphi_1 \wedge \varphi_2 \ | \ \varphi_1 \vee \varphi_2 \ | \ \varphi_1 \rightarrow \varphi_2 \ | \\ K_G \varphi \ | \ B_G \varphi \ | \ [\varphi_1]_G^r \varphi_2
+						\]
+						onde $r \in U = [0, 1]$, $G$ denota um grupo e $p \in \Phi$.
+					</p>
+				</section>
+
+				<section>
+					<h2>Anúncio</h2>
+					<img src="img/announcement-explanation.png" height="400px" />
+				</section>
+
+			</section>
+
+			<section>
+				<h2>Aplicações</h2>
+				<p>
+					Os novs rumos que prentendemos explorar com o trabalho são diversas aplicações em <b>redes sociais</b>, e melhorias na <b>especificação de modelos</b> para verificação.
+				</p>
+			</section>
+
+			<section>
+
+				<section>
+					<h2>DaLí 2017</h2>
+					<p>
+						Nos dias 23 e 24 de Setembro de 2017 o workshop "Dynamic Logic: new trends and applications" (DaLí) ocorreu na Universidade de Brasília (UnB).
+					</p>
+					<p>
+						Na conferência, foi apresentado, dentre outros, o trabalho de S. Smets e F. R. Velázquez-Quesada: "The Creation and Change of Social Networks: a logical study based on group size".
+					</p>
+				</section>
+
+				<section>
+					<h2>Redes sociais</h2>
+					<p>
+						O artigo citado anteriormente apresenta abordagens de lógica modal para a modelagem e estudo de redes sociais.
+					</p>
+					<p>
+						As redes socias são criadas considerando-se as distâncias entre os agentes, que são definidas como as diferenças entre suas propriedades (ou preferências).
+					</p>
+				</section>
+
+				<section>
+					<h2>Número de Dunbar</h2>
+					<p>
+						É definido o número de Dunbar $\lambda$ [Dunbar, 1992], como o tamanho máximo da rede social que um agente pode possuir.
+					</p>
+					<p>
+						A motivação é a própria limitação cognitiva de uma pessoa em conseguir manter relacionamentos sustentáveis com tamanho número de indivíduos.
+					</p>
+				</section>
+
 			</section>
 
 		</div>

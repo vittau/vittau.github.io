@@ -1,576 +1,573 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
-	<head>
-		<meta charset="utf-8">
+<head>
+	<meta charset="utf-8">
 
-		<title>Populational Announcement Logic (PPAL)</title>
+	<title>Populational Announcement Logic (PPAL)</title>
 
-		<meta name="description" content="A dynamic epistemic logic with populations">
-		<meta name="author" content="Vitor Machado">
-		<meta name="theme-color" content="#f7f2d3">
+	<meta name="description" content="A dynamic epistemic logic with populations">
+	<meta name="author" content="Vitor Machado">
+	<meta name="theme-color" content="#f7f2d3">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/my-beige.css" id="theme">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/my-beige.css" id="theme">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
 
-		<!--[if lt IE 9]>
+	<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-	</head>
+</head>
 
-	<body>
+<body>
 
-		<div class="reveal">
+	<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section>
+				<h1>PPAL</h1>
+				<h2>Populational Announcement Logic</h2>
+				<p>Uma lógica dinâmica epistêmica com semântica fuzzy e populações</p>
+				<p>
+					<small>Dissertação de mestrado de <a href="http://vitorpmach.com">Vitor Machado</a>, orientado pelo Prof. <a href="http://www.cos.ufrj.br/~mario/">Mario Benevides</a></small>
+				</p>
+			</section>
+
+			<section>
+
 				<section>
-					<h1>PPAL</h1>
-					<h2>Populational Announcement Logic</h2>
-					<p>Uma lógica dinâmica epistêmica com semântica fuzzy e populações</p>
+					<h2>Representação do conhecimento</h2>
 					<p>
-						<small>Dissertação de mestrado de <a href="http://vitorpmach.com">Vitor Machado</a>, orientado pelo Prof. <a href="http://www.cos.ufrj.br/~mario/">Mario Benevides</a></small>
+						É a área que estuda modelos e sistemas para representar e raciocinar sobre conhecimento.
+					</p>
+					<blockquote>
+						&ldquo;Representação de conhecimento é a aplicação de lógica e ontologia à tarefa de construir modelos computáveis para algum domínio&rdquo; - John Sowa, inventor dos gráficos conceituais
+					</blockquote>
+				</section>
+
+				<section>
+					<h2>Lógica epistêmica</h2>
+					<p>
+						Representação do conhecimento tem pouco propósito se não é possível raciocinar sobre o mesmo.
+					</p>
+					<p>
+						Lógicas epistêmicas são sistemas formais para lidar com representação de conhecimento. Algumas de suas ideias mais básicas, em especial no campo da filosofia, vem dos tempos da Grécia antiga.
+					</p>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h2>Objetivo</h2>
+					<p>
+						Especificar uma variante de Public Announcement Logic (PAL), onde o conhecimento é representado sobre populações e grupos, ao invés de sobre agentes discretos como é comumente feito na literatura.
+					</p>
+					<h2>Motivação</h2>
+					<p>
+						Prover um framework mais fácil de se trabalhar, voltado para especificação de cenários mais próximos da realidade. Permitir evolução dinâmica das populações também, não só do conhecimento das mesmas.
 					</p>
 				</section>
 
 				<section>
-
-					<section>
-						<h2>Representação do conhecimento</h2>
-						<p>
-							É a área que estuda modelos e sistemas para representar e raciocinar sobre conhecimento.
-						</p>
-						<blockquote>
-							&ldquo;Representação de conhecimento é a aplicação de lógica e ontologia à tarefa de construir modelos computáveis para algum domínio&rdquo; - John Sowa, inventor dos gráficos conceituais
-						</blockquote>
-					</section>
-
-					<section>
-						<h2>Lógica epistêmica</h2>
-						<p>
-							Representação do conhecimento tem pouco propósito se não é possível raciocinar sobre o mesmo.
-						</p>
-						<p>
-							Lógicas epistêmicas são sistemas formais para lidar com representação de conhecimento. Algumas de suas ideias mais básicas, em especial no campo da filosofia, vem dos tempos da Grécia antiga.
-						</p>
-					</section>
-
+					<h2>Roteiro</h2>
+					<p>
+						<b>1.</b> Para atingir os objetivos, foi especificada uma variante "fuzzyficada" de PAL que permite anúncios parciais para suas populações. Formalizações para o modelo, linguagem e semântica são providas, bem como exemplos;
+					</p>
+					<p>
+						<b>2.</b> Foi construída também uma prova de decidibilidade da linguagem para modelos finitos, um resultado importante para verificação de modelos;
+					</p>
+					<p>
+						<b>3.</b> Foi desenvolvida ainda uma biblioteca e verificador de modelos desenvolvidos em Java que implementam a linguagem da lógica.
+					</p>
+					</ol>
 				</section>
 
 				<section>
+					<h2>ENIAC 2015</h2>
+					<small>
+						Um artigo derivado desse trabalho foi aceito no Encontro Nacional de Inteligência Artificial e Computacional (ENIAC), conferência ocorrida em Natal - RN. O artigo encontra-se publicado na Biblioteca Digital Brasileira de Computação (BDBComp).
+					</small>
+					<img src="img/eniac-logo.png" height="125px" />
+					<h2>BRACIS 2016</h2>
+					<small>
+						Artigo submetido também à Brazilian Conference on Intelligent Systems (BRACIS), aguardando revisão.
+					</small>
+					<img src="img/bracis-logo.png" height="125px" />
+				</section>
 
-					<section>
-						<h2>Objetivo</h2>
-						<p>
-							Especificar uma variante de Public Announcement Logic (PAL), onde o conhecimento é representado sobre populações e grupos, ao invés de sobre agentes discretos como é comumente feito na literatura.
-						</p>
-						<h2>Motivação</h2>
-						<p>
-							Prover um framework mais fácil de se trabalhar, voltado para especificação de cenários mais próximos da realidade. Permitir evolução dinâmica das populações também, não só do conhecimento das mesmas.
-						</p>
-					</section>
+			</section>
 
-					<section>
-						<h2>Roteiro</h2>
-						<p>
-							<b>1.</b> Para atingir os objetivos, foi especificada uma variante "fuzzyficada" de PAL que permite anúncios parciais para suas populações. Formalizações para o modelo, linguagem e semântica são providas, bem como exemplos;
-						</p>
-						<p>
-							<b>2.</b> Foi construída também uma prova de decidibilidade da linguagem para modelos finitos, um resultado importante para verificação de modelos;
-						</p>
-						<p>
-							<b>3.</b> Foi desenvolvida ainda uma biblioteca e verificador de modelos desenvolvidos em Java que implementam a linguagem da lógica.
-						</p>
-						</ol>
-					</section>
+			<section>
 
-					<section>
-						<h2>ENIAC 2015</h2>
-							<small>
-								Um artigo derivado desse trabalho foi aceito no Encontro Nacional de Inteligência Artificial e Computacional (ENIAC), conferência ocorrida em Natal - RN. O artigo encontra-se publicado na Biblioteca Digital Brasileira de Computação (BDBComp).
-							</small>
-						<img src="img/eniac-logo.png" height="125px" />
-						<h2>BRACIS 2016</h2>
-							<small>
-								Artigo submetido também à Brazilian Conference on Intelligent Systems (BRACIS), aguardando revisão.
-							</small>
-						<img src="img/bracis-logo.png" height="125px" />
-					</section>
-
+				<section>
+					<h2>Lógica epistêmica multi-agente</h2>
+					<p>
+						É uma generalização da lógica modal onde existem agentes, e operadores de conhecimento para os mesmos ($K$ e $B$, conhecimento e crença respectivamente), e expressões como $K_a \varphi$ (agente $a$ sabe $\varphi$) podem ser escritas.
+					</p>
 				</section>
 
 				<section>
-					
-					<section>
-						<h2>Lógica epistêmica multi-agente</h2>
-						<p>
-							É uma generalização da lógica modal onde existem agentes, e operadores de conhecimento para os mesmos ($K$ e $B$, conhecimento e crença respectivamente), e expressões como $K_a \varphi$ (agente $a$ sabe $\varphi$) podem ser escritas.
-						</p>
-					</section>
+					<h2>Exemplo (jogo de cartas)</h2>
+					<p style="font-size: .8em">
+						Suponha três jogadores, $a$, $b$ e $c$, e cartas $0$, $1$ e $2$. Usamos, por exemplo $1_a$ para dizer que o jogador $a$ possui a carta $1$.
+					</p>
+					<p style="font-size: .8em">
+						Os estados serão nomeados como a carta de cada jogador, em ordem. Por exemplo, em $012$ o agente $a$ tem a carta $0$, $b$ tem $1$ e $c$ tem $2$. O estado real é sublinhado.
+					</p>
+					<p style="font-size: .8em">
+						As relações (arestas) representam dúvida dos agentes entre estados.
+					</p>
+					<img src="img/multiagent.png" height="200px" />
+					<br />
+					<small>Modelo $Hexa$: jogo de cartas</small>
+				</section>
 
-					<section>
-						<h2>Exemplo (jogo de cartas)</h2>
-						<p style="font-size: .8em">
-							Suponha três jogadores, $a$, $b$ e $c$, e cartas $0$, $1$ e $2$. Usamos, por exemplo $1_a$ para dizer que o jogador $a$ possui a carta $1$.
-						</p>
-						<p style="font-size: .8em">
-							Os estados serão nomeados como a carta de cada jogador, em ordem. Por exemplo, em $012$ o agente $a$ tem a carta $0$, $b$ tem $1$ e $c$ tem $2$. O estado real é sublinhado.
-						</p>
-						<p style="font-size: .8em">
-							As relações (arestas) representam dúvida dos agentes entre estados.
-						</p>
-						<img src="img/multiagent.png" height="200px" />
-						<br />
-						<small>Modelo $Hexa$: jogo de cartas</small>
-					</section>
-
-					<section>
-						<h2>Linguagem</h2>
-						<p>
-							$$
-								\varphi ::= p \  | \neg \varphi \  | \  \varphi_1 \land \varphi_2 \  | \  \varphi_1 \lor \varphi_2 \  | \  \varphi_1 \to \varphi_2 \  | \  K_a \varphi \  | \  B_a \varphi
-							$$
-						</p>
-						<h2>Semântica</h2>
-						<p style="font-size: .8em">
+				<section>
+					<h2>Linguagem</h2>
+					<p>
+						$$
+						\varphi ::= p \ | \neg \varphi \ | \ \varphi_1 \land \varphi_2 \ | \ \varphi_1 \lor \varphi_2 \ | \ \varphi_1 \to \varphi_2 \ | \ K_a \varphi \ | \ B_a \varphi
+						$$
+					</p>
+					<h2>Semântica</h2>
+					<p style="font-size: .8em">
 						\[\begin{aligned}
-							{\cal M},s \models p &amp; \leftrightarrow s \in V(p) \\
-							{\cal M},s \models \neg \phi &amp; \leftrightarrow {\cal M},s \not \models \phi \\
-							{\cal M},s \models \phi \land \psi &amp; \leftrightarrow {\cal M},s \models \phi \  \text{e} \  {\cal M},s \models \psi \\
-							{\cal M},s \models \phi \lor \psi &amp; \leftrightarrow {\cal M},s \models \phi \  \text{ou} \  {\cal M},s \models \psi \\
-							{\cal M},s \models \phi \to \psi &amp; \leftrightarrow {\cal M},s \not\models \phi \  \text{ou} \  {\cal M},s \models \psi \\
-							{\cal M},s \models K_a \phi &amp; \leftrightarrow \forall s' \in S: s \sim_a s' \Rightarrow {\cal M},s' \models \phi \\
-							{\cal M},s \models B_a \phi &amp; \leftrightarrow \exists s' \in S: s \sim_a s' \  \text{e} \  {\cal M},s' \models \phi
-							\end{aligned} \]
-						</p>
-					</section>
-
-					<section>
-						<h2>Lógica de anúncios públicos (PAL)</h2>
-						<p>
-							Operador $[ \dots ]$ de anúncio público altera o modelo, reduzindo as arestas entre os estados. $[ \varphi ] \psi$ tem o significado de "após anúncio de $\varphi$, $\psi$ é verdadeiro".
-						</p>
-						<img src="img/multiagent.png" height="200px" style="margin-right: 100px;" /> <img src="img/announcement.png" height="200px" />
-						<br />
-						<small>Modelo $Hexa$ (esquerda); Modelo $Hexa_2 := Hexa | \neg 1_a$ (direita)</small>
-						<br />
-						<small>Para o anúncio $Hexa, 012 \models [ \neg 1_a ] K_c 0_a$, precisamos checar $K_c 0_a$ em $Hexa_2$.</small>
-					</section>
-
+						{\cal M},s \models p &amp; \leftrightarrow s \in V(p) \\
+						{\cal M},s \models \neg \phi &amp; \leftrightarrow {\cal M},s \not \models \phi \\
+						{\cal M},s \models \phi \land \psi &amp; \leftrightarrow {\cal M},s \models \phi \ \text{e} \ {\cal M},s \models \psi \\
+						{\cal M},s \models \phi \lor \psi &amp; \leftrightarrow {\cal M},s \models \phi \ \text{ou} \ {\cal M},s \models \psi \\
+						{\cal M},s \models \phi \to \psi &amp; \leftrightarrow {\cal M},s \not\models \phi \ \text{ou} \ {\cal M},s \models \psi \\
+						{\cal M},s \models K_a \phi &amp; \leftrightarrow \forall s' \in S: s \sim_a s' \Rightarrow {\cal M},s' \models \phi \\
+						{\cal M},s \models B_a \phi &amp; \leftrightarrow \exists s' \in S: s \sim_a s' \ \text{e} \ {\cal M},s' \models \phi
+						\end{aligned} \]
+					</p>
 				</section>
 
 				<section>
+					<h2>Lógica de anúncios públicos (PAL)</h2>
+					<p>
+						Operador $[ \dots ]$ de anúncio público altera o modelo, reduzindo as arestas entre os estados. $[ \varphi ] \psi$ tem o significado de "após anúncio de $\varphi$, $\psi$ é verdadeiro".
+					</p>
+					<img src="img/multiagent.png" height="200px" style="margin-right: 100px;" /> <img src="img/announcement.png" height="200px" />
+					<br />
+					<small>Modelo $Hexa$ (esquerda); Modelo $Hexa_2 := Hexa | \neg 1_a$ (direita)</small>
+					<br />
+					<small>Para o anúncio $Hexa, 012 \models [ \neg 1_a ] K_c 0_a$, precisamos checar $K_c 0_a$ em $Hexa_2$.</small>
+				</section>
 
-					<section>
-						<h2>Populational Announcement Logic (PPAL)</h2>
-						<p>
-							Nesse trabalho a Lógica de Anúncios Populacionais foi especificada, e nos próximos slides veremos mais detalhes sobre sua sintaxe e semântica, bem como exemplos.
-						</p>
-					</section>
+			</section>
 
-					<section>
-						<h2>Populações e grupos</h2>
-						<p>
-							Nesta lógica, introduzimos conceitos de populações e grupos ao invés de agentes. Anúncios agem sobre frações de populações/grupos, criando novos grupos a partir deles.
-						</p>
-						<p>
-							<b>Definição:</b> Uma população representa um conjunto de indivíduos. Uma população $P$ possui tamanho $\overline{P} \in \mathbb R_{>0}$.
-						</p>
-						<p>
-							<b>Definição:</b> Um grupo pode ser vazio, uma população ou um conjunto disjunto de grupos:
-							<br />
-							$G := \emptyset \  | \  P \  | \  \{ G_0, G_1, \dots, G_n \}$
-						</p>
-					</section>
+			<section>
 
-					<section>
-						<h2>Modelo (População)</h2>
-						<p>
-							Como veremos adiante, anúncios agem sobre frações de populações/grupos, dessa forma criando diferentes "mundos" para quem recebeu ou não o anúncio. Por esse motivo, o conceito de "muitos mundos" é aplicado.</p>
-						<p>
-							<b>Definição:</b> Um modelo para uma população $P$ é composto de:
-							<ul>
-								<li>Um conjunto de estados $T$;</li>
-								<li>uma função de valoração $V : \Phi \to 2^T$ que indica proposições verdadeiras para cada estado;</li>
-								<li>Uma família de relações binárias $\stackrel{M_P, G}{\sim}$ para cada grupo $G$ conhecido por esta população.</li>
-							</ul>
-						</p>
-					</section>
+				<section>
+					<h2>Populational Announcement Logic (PPAL)</h2>
+					<p>
+						Nesse trabalho a Lógica de Anúncios Populacionais foi especificada, e nos próximos slides veremos mais detalhes sobre sua sintaxe e semântica, bem como exemplos.
+					</p>
+				</section>
 
-					<section>
-						<h2>Modelo (Grupo)</h2>
-						<p>
-							<b>Definição:</b> Um modelo para um grupo $G= \{ G_0, G_1, \dots, G_n \}$ é definido como o conjunto de modelos de cada um dos seus grupos. Isto é, $M_G = \{ M_{G_0}, M_{G_1}, \dots, M_{G_n} \}$.
-						</p>
-					</section>
+				<section>
+					<h2>Populações e grupos</h2>
+					<p>
+						Nesta lógica, introduzimos conceitos de populações e grupos ao invés de agentes. Anúncios agem sobre frações de populações/grupos, criando novos grupos a partir deles.
+					</p>
+					<p>
+						<b>Definição:</b> Uma população representa um conjunto de indivíduos. Uma população $P$ possui tamanho $\overline{P} \in \mathbb R_{>0}$.
+					</p>
+					<p>
+						<b>Definição:</b> Um grupo pode ser vazio, uma população ou um conjunto disjunto de grupos:
+						<br />
+						$G := \emptyset \ | \ P \ | \ \{ G_0, G_1, \dots, G_n \}$
+					</p>
+				</section>
 
-					<section>
-						<h2>Linguagem</h2>
-						<p>
-							\[
-								\varphi ::= p \  | \  \neg \varphi \  | \  \varphi_1 \wedge \varphi_2 \  | \  \varphi_1 \vee \varphi_2 \  | \  \varphi_1 \rightarrow \varphi_2 \  | \\ K_G \varphi \  | \  B_G \varphi \  | \  [\varphi_1]_G^r \varphi_2
-							\]
-							onde $r \in U = [0, 1]$, $G$ denota um grupo e $p \in \Phi$.
-						</p>
-					</section>
-
-					<section>
-						<h2>Anúncio</h2>
-						<img src="img/announcement-explanation.png" height="400px" />
-					</section>
-
-					<section>
-						<h2>Operadores de conhecimento e anúncio</h2>
+				<section>
+					<h2>Modelo (População)</h2>
+					<p>
+						Como veremos adiante, anúncios agem sobre frações de populações/grupos, dessa forma criando diferentes "mundos" para quem recebeu ou não o anúncio. Por esse motivo, o conceito de "muitos mundos" é aplicado.</p>
+					<p>
+						<b>Definição:</b> Um modelo para uma população $P$ é composto de:
 						<ul>
-							<li>$K_G \varphi$ e $B_G \varphi$: "o grupo $G$ sabe/acredita que $\varphi$ vale";</li>
-							<li>$[\varphi_1]_G^r \varphi_2$: "$\varphi_2$ vale no grupo $G$ após anúncio de $\varphi_1$ para fração $r$ dos indivíduos em $G$", onde $G = \{ P_1, P_2 \}$ e $\overline{P_1} = \overline{G} \cdot r$.
+							<li>Um conjunto de estados $T$;</li>
+							<li>uma função de valoração $V : \Phi \to 2^T$ que indica proposições verdadeiras para cada estado;</li>
+							<li>Uma família de relações binárias $\stackrel{M_P, G}{\sim}$ para cada grupo $G$ conhecido por esta população.</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h2>Modelo (Grupo)</h2>
+					<p>
+						<b>Definição:</b> Um modelo para um grupo $G= \{ G_0, G_1, \dots, G_n \}$ é definido como o conjunto de modelos de cada um dos seus grupos. Isto é, $M_G = \{ M_{G_0}, M_{G_1}, \dots, M_{G_n} \}$.
+					</p>
+				</section>
+
+				<section>
+					<h2>Linguagem</h2>
+					<p>
+						\[
+						\varphi ::= p \ | \ \neg \varphi \ | \ \varphi_1 \wedge \varphi_2 \ | \ \varphi_1 \vee \varphi_2 \ | \ \varphi_1 \rightarrow \varphi_2 \ | \\ K_G \varphi \ | \ B_G \varphi \ | \ [\varphi_1]_G^r \varphi_2
+						\]
+						onde $r \in U = [0, 1]$, $G$ denota um grupo e $p \in \Phi$.
+					</p>
+				</section>
+
+				<section>
+					<h2>Anúncio</h2>
+					<img src="img/announcement-explanation.png" height="400px" />
+				</section>
+
+				<section>
+					<h2>Operadores de conhecimento e anúncio</h2>
+					<ul>
+						<li>$K_G \varphi$ e $B_G \varphi$: "o grupo $G$ sabe/acredita que $\varphi$ vale";</li>
+						<li>$[\varphi_1]_G^r \varphi_2$: "$\varphi_2$ vale no grupo $G$ após anúncio de $\varphi_1$ para fração $r$ dos indivíduos em $G$", onde $G = \{ P_1, P_2 \}$ e $\overline{P_1} = \overline{G} \cdot r$.
 							<ul>
 								<li>Essa expressão descreve um anúncio parcial que define duas novas populações, uma delas com conhecimento adicional e outra que não recebeu nenhuma nova informação.</li>
 							</ul>
-							</li>
-						</ul>
-					</section>
-
+						</li>
+					</ul>
 				</section>
-				
+
+			</section>
+
+			<section>
+
 				<section>
-					
-					<section>
-						<h2>Semântica (Proposição)</h2>
-						<p>
-							Definimos valorações para cada expressão da linguagem, começando pela proposição simples:
-							\[
-								E_{M_G, s}(p) = e(p, (M_S, s))
-							\]
-							Ou seja, a proposição é evaluada sobre um modelo e um estado, de acordo com uma função de valoração $e : p \times (M_G, s) \rightarrow U$, que pode ser simplesmente algo como $e(p, (M_S, s)) = 1$ se $p \in V(p)$, e $0$ caso contrário.
-						</p>
-					</section>
-
-					<section>
-						<h2>Semântica ($\neg$, $\land$, $\lor$, $\to$)</h2>
-						<p>
-							Os operadores são definidos utilizando-se de funções, que posteriormente definiremos a partir de suas propriedades.
-							\[\begin{aligned}
-								E_{M_G, s}(\neg \varphi) &amp; = NOT(E_{M_G, s}(\varphi)) \\
-								E_{M_G, s}(\varphi \wedge \psi) &amp; = AND(E_{M_G, s}(\varphi), E_{M_G, s}(\psi)) \\
-								E_{M_G, s}(\varphi \vee \psi) &amp; = OR(E_{M_G, s}(\varphi), E_{M_G, s}(\psi)) \\
-								E_{M_G, s}(\varphi \rightarrow \psi) &amp; = IMP(E_{M_G, s}(\varphi), E_{M_G, s}(\psi))
-							\end{aligned} \]
-						</p>
-					</section>
-
-					<section>
-						<h2>Negação Fuzzy</h2>
-						<p>
-							Um operador unário $NOT : U \rightarrow U$ é uma negação fuzzy se:
-							<small>
-								<ul>
-									<li>$NOT(0) = 1$;</li>
-									<li>$NOT(1) = 0$;</li>
-									<li>$\color{red}{x} \leq \color{blue}{y} \rightarrow NOT(\color{blue}{y}) \leq NOT(\color{red}{x})$.</li>
-								</ul>
-							</small>
-							<br />
-							Por exemplo, uma possível função de negação é $NOT(x) = 1 - x$.
-						</p>
-					</section>
-
-					<section>
-						<h2>Conjunção Fuzzy</h2>
-						<p>
-							Um operador binário $AND : U \times U \rightarrow U$ é uma conjunção fuzzy se:
-							<small>
-								<ul>
-									<li>$AND(\color{red}{x}, \color{blue}{y}) = AND(\color{blue}{y}, \color{red}{x})$ (Simetria);</li>
-									<li>$AND(\color{red}{x}, AND(\color{blue}{y}, \color{green}{z})) = AND(AND(\color{red}{x}, \color{blue}{y}), \color{green}{z})$ (Associatividade);</li>
-									<li>$\color{blue}{y} \leq \color{green}{z} \rightarrow AND(\color{red}{x}, \color{blue}{y}) \leq AND(\color{red}{x}, \color{green}{z})$ (Monotonicidade);</li>
-									<li>$AND(\color{red}{x}, 1) = \color{red}{x}$ (1-Identidade).</li>
-								</ul>
-							</small>
-							<br />
-							Por exemplo, uma possível função de conjunção é $AND(x, y) = min\{x, y\}$.
-						</p>
-					</section>
-
-					<section>
-						<h2>Disjunção Fuzzy</h2>
-						<p>
-							Um operador binário $OR : U \times U \rightarrow U$ é uma disjunção fuzzy se:
-							<small>
-								<ul>
-									<li>$OR(\color{red}{x}, \color{blue}{y}) = OR(\color{blue}{y}, \color{red}{x})$ (Simetria);</li>
-									<li>$OR(\color{red}{x}, OR(\color{blue}{y}, \color{green}{z})) = OR(OR(\color{red}{x}, \color{blue}{y}), \color{green}{z})$ (Associatividade);</li>
-									<li>$\color{blue}{y} \leq \color{green}{z} \rightarrow OR(\color{red}{x}, \color{blue}{y}) \leq OR(\color{red}{x}, \color{green}{z})$ (Monotonicidade);</li>
-									<li>$OR(\color{red}{x}, 0) = \color{red}{x}$ (0-Identidade).</li>
-								</ul>
-							</small>
-							<br />
-							Por exemplo, uma possível função de disjunção é $OR(x, y) = max\{x, y\}$.
-						</p>
-					</section>
-
-					<section>
-						<h2>Implicação Fuzzy</h2>
-						<p>
-							Um operador binário $IMP : U \times U \rightarrow U$ é uma implicação fuzzy se:
-							<small>
-								<ul>
-									<li>$\color{red}{x} \leq \color{blue}{y} \rightarrow IMP(\color{red}{x}, \color{green}{z}) \geq IMP(\color{blue}{y}, \color{green}{z})$;</li>
-									<li>$\color{blue}{y} \geq \color{green}{z} \rightarrow IMP(\color{red}{x}, \color{blue}{y}) \geq IMP(\color{red}{x}, \color{green}{z})$;</li>
-									<li>$IMP(0, \color{red}{x}) = 1$;</li>
-									<li>$IMP(\color{red}{x}, 1) = 1$;</li>
-									<li>$IMP(1, 0) = 0$;</li>
-								</ul>
-							</small>
-							<br />
-							Por exemplo, uma possível função de implicação é $IMP(x, y) = min\{1, 1 - x + y\}$, também conhecida como implicação de Łukasiewicz (originária da lógica fuzzy de mesmo nome).
-						</p>
-					</section>
-
-					<section>
-						<h2>Conhecimento Fuzzy</h2>
-						<p>
-							Um operador ternário $K : \phi \times (M_S, S) \times G \rightarrow U$ é uma checagem de conhecimento fuzzy se:
-							<small>
-								<ul>
-									<li>Se $G = P$:
-										<ul>
-											<li>$\forall s' \in T ~~ | ~~ s  \stackrel{M_S, P}{\sim} s' (E_{M_S, s'}(\varphi) = 1) \rightarrow K(\varphi, (M_S, s), P) = 1$;</li>
-											<li>$\forall s' \in T ~~| ~~s  \stackrel{M_S, P}{\sim} s' (E_{M_S, s'}(\neg \varphi) = 1) \rightarrow K(\varphi, (M_S, s), P) = 0$;</li>
-										</ul>
-									</li>
-									<li>$K(\varphi, (M_S, s), G) \leq max_{G' \in G} \{K(\varphi, (M_S, s), G')\}$;</li>
-									<li>$K(\varphi, (M_S, s), G) \geq min_{G' \in G} \{K(\varphi, (M_S, s), G')\}$.</li>
-								</ul>
-							</small>
-						</p>
-					</section>
-
-					<section>
-						<h2>Conhecimento Fuzzy (Função)</h2>
-						<p>
-							Por exemplo, uma possível função de checagem de conhecimento é
-							<small>
-								$$K(\varphi, (M_S, s), G) = \left\{
-								\begin{array}{ll}
-									\sum_{G' \in G} \frac{\overline{G'}}{\overline{G}} K(\varphi, (M_S, s), G') & \text{se} \  G = \{ G_0, G_1, \dots, G_n \} \text{,} \\
-									1 & \text{se} \  G = P \  \text{e} \  \forall s' \in T ~| ~s \stackrel{M_S, P}{\sim} s' \rightarrow E_{M_S, s'}(\varphi) \text{,} \\
-									0  &  \text{caso contrário.}
-								\end{array}
-								\right.$$
-							</small>
-						</p>
-						<p>
-							<br />
-							Intuitivamente, significa que o conhecimento de um grupo é igual à média ponderada dos conhecimentos dos grupos contidos nele. Uma única população sabe algo apenas quando é verdadeiro em todo mundo concebível que essa população contempla.
-						</p>
-					</section>
-
-					<section>
-						<h2>Crença Fuzzy</h2>
-						<p>
-							Um operador ternário $B : \phi \times (M_S, S) \times G \rightarrow U$ é uma checagem de crença fuzzy se:
-							<small>
-								<ul>
-									<li>Se $G = P$:
-										<ul>
-											<li>$\exists s' \in T~~ |~~ s  \stackrel{M_S, P}{\sim} s' (E_{M_S, s'}(\varphi) = 1) \rightarrow B(\varphi, (M_S, s), P) > 0$;</li>
-											<li>$\exists s' \in T ~~| ~~s  \stackrel{M_S, P}{\sim} s' (E_{M_S, s'}(\neg \varphi) = 1) \rightarrow B(\varphi, (M_S, s), P) < 1$;</li>
-										</ul>
-									</li>
-									<li>$B(\varphi, (M_S, s), G) \leq max_{G' \in G} \{B(\varphi, (M_S, s), G')\}$;</li>
-									<li>$B(\varphi, (M_S, s), G) \geq min_{G' \in G} \{B(\varphi, (M_S, s), G')\}$.</li>
-								</ul>
-							</small>
-						</p>
-					</section>
-
-					<section>
-						<h2>Crença Fuzzy (Função)</h2>
-						<p>
-							Por exemplo, uma possível função de checagem de crença é
-							<small>
-								$$B(\varphi, (M_S, s), G) = \left\{
-								\begin{array}{ll}
-									\sum_{G' \in G} \frac{\overline{G'}}{\overline{G}} B(\varphi, (M_S, s), G') & \text{se} \  G = \{ G_0, G_1, \dots, G_n \} \text{,} \\
-									\sum_{s' \in N_s} \frac{E_{M_S, s'}(\varphi)}{\overline{N_s}} & \text{se} \  G = P \text{,} \\
-									0  &  \text{caso contrário.}
-								\end{array}
-								\right.$$
-							</small>
-						</p>
-						<p>
-							<br />
-							onde <small>$N_s = \bigcup_{s' \in T | s  \stackrel{M_S, G}{\sim} s'} s'$</small> são os vizinhos de <small>$s$</small> via relação <small>$\stackrel{M_S, G}{\sim}$</small>.
-							<br />
-							Permite qualquer número no intervalo $[0, 1]$. Por exemplo, se em metade dos estados conectados ao estado $s$ via <small>$\stackrel{M_S, P}{\sim}$</small>, $\varphi$ evaluar para $1$ e na outra metade para $0$, então $B(\varphi, (M_S, s), P) = 0,5$.
-						</p>
-					</section>
-
-				</section>
-				
-				<section>
-
-					<section>
-						<h2>Exemplo</h2>
-						<p>
-							Os estados são nomeados como o conjunto de proposições que são válidas nos mesmos, para facilitar a visualização.
-						</p>
-						<p>
-							A motivação para o exemplo é a seguinte: considere um político famoso que está sob investigação por lavagem de dinheiro e pagamento de propina. As eleições estão chegando, e para ser reeleito o político precisa que as pessoas não saibam de ambas as acusações sendo feitas sobre ele.
-						</p>
-					</section>
-
-					<section>
-						<h2>Modelo inicial</h2>
-						<p>
-							Temos um modelo inicial composto de uma única população $P$, duas proposições $l$ (lavagem de dinheiro) e $b$ (pagamento de propina) e um estado real $\{l, b\}$.
-							<br />
-							<img src="img/corrupt-initial.png" height="200px" />
-							<br />
-							Se perguntarmos quem não votaria no político, isto é $K_P(l \land b)$, a evaluação será $0$, já que há arestas $P$ conectando o estado $\{l, b\}$ a outros.
-						</p>
-					</section>
-
-					<section>
-						<h2>Primeiro anúncio</h2>
-						<p>
-							Um programa de TV foi visto por 30% da população, e revelou que o político praticou lavagem de dinheiro. Isso é equivalente ao anúncio $[l]^{0.3}_G$, onde $G = \{P^1, P^2\}$ é um grupo contendo as populações resultantes do anúncio: $P^1$ recebeu o mesmo, e $P^2$ não.
-							<br />
-							<img src="img/corrupt-after1.png" height="200px" />
-						</p>
-					</section>
-
-					<section>
-						<h2>Primeiro anúncio, $K$</h2>
-						<img src="img/corrupt-after1.png" height="200px" />
-						<p>
-							Se perguntarmos agora $[l]^{0.3}_G K_G(l \land b)$, a evaluação nesse momento será $0$, já que ainda existem arestas $P^1$ e $P^2$ conectando o estado $\{l, b\}$ a outros. Isto é, ambas as populações estão em dúvida quanto ao estado $\{l, b\}$ ser o real ou não.
-						</p>
-					</section>
-
-					<section>
-						<h2>Primeiro anúncio, $B$</h2>
-						<img src="img/corrupt-after1.png" height="200px" />
-						<p>
-							Podemos também verificar a crença da população, isto é, evaluar $[l]^{0.3}_G B_G(l \land b)$.
-						</p>
-					</section>
-
-					<section>
-						<h2>Primeiro anúncio, $B$</h2>
-						<img src="img/corrupt-after1.png" height="200px" />
-						<p style="font-size: .8em">
-							\begin{equation}
-								\begin{aligned}
-									B(l \land b, (M_G, \{ l, b \}), G) &=  \sum_{G' \in G} \frac{\overline{G'}}{\overline{G}} B(l \land b, (M_G, \{ l, b \}), G') \\
-									= 0.3 \sum_{s' \in N_{\{ l, b \}}} \frac{E_{M_{P^1}, \{ l, b \}}(l \land b)}{\overline{N_{\{ l, b \}}}} &+ 0.7 \sum_{s' \in N_{\{ l, b \}}} \frac{E_{M_{P^2}, \{ l, b \}}(l \land b)}{\overline{N_{\{ l, b \}}}} \\
-									= 0.3 \cdot 1/2 + 0.7 \cdot 1/4 &= 0.325
-								\end{aligned}
-							\end{equation}
-						</p>
-					</section>
-
-					<section>
-						<h2>Segundo anúncio</h2>
-						<p>
-							Considere novamente que outro programa de TV foi ao ar, dessa vez com 40% de cobertura da população total inicial. Nesse programa foi anunciado que o político praticou pagamento de propina, isto é, $[b]^{0.4}_G$.
-						</p>
-					</section>
-
-					<section>
-						<h2>Segundo anúncio (modelo)</h2>
-						<p>
-							O modelo resultante dos anúncios seguidos é como o da imagem:
-							<br />
-							<img src="img/corrupt-after2.png" height="400px" style="float: left" />
-							<br />
-							<ul style="font-size: .8em">
-								<li>Modelo $G^1$ à esquerda:</li>
-								<ul>
-									<li>Acima recebeu ambos<br />os anúncios ($P^{11}$);</li>
-									<li>Abaixo apenas o <br />primeiro ($P^{12}$);
-								</ul>
-								<li>Modelo $G^2$ à direita:</li>
-								<ul>
-									<li>Acima recebeu apenas<br />o segundo anúncio ($P^{21}$);</li>
-									<li>Abaixo nenhum ($P^{22}$).</li>
-							</ul>
-						</p>
-					</section>
-
-					<section>
-						<h2>Segundo anúncio, $K$</h2>
-						<img src="img/corrupt-after2.png" height="400px" style="float: left" />
-						<p style="font-size: .8em">
-							Poderíamos perguntar agora $[l]^{0.3}_G [b]^{0.4}_{G'} K_{G'}(l \land b)$.
-						</p>
-					</section>
-
-					<section>
-						<h2>Segundo anúncio, $K$</h2>
-						<img src="img/corrupt-after2.png" height="400px" style="float: left" />
-						<p style="font-size: .8em">
-							\begin{equation}
-								\begin{aligned}
-									&K(l \land b, (M_G, \{ l, b \}), G) \\
-									&= \sum_{G' \in G} \frac{\overline{G'}}{\overline{G}} K(l \land b, (M_G, \{ l, b \}), G') \\
-									&= 0.3 ( 0.4 \cdot 1 + 0.6 \cdot 0) \\
-									&+ 0.7 ( 0.4 \cdot 0 + 0.6 \cdot 0) \\
-									&= 0.3 \cdot 0.4 = 0.12
-								\end{aligned}
-							\end{equation}
-						</p>
-					</section>
-
+					<h2>Semântica (Proposição)</h2>
+					<p>
+						Definimos valorações para cada expressão da linguagem, começando pela proposição simples:
+						\[
+						E_{M_G, s}(p) = e(p, (M_S, s))
+						\]
+						Ou seja, a proposição é evaluada sobre um modelo e um estado, de acordo com uma função de valoração $e : p \times (M_G, s) \rightarrow U$, que pode ser simplesmente algo como $e(p, (M_S, s)) = 1$ se $p \in V(p)$, e $0$ caso contrário.
+					</p>
 				</section>
 
 				<section>
-					
-					<section>
-						<h2>Verificador de modelos</h2>
-						<p>
-							<img src="img/java.png" height="150px" style="float: left" />
-							<br />
-							Uma biblioteca e verificador de modelos para a PPAL foram implementados em Java. A biblioteca foi coberta extensivamente por testes unitários e de integração para garantir consistência com a especificação da lógica.
-						</p>
-						<h2>Objetivos</h2>
-						<p>
-							<ul>
-								<li>Implementar um verificador de modelos básico para a lógica PPAL;</li>
-								<li>Desenvolver um formato para especificação de modelos (estruturas de Kripke) simples e conciso.</li>
-							</ul>
-						</p>
-					</section>
+					<h2>Semântica ($\neg$, $\land$, $\lor$, $\to$)</h2>
+					<p>
+						Os operadores são definidos utilizando-se de funções, que posteriormente definiremos a partir de suas propriedades.
+						\[\begin{aligned}
+						E_{M_G, s}(\neg \varphi) &amp; = NOT(E_{M_G, s}(\varphi)) \\
+						E_{M_G, s}(\varphi \wedge \psi) &amp; = AND(E_{M_G, s}(\varphi), E_{M_G, s}(\psi)) \\
+						E_{M_G, s}(\varphi \vee \psi) &amp; = OR(E_{M_G, s}(\varphi), E_{M_G, s}(\psi)) \\
+						E_{M_G, s}(\varphi \rightarrow \psi) &amp; = IMP(E_{M_G, s}(\varphi), E_{M_G, s}(\psi))
+						\end{aligned} \]
+					</p>
+				</section>
 
-					<section>
-						<h2>Formato de especificação</h2>
-						<p>
-							Um dos problemas recorrentes em outros verificadores é o de especificar modelos de entrada. A dificuldade vem da necessidade de se especificar todos os estados e arestas do modelo, e também por constantemente essa especificação ser difícil de ler e pouco intuitiva.
-						</p>
-						<p>Foi definida uma especificação com estrutura XML para a declaração de modelos, visando intuitividade e escalabilidade.
-					</section>
-
-					<section>
-						<h2>Exemplo de modelo</h2>
+				<section>
+					<h2>Negação Fuzzy</h2>
+					<p>
+						Um operador unário $NOT : U \rightarrow U$ é uma negação fuzzy se:
 						<small>
+							<ul>
+								<li>$NOT(0) = 1$;</li>
+								<li>$NOT(1) = 0$;</li>
+								<li>$\color{red}{x} \leq \color{blue}{y} \rightarrow NOT(\color{blue}{y}) \leq NOT(\color{red}{x})$.</li>
+							</ul>
+						</small>
+						<br />
+						Por exemplo, uma possível função de negação é $NOT(x) = 1 - x$.
+					</p>
+				</section>
+
+				<section>
+					<h2>Conjunção Fuzzy</h2>
+					<p>
+						Um operador binário $AND : U \times U \rightarrow U$ é uma conjunção fuzzy se:
+						<small>
+							<ul>
+								<li>$AND(\color{red}{x}, \color{blue}{y}) = AND(\color{blue}{y}, \color{red}{x})$ (Simetria);</li>
+								<li>$AND(\color{red}{x}, AND(\color{blue}{y}, \color{green}{z})) = AND(AND(\color{red}{x}, \color{blue}{y}), \color{green}{z})$ (Associatividade);</li>
+								<li>$\color{blue}{y} \leq \color{green}{z} \rightarrow AND(\color{red}{x}, \color{blue}{y}) \leq AND(\color{red}{x}, \color{green}{z})$ (Monotonicidade);</li>
+								<li>$AND(\color{red}{x}, 1) = \color{red}{x}$ (1-Identidade).</li>
+							</ul>
+						</small>
+						<br />
+						Por exemplo, uma possível função de conjunção é $AND(x, y) = min\{x, y\}$.
+					</p>
+				</section>
+
+				<section>
+					<h2>Disjunção Fuzzy</h2>
+					<p>
+						Um operador binário $OR : U \times U \rightarrow U$ é uma disjunção fuzzy se:
+						<small>
+							<ul>
+								<li>$OR(\color{red}{x}, \color{blue}{y}) = OR(\color{blue}{y}, \color{red}{x})$ (Simetria);</li>
+								<li>$OR(\color{red}{x}, OR(\color{blue}{y}, \color{green}{z})) = OR(OR(\color{red}{x}, \color{blue}{y}), \color{green}{z})$ (Associatividade);</li>
+								<li>$\color{blue}{y} \leq \color{green}{z} \rightarrow OR(\color{red}{x}, \color{blue}{y}) \leq OR(\color{red}{x}, \color{green}{z})$ (Monotonicidade);</li>
+								<li>$OR(\color{red}{x}, 0) = \color{red}{x}$ (0-Identidade).</li>
+							</ul>
+						</small>
+						<br />
+						Por exemplo, uma possível função de disjunção é $OR(x, y) = max\{x, y\}$.
+					</p>
+				</section>
+
+				<section>
+					<h2>Implicação Fuzzy</h2>
+					<p>
+						Um operador binário $IMP : U \times U \rightarrow U$ é uma implicação fuzzy se:
+						<small>
+							<ul>
+								<li>$\color{red}{x} \leq \color{blue}{y} \rightarrow IMP(\color{red}{x}, \color{green}{z}) \geq IMP(\color{blue}{y}, \color{green}{z})$;</li>
+								<li>$\color{blue}{y} \geq \color{green}{z} \rightarrow IMP(\color{red}{x}, \color{blue}{y}) \geq IMP(\color{red}{x}, \color{green}{z})$;</li>
+								<li>$IMP(0, \color{red}{x}) = 1$;</li>
+								<li>$IMP(\color{red}{x}, 1) = 1$;</li>
+								<li>$IMP(1, 0) = 0$;</li>
+							</ul>
+						</small>
+						<br />
+						Por exemplo, uma possível função de implicação é $IMP(x, y) = min\{1, 1 - x + y\}$, também conhecida como implicação de Łukasiewicz (originária da lógica fuzzy de mesmo nome).
+					</p>
+				</section>
+
+				<section>
+					<h2>Conhecimento Fuzzy</h2>
+					<p>
+						Um operador ternário $K : \phi \times (M_S, S) \times G \rightarrow U$ é uma checagem de conhecimento fuzzy se:
+						<small>
+							<ul>
+								<li>Se $G = P$:
+									<ul>
+										<li>$\forall s' \in T ~~ | ~~ s \stackrel{M_S, P}{\sim} s' (E_{M_S, s'}(\varphi) = 1) \rightarrow K(\varphi, (M_S, s), P) = 1$;</li>
+										<li>$\forall s' \in T ~~| ~~s \stackrel{M_S, P}{\sim} s' (E_{M_S, s'}(\neg \varphi) = 1) \rightarrow K(\varphi, (M_S, s), P) = 0$;</li>
+									</ul>
+								</li>
+								<li>$K(\varphi, (M_S, s), G) \leq max_{G' \in G} \{K(\varphi, (M_S, s), G')\}$;</li>
+								<li>$K(\varphi, (M_S, s), G) \geq min_{G' \in G} \{K(\varphi, (M_S, s), G')\}$.</li>
+							</ul>
+						</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Conhecimento Fuzzy (Função)</h2>
+					<p>
+						Por exemplo, uma possível função de checagem de conhecimento é
+						<small>
+							$$K(\varphi, (M_S, s), G) = \left\{
+							\begin{array}{ll}
+							\sum_{G' \in G} \frac{\overline{G'}}{\overline{G}} K(\varphi, (M_S, s), G') & \text{se} \ G = \{ G_0, G_1, \dots, G_n \} \text{,} \\
+							1 & \text{se} \ G = P \ \text{e} \ \forall s' \in T ~| ~s \stackrel{M_S, P}{\sim} s' \rightarrow E_{M_S, s'}(\varphi) \text{,} \\
+							0 & \text{caso contrário.}
+							\end{array}
+							\right.$$
+						</small>
+					</p>
+					<p>
+						<br />
+						Intuitivamente, significa que o conhecimento de um grupo é igual à média ponderada dos conhecimentos dos grupos contidos nele. Uma única população sabe algo apenas quando é verdadeiro em todo mundo concebível que essa população contempla.
+					</p>
+				</section>
+
+				<section>
+					<h2>Crença Fuzzy</h2>
+					<p>
+						Um operador ternário $B : \phi \times (M_S, S) \times G \rightarrow U$ é uma checagem de crença fuzzy se:
+						<small>
+							<ul>
+								<li>Se $G = P$:
+									<ul>
+										<li>$\exists s' \in T~~ |~~ s \stackrel{M_S, P}{\sim} s' (E_{M_S, s'}(\varphi) = 1) \rightarrow B(\varphi, (M_S, s), P) > 0$;</li>
+										<li>$\exists s' \in T ~~| ~~s \stackrel{M_S, P}{\sim} s' (E_{M_S, s'}(\neg \varphi) = 1) \rightarrow B(\varphi, (M_S, s), P) < 1$;</li> </ul> </li> <li>$B(\varphi, (M_S, s), G) \leq max_{G' \in G} \{B(\varphi, (M_S, s), G')\}$;</li>
+										<li>$B(\varphi, (M_S, s), G) \geq min_{G' \in G} \{B(\varphi, (M_S, s), G')\}$.</li>
+									</ul>
+						</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Crença Fuzzy (Função)</h2>
+					<p>
+						Por exemplo, uma possível função de checagem de crença é
+						<small>
+							$$B(\varphi, (M_S, s), G) = \left\{
+							\begin{array}{ll}
+							\sum_{G' \in G} \frac{\overline{G'}}{\overline{G}} B(\varphi, (M_S, s), G') & \text{se} \ G = \{ G_0, G_1, \dots, G_n \} \text{,} \\
+							\sum_{s' \in N_s} \frac{E_{M_S, s'}(\varphi)}{\overline{N_s}} & \text{se} \ G = P \text{,} \\
+							0 & \text{caso contrário.}
+							\end{array}
+							\right.$$
+						</small>
+					</p>
+					<p>
+						<br />
+						onde <small>$N_s = \bigcup_{s' \in T | s \stackrel{M_S, G}{\sim} s'} s'$</small> são os vizinhos de <small>$s$</small> via relação <small>$\stackrel{M_S, G}{\sim}$</small>.
+						<br />
+						Permite qualquer número no intervalo $[0, 1]$. Por exemplo, se em metade dos estados conectados ao estado $s$ via <small>$\stackrel{M_S, P}{\sim}$</small>, $\varphi$ evaluar para $1$ e na outra metade para $0$, então $B(\varphi, (M_S, s), P) = 0,5$.
+					</p>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h2>Exemplo</h2>
+					<p>
+						Os estados são nomeados como o conjunto de proposições que são válidas nos mesmos, para facilitar a visualização.
+					</p>
+					<p>
+						A motivação para o exemplo é a seguinte: considere um político famoso que está sob investigação por lavagem de dinheiro e pagamento de propina. As eleições estão chegando, e para ser reeleito o político precisa que as pessoas não saibam de ambas as acusações sendo feitas sobre ele.
+					</p>
+				</section>
+
+				<section>
+					<h2>Modelo inicial</h2>
+					<p>
+						Temos um modelo inicial composto de uma única população $P$, duas proposições $l$ (lavagem de dinheiro) e $b$ (pagamento de propina) e um estado real $\{l, b\}$.
+						<br />
+						<img src="img/corrupt-initial.png" height="200px" />
+						<br />
+						Se perguntarmos quem não votaria no político, isto é $K_P(l \land b)$, a evaluação será $0$, já que há arestas $P$ conectando o estado $\{l, b\}$ a outros.
+					</p>
+				</section>
+
+				<section>
+					<h2>Primeiro anúncio</h2>
+					<p>
+						Um programa de TV foi visto por 30% da população, e revelou que o político praticou lavagem de dinheiro. Isso é equivalente ao anúncio $[l]^{0.3}_G$, onde $G = \{P^1, P^2\}$ é um grupo contendo as populações resultantes do anúncio: $P^1$ recebeu o mesmo, e $P^2$ não.
+						<br />
+						<img src="img/corrupt-after1.png" height="200px" />
+					</p>
+				</section>
+
+				<section>
+					<h2>Primeiro anúncio, $K$</h2>
+					<img src="img/corrupt-after1.png" height="200px" />
+					<p>
+						Se perguntarmos agora $[l]^{0.3}_G K_G(l \land b)$, a evaluação nesse momento será $0$, já que ainda existem arestas $P^1$ e $P^2$ conectando o estado $\{l, b\}$ a outros. Isto é, ambas as populações estão em dúvida quanto ao estado $\{l, b\}$ ser o real ou não.
+					</p>
+				</section>
+
+				<section>
+					<h2>Primeiro anúncio, $B$</h2>
+					<img src="img/corrupt-after1.png" height="200px" />
+					<p>
+						Podemos também verificar a crença da população, isto é, evaluar $[l]^{0.3}_G B_G(l \land b)$.
+					</p>
+				</section>
+
+				<section>
+					<h2>Primeiro anúncio, $B$</h2>
+					<img src="img/corrupt-after1.png" height="200px" />
+					<p style="font-size: .8em">
+						\begin{equation}
+						\begin{aligned}
+						B(l \land b, (M_G, \{ l, b \}), G) &= \sum_{G' \in G} \frac{\overline{G'}}{\overline{G}} B(l \land b, (M_G, \{ l, b \}), G') \\
+						= 0.3 \sum_{s' \in N_{\{ l, b \}}} \frac{E_{M_{P^1}, \{ l, b \}}(l \land b)}{\overline{N_{\{ l, b \}}}} &+ 0.7 \sum_{s' \in N_{\{ l, b \}}} \frac{E_{M_{P^2}, \{ l, b \}}(l \land b)}{\overline{N_{\{ l, b \}}}} \\
+						= 0.3 \cdot 1/2 + 0.7 \cdot 1/4 &= 0.325
+						\end{aligned}
+						\end{equation}
+					</p>
+				</section>
+
+				<section>
+					<h2>Segundo anúncio</h2>
+					<p>
+						Considere novamente que outro programa de TV foi ao ar, dessa vez com 40% de cobertura da população total inicial. Nesse programa foi anunciado que o político praticou pagamento de propina, isto é, $[b]^{0.4}_G$.
+					</p>
+				</section>
+
+				<section>
+					<h2>Segundo anúncio (modelo)</h2>
+					<p>
+						O modelo resultante dos anúncios seguidos é como o da imagem:
+						<br />
+						<img src="img/corrupt-after2.png" height="400px" style="float: left" />
+						<br />
+						<ul style="font-size: .8em">
+							<li>Modelo $G^1$ à esquerda:</li>
+							<ul>
+								<li>Acima recebeu ambos<br />os anúncios ($P^{11}$);</li>
+								<li>Abaixo apenas o <br />primeiro ($P^{12}$);
+							</ul>
+							<li>Modelo $G^2$ à direita:</li>
+							<ul>
+								<li>Acima recebeu apenas<br />o segundo anúncio ($P^{21}$);</li>
+								<li>Abaixo nenhum ($P^{22}$).</li>
+							</ul>
+					</p>
+				</section>
+
+				<section>
+					<h2>Segundo anúncio, $K$</h2>
+					<img src="img/corrupt-after2.png" height="400px" style="float: left" />
+					<p style="font-size: .8em">
+						Poderíamos perguntar agora $[l]^{0.3}_G [b]^{0.4}_{G'} K_{G'}(l \land b)$.
+					</p>
+				</section>
+
+				<section>
+					<h2>Segundo anúncio, $K$</h2>
+					<img src="img/corrupt-after2.png" height="400px" style="float: left" />
+					<p style="font-size: .8em">
+						\begin{equation}
+						\begin{aligned}
+						&K(l \land b, (M_G, \{ l, b \}), G) \\
+						&= \sum_{G' \in G} \frac{\overline{G'}}{\overline{G}} K(l \land b, (M_G, \{ l, b \}), G') \\
+						&= 0.3 ( 0.4 \cdot 1 + 0.6 \cdot 0) \\
+						&+ 0.7 ( 0.4 \cdot 0 + 0.6 \cdot 0) \\
+						&= 0.3 \cdot 0.4 = 0.12
+						\end{aligned}
+						\end{equation}
+					</p>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h2>Verificador de modelos</h2>
+					<p>
+						<img src="img/java.png" height="150px" style="float: left" />
+						<br />
+						Uma biblioteca e verificador de modelos para a PPAL foram implementados em Java. A biblioteca foi coberta extensivamente por testes unitários e de integração para garantir consistência com a especificação da lógica.
+					</p>
+					<h2>Objetivos</h2>
+					<p>
+						<ul>
+							<li>Implementar um verificador de modelos básico para a lógica PPAL;</li>
+							<li>Desenvolver um formato para especificação de modelos (estruturas de Kripke) simples e conciso.</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h2>Formato de especificação</h2>
+					<p>
+						Um dos problemas recorrentes em outros verificadores é o de especificar modelos de entrada. A dificuldade vem da necessidade de se especificar todos os estados e arestas do modelo, e também por constantemente essa especificação ser difícil de ler e pouco intuitiva.
+					</p>
+					<p>Foi definida uma especificação com estrutura XML para a declaração de modelos, visando intuitividade e escalabilidade.
+				</section>
+
+				<section>
+					<h2>Exemplo de modelo</h2>
+					<small>
 						<pre><code style="font-size: 1.3em; min-height: 470px; min-width: 900px" data-trim>
 &lt;model version = "0.1" name = "Cards game (pop)"&gt;
 	&lt;societies&gt;
@@ -668,123 +665,126 @@
 	&lt;/realstate&gt;
 &lt;/model&gt;
 						</code></pre>
-						</small>
-					</section>
-
-					<section>
-						<h2>Decidibilidade</h2>
-						<p>
-							Um aspecto importante da verificação de modelos é a decidibilidade, que está relacionada com o problema de parada: existe alguma fórmula na linguagem que pode fazer o verificador ficar preso em um loop?
-						</p>
-						<p>
-							É possível mostrar através de indução no tamanho das expressões BNF que a lógica é de fato decidível.
-						</p>
-					</section>
-
+					</small>
 				</section>
 
 				<section>
-					
-					<section>
-						<h2>Conclusão</h2>
-						<p>
-							Nesse trabalho foi definida uma variante "fuzzy" de PAL que permite anúncios parciais para populações/grupos (os "agentes").
-						</p>
-						<p>
-							A maior vantagem da lógica é a flexibilidade de não ter que trabalhar com agentes definidos previamente. É possível definir agentes e evoluí-los de uma maneira mais natural a partir de anúncios.
-						</p>
-						<p>
-							A lógica também constrói sobre a noção de "dinâmico", pois não apenas as relações de acessibilidade mudam, mas também os próprios agentes.
-						</p>
-					</section>
+					<h2>Decidibilidade</h2>
+					<p>
+						Um aspecto importante da verificação de modelos é a decidibilidade, que está relacionada com o problema de parada: existe alguma fórmula na linguagem que pode fazer o verificador ficar preso em um loop?
+					</p>
+					<p>
+						É possível mostrar através de indução no tamanho das expressões BNF que a lógica é de fato decidível.
+					</p>
+				</section>
 
-					<section>
-						<h2>Trabalhos futuros (axiomatização)</h2>
-						<p>
-							Um formalismo importante para lógicas é o da axiomatização, isto é, um conjunto de tautologias (fórmulas que são sempre verdadeiras), chamadas axiomas, que podem ser usadas para derivar todas as outras fórmulas na linguagem.
-						</p>
-					</section>
+			</section>
 
-					<section>
-						<h2>Trabalhos futuros (verif. simbólica)</h2>
-						<p>
-							Não foi tentada a verificação de modelos simbólica. Um verificador é "simbólico" quando ele não representa todos os estados do modelo individualmente, e ao invés disso possui representações de conjuntos de estados e fórmulas para relações de transição, o que pode melhorar muito a performance.
-						</p>
-						<p>
-							Uma possível aproximação para essa técnica é via uso de "binary decision diagrams" (BDD), estruturas compactas que possibilitam checar evaluações em funções booleanas, e funções equivalentes são unicamente representadas.
-						</p>
-					</section>
+			<section>
 
-					<section>
-						<h2>Binary Decision Diagram (BDD)</h2>
-							<img src="img/dec-tree.png" height="400px" />
-							<img style="margin-left: 100px;" src="img/bdd.png" height="400px" />
-					</section>
-
+				<section>
+					<h2>Conclusão</h2>
+					<p>
+						Nesse trabalho foi definida uma variante "fuzzy" de PAL que permite anúncios parciais para populações/grupos (os "agentes").
+					</p>
+					<p>
+						A maior vantagem da lógica é a flexibilidade de não ter que trabalhar com agentes definidos previamente. É possível definir agentes e evoluí-los de uma maneira mais natural a partir de anúncios.
+					</p>
+					<p>
+						A lógica também constrói sobre a noção de "dinâmico", pois não apenas as relações de acessibilidade mudam, mas também os próprios agentes.
+					</p>
 				</section>
 
 				<section>
-					<h1>Obrigado!</h1>
+					<h2>Trabalhos futuros (axiomatização)</h2>
+					<p>
+						Um formalismo importante para lógicas é o da axiomatização, isto é, um conjunto de tautologias (fórmulas que são sempre verdadeiras), chamadas axiomas, que podem ser usadas para derivar todas as outras fórmulas na linguagem.
+					</p>
 				</section>
 
-			</div>
+				<section>
+					<h2>Trabalhos futuros (verif. simbólica)</h2>
+					<p>
+						Não foi tentada a verificação de modelos simbólica. Um verificador é "simbólico" quando ele não representa todos os estados do modelo individualmente, e ao invés disso possui representações de conjuntos de estados e fórmulas para relações de transição, o que pode melhorar muito a performance.
+					</p>
+					<p>
+						Uma possível aproximação para essa técnica é via uso de "binary decision diagrams" (BDD), estruturas compactas que possibilitam checar evaluações em funções booleanas, e funções equivalentes são unicamente representadas.
+					</p>
+				</section>
+
+				<section>
+					<h2>Binary Decision Diagram (BDD)</h2>
+					<img src="img/dec-tree.png" height="400px" />
+					<img style="margin-left: 100px;" src="img/bdd.png" height="400px" />
+				</section>
+
+			</section>
+
+			<section>
+				<h1>Obrigado!</h1>
+			</section>
 
 		</div>
 
-		<!-- Randomize slide background colors -->
-		<script src="js/Please-compressed.js"></script>
-		<script type="text/javascript">
-			var elements = document.querySelectorAll('section');
-			Array.prototype.forEach.call(elements, function(el, i){
-				el.setAttribute('data-background', Please.make_color({saturation: .05, value: .95}));
-			});
-		</script>
+	</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+	<!-- Randomize slide background colors -->
+	<script src="js/Please-compressed.js"></script>
+	<script type="text/javascript">
+		var elements = document.querySelectorAll('section');
+		Array.prototype.forEach.call(elements, function (el, i) {
+			el.setAttribute('data-background', Please.make_color({ saturation: .05, value: .95 }));
+		});
+	</script>
 
-		<script>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				slideNumber: true,
-				history: true,
-				center: true,
-				hideAddressBar: true,
+	<script>
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
-				transitionSpeed: 'slow',
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			slideNumber: true,
+			history: true,
+			center: true,
+			hideAddressBar: true,
 
-				math: {
-					// mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
-					config: 'TeX-AMS_HTML-full'
-				},
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+			transitionSpeed: 'slow',
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/math/math.js', async: true }
-				]
-			});
+			math: {
+				// mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+				config: 'TeX-AMS_HTML-full'
+			},
 
-		</script>
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/math/math.js', async: true }
+			]
+		});
 
-		<!-- Google Analytics -->
-		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-			ga('create', 'UA-71214783-2', 'auto');
-			ga('send', 'pageview');
-		</script>
-	</body>
+	</script>
+
+	<!-- Google Analytics -->
+	<script>
+		(function (i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date(); a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-71214783-2', 'auto');
+		ga('send', 'pageview');
+	</script>
+</body>
+
 </html>

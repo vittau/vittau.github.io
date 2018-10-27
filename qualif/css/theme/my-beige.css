@@ -1,0 +1,26 @@
+@import url(beige.css);
+
+.reveal {
+	font-size: 36px;
+}
+
+.reveal h1 {
+	font-size: 3em;
+	text-shadow: unset;
+}
+
+.reveal table th,
+.reveal table td {
+	text-align: center;
+	border-top: 2px solid;
+	border-bottom: 2px solid;
+	border-left: 2px solid;
+	border-right: 2px solid;
+}
+
+.reveal section img {
+	margin: 15px 0px;
+	background: unset;
+	border: unset;
+	box-shadow: unset;
+}

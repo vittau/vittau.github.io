@@ -72,8 +72,9 @@
 					</p>
 					<p>
 						<b>Definição:</b> Um grupo pode ser vazio, uma população ou um conjunto disjunto de grupos:
-						<br />
-						$G := \emptyset \ | \ P \ | \ \{ G_0, G_1, \dots, G_n \}$
+						\[
+						G := \emptyset \ | \ P \ | \ \{ G_0, G_1, \dots, G_n \}
+						\]
 					</p>
 				</section>
 
@@ -94,7 +95,10 @@
 				<section>
 					<h2>Modelo (Grupo)</h2>
 					<p>
-						<b>Definição:</b> Um modelo para um grupo $G= \{ G_0, G_1, \dots, G_n \}$ é definido como o conjunto de modelos de cada um dos seus grupos. Isto é, $M_G = \{ M_{G_0}, M_{G_1}, \dots, M_{G_n} \}$.
+						<b>Definição:</b> Um modelo para um grupo $G= \{ G_0, G_1, \dots, G_n \}$ é definido a partir do conjunto de modelos de cada um dos seus grupos da seguinte forma:
+						\[
+						M_G = M_G = \langle T, \stackrel{M_{G_1}}{\sim} \cup \stackrel{M_{G_2}}{\sim} \cup \dots \cup \stackrel{M_{G_n}}{\sim}, V \rangle
+						\]
 					</p>
 				</section>
 
@@ -247,10 +251,82 @@
 				<section>
 					<h2>Centralidade</h2>
 					<p>
+						Centralidade é uma métrica importante da relevância de um nó para uma rede. Em análise de grafos convencional, a centralidade de proximidade é a distância média dos caminhos mais curtos entre o nó e todos os outros nós do grafo.
+					</p>
+					<p>
+						Normalmente a métrica de distancia usada é a geodésica (número de arestas mínimo conectando os vértices). Aqui usaremos a métrica de distância social definida anteriormente.
+					</p>
+				</section>
+
+				<section>
+					<h2>Centralidade de proximidade normalizada</h2>
+					<p>A centralidade de proximidade normalizada de um grupo $G$ em um modelo $M$ e estado $w$ é dada por:
+						\[
+						C_{M, w}(G) = \frac{\overline{\mathcal{G}_G} - 1}{\overline{\mathcal{G}_G} - 1 + \sum_{X \in \mathcal{G}_G} SD_{M, w}(G, X)}
+						\]
+					</p>
+				</section>
+
+				<section>
+					<h2>Exemplo: centralidade</h2>
+					<p>
 						<i>Em construção...</i>
 					</p>
 				</section>
 
+				<section>
+					<h2>Exemplo: hobbies</h2>
+					<p>
+						<i>Em construção...</i>
+					</p>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h2>Especificação de modelos</h2>
+					<p>
+						Um dos problemas comuns em verificação de modelos é a dificuldade para especificação dos modelos.
+					</p>
+					<p>
+						Os verificadores mais comumente utilizados atualmente recebem modelos iniciais a partir da especificação explícita dos estados.
+					</p>
+				</section>
+
+				<section>
+					<h2>Estruturas de Kripke</h2>
+					<p>
+						<i>Em construção...</i>
+					</p>
+				</section>
+
+				<section>
+					<h2>Um padrão para especificação</h2>
+					<p>
+						<i>Em construção...</i>
+					</p>
+				</section>
+
+				<section>
+					<h2>Programação funcional</h2>
+					<p>
+						<i>Em construção...</i>
+					</p>
+				</section>
+
+				<section>
+					<h2>Verificação de modelos para redes sociais</h2>
+					<p>
+						<i>Em construção...</i>
+					</p>
+				</section>
+
+			</section>
+
+			<section>
+				<h1>Obrigado!</h1>
 			</section>
 
 		</div>
@@ -285,7 +361,7 @@
 			transitionSpeed: 'slow',
 
 			math: {
-				// mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+				mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js',
 				config: 'TeX-AMS_HTML-full'
 			},
 

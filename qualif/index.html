@@ -120,7 +120,7 @@
 			</section>
 
 			<section>
-				<h2>Aplicações</h2>
+				<h2>Redes sociais</h2>
 				<p>
 					As novas direções que prentendemos explorar com o trabalho são diversas aplicações em <b>redes sociais</b>, e melhorias na <b>especificação de modelos</b> para verificação.
 				</p>
@@ -252,25 +252,6 @@
 				</section>
 
 				<section>
-					<h2>Centralidade</h2>
-					<p>
-						Centralidade é uma métrica importante da relevância de um nó para uma rede. Em análise de grafos convencional, a centralidade de proximidade é a distância média dos caminhos mais curtos entre o nó e todos os outros nós do grafo.
-					</p>
-					<p>
-						Normalmente a métrica de distancia usada é a geodésica (número de arestas mínimo conectando os vértices). Aqui usaremos a métrica de distância social definida anteriormente.
-					</p>
-				</section>
-
-				<section>
-					<h2>Centralidade de proximidade normalizada</h2>
-					<p>A centralidade de proximidade normalizada de um grupo $G$ em um modelo $M$ e estado $w$ é dada por:
-						\[
-						C_{M, w}(G) = \frac{\overline{\mathcal{G}_G} - 1}{\overline{\mathcal{G}_G} - 1 + \sum_{X \in \mathcal{G}_G} SD_{M, w}(G, X)}
-						\]
-					</p>
-				</section>
-
-				<section>
 					<h2>Caso-de-uso: fake news</h2>
 					<p>
 						Nesse caso de uso, o objetivo é analisar como notícias falsas, ou <i>fake news</i>, se espalham por uma rede social. O tema ganhou fama após a campanha presidencial de 2016 nos Estados Unidos.
@@ -287,6 +268,51 @@
 					</p>
 					<p>
 						O desafio desse caso de uso é como modelar a passagem de tempo e evolução do estado da rede.
+					</p>
+				</section>
+
+			</section>
+
+			<section>
+
+				<section>
+					<h2>Comparação com redes sociais "tradicionais"</h2>
+					<p>
+						Um caminho que deve ser explorado é a comparação da abordagem aqui apresentada e a abordagem tradicional para redes sociais.
+					</p>
+					<p>
+						Redes sociais normalmente são divididas em três níveis distintos de abstração: micro, meso e macro.
+					</p>
+
+				</section>
+
+				<section>
+					<h2>Níveis de abstração</h2>
+					<p>No nível <b>micro</b>, o foco é em indivíduos, e suas interações diretas com outros. Não é nosso objetivo de estudo, já que na PPAL indivíduos nunca são endereçados diretamente.</p>
+					<p>
+						No nível <b>meso</b>, populações e grupos e suas relações são estudadas.
+					</p>
+					<p>
+						No nível <b>macro</b>, populações e grupos também são estudados, porém estamos mais interessados em desfechos globais e fatos sobre toda a rede.
+					</p>
+				</section>
+
+				<section>
+					<h2>Centralidade</h2>
+					<p>
+						Centralidade é uma métrica importante da relevância de um nó para uma rede. Em análise de grafos convencional, a centralidade de proximidade é a distância média dos caminhos mais curtos entre o nó e todos os outros nós do grafo.
+					</p>
+					<p>
+						Normalmente a métrica de distancia usada é a geodésica (número de arestas mínimo conectando os vértices). Aqui usaremos a métrica de distância social definida anteriormente.
+					</p>
+				</section>
+
+				<section>
+					<h2>Centralidade de proximidade normalizada</h2>
+					<p>A centralidade de proximidade normalizada de um grupo $G$ em um modelo $M$ e estado $w$ é dada por:
+						\[
+						C_{M, w}(G) = \frac{\overline{\mathcal{G}_G} - 1}{\overline{\mathcal{G}_G} - 1 + \sum_{X \in \mathcal{G}_G} SD_{M, w}(G, X)}
+						\]
 					</p>
 				</section>
 

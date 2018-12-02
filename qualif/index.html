@@ -167,7 +167,7 @@
 						Inspirando-se nas ideias anteriores, a métrica de distância usada na definição das redes socais para PPAL são os interesses dos grupos.
 					</p>
 					<p>
-						Para isso, definimos a matriz de interesses:
+						Para isso, definimos a <b>matriz de interesses</b>:
 						\[
 						\mathcal{I}_{M, w}(G) = \{p_j \mid g_i = G \ \text{and} \ \mathcal{I}_{M, w}^{i, j} = True\}
 						\]
@@ -217,24 +217,37 @@
 				</section>
 
 				<section>
-					<h2>Camadas sociais</h2>
+					<h2>Camadas sociais (distâncias)</h2>
+					<img src="img/social-layers.png" height="250px" />
+				</section>
+
+				<section>
+					<h2>Camadas sociais (interesses)</h2>
+					<img src="img/social-layers-2.png" height="250px" />
+				</section>
+
+				<section>
+					<h2>Camadas sociais (definição)</h2>
 					<p>
-						Distância social ($SD_{M, w}(A, B)$):
+						A <b>distância social</b> de um grupo $A$ para um grupo $B$ é:
 						\[
 						SD_{M, w}(A, B) = \lvert \mathcal{I}_{M, w}(A) \rvert - \lvert \mathcal{I}_{M, w}(A) \cap \mathcal{I}_{M, w}(B)\rvert
 						\]
 					</p>
 					<p style="margin-top: 60px;">
-						Camada social ($\odot_{G'}^{A,n} \varphi$):
+						Evaluação do <b>operador de camada social</b> $\odot_{G'}^{A,n} \varphi$:
 						\[
 						E_{M_G, s}(\odot_{G'}^{A,n} \varphi) = E_{M_{G'}, s}(\varphi)
 						\]
-						onde $G' = \{g \in \mathcal{G}_A \mid SD_{M, w}{(A, g)} \leq n\}$ e $\mathcal{G}_A$ são o conjunto de todos os grupos que $A$ pode atingir via rede social. $n$ pode ser o número de Dunbar $\lambda$.
+						onde $G' = \{g \in \mathcal{G}_A \mid SD_{M, w}{(A, g)} \leq n\}$ e $\mathcal{G}_A$ são o conjunto de todos os grupos que $A$ pode atingir via rede social.
 					</p>
 				</section>
 
 				<section>
 					<h2>Camada superior</h2>
+					<p>
+						É a camada mais externa dentre as camadas sociais de um grupo.
+					</p>
 					<p>
 						\[
 						M, w \uparrow A = max_{X \in \mathcal{G}_A} \{SD_{M, w}(A, X)\}
@@ -308,6 +321,13 @@
 				</section>
 
 				<section>
+					<h2>Centralidade (visualmente)</h2>
+					<p>Nesta imagem vemos as distâncias sociais entre grupos (e não os relacionamentos entre estados do modelo).</p>
+					<img src="img/centrality.png" height="200px" />
+					<p>O grupo com maior centralidade é o que possui menor distância média entre os outros grupos.</p>
+				</section>
+
+				<section>
 					<h2>Centralidade de proximidade normalizada</h2>
 					<p>A centralidade de proximidade normalizada de um grupo $G$ em um modelo $M$ e estado $w$ é dada por:
 						\[
@@ -365,7 +385,7 @@
 						Programação como evaluação de funções, evitando efeitos colaterais e dados mutáveis.
 						<ul>
 							<li>map: aplica uma função a cada elemento de uma estrutura, resultando numa nova coleção com os resultados;</li>
-							<li>filter: aplica uma função aos elementos de uma estrutura, retorando apenas os elementos cuja função resultou em <i>true</i>;</li>
+							<li>filter: aplica uma função aos elementos de uma estrutura, retornando apenas os elementos cuja função resultou em <i>true</i>;</li>
 							<li>reduce: aplica uma função de combinação a uma estrutura recursiva, resultando em um único elemento.</li>
 						</ul>
 					</p>
@@ -396,7 +416,7 @@
 	<script type="text/javascript">
 		var elements = document.querySelectorAll('section');
 		Array.prototype.forEach.call(elements, function (el, i) {
-			el.setAttribute('data-background', Please.make_color({ saturation: .1, value: 1 }));
+			el.setAttribute('data-background', Please.make_color({ saturation: .05, value: 1 }));
 		});
 	</script>
 

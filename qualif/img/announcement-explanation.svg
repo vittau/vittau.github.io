@@ -14,11 +14,11 @@
    viewBox="0 0 744.09448819 1052.3622047"
    id="svg2"
    version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="drawing.svg"
-   inkscape:export-filename="C:\Users\Vitor\Desktop\announcement.png"
-   inkscape:export-xdpi="21.724215"
-   inkscape:export-ydpi="21.724215">
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="announcement-explanation.svg"
+   inkscape:export-filename="D:\Progrs\GitHub\vittau.github.io\qualif\img\announcement-explanation.png"
+   inkscape:export-xdpi="68.006241"
+   inkscape:export-ydpi="68.006241">
   <defs
      id="defs4">
     <marker
@@ -58,16 +58,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.24748737"
-     inkscape:cx="-1408.5848"
-     inkscape:cy="639.69849"
+     inkscape:zoom="0.12374369"
+     inkscape:cx="-2643.9329"
+     inkscape:cy="-112.36061"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="2498"
      inkscape:window-height="1057"
      inkscape:window-x="54"
-     inkscape:window-y="1072"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
@@ -107,11 +107,10 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:175.29269409px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="-1707.0812"
        y="833.65729"
-       id="text3343"
-       sodipodi:linespacing="125%"><tspan
+       id="text3343"><tspan
          sodipodi:role="line"
          id="tspan3345"
          x="-1707.0812"
@@ -129,11 +128,10 @@
        id="circle4138"
        style="opacity:1;fill:#66ff00;fill-opacity:0.27450982;stroke:#000000;stroke-width:18.75;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:18.75, 37.50000000000000000;stroke-dashoffset:0;stroke-opacity:1" />
     <text
-       sodipodi:linespacing="125%"
        id="text3349"
        y="-342.57193"
        x="1089.6589"
-       style="font-style:normal;font-weight:normal;font-size:175.29269409px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:175.29269409px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:center;writing-mode:lr-tb;text-anchor:middle"
          y="-342.57193"
@@ -142,7 +140,7 @@
          sodipodi:role="line">População P¹</tspan><tspan
          id="tspan3353"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:175.29269409px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:center;writing-mode:lr-tb;text-anchor:middle"
-         y="-123.45607"
+         y="-123.45606"
          x="1089.6589"
          sodipodi:role="line">de tamanho 3</tspan></text>
     <circle
@@ -153,11 +151,10 @@
        r="342.83075" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:175.29269409px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="1087.2048"
        y="1419.3508"
-       id="text3355"
-       sodipodi:linespacing="125%"><tspan
+       id="text3355"><tspan
          sodipodi:role="line"
          id="tspan3357"
          x="1087.2048"
@@ -174,17 +171,16 @@
        id="path3361"
        inkscape:connector-curvature="0" />
     <text
-       sodipodi:linespacing="125%"
        id="text4187"
        y="-468.09314"
        x="-415.96387"
-       style="font-style:normal;font-weight:normal;font-size:175.29269409px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"
-       transform="matrix(0.8660254,-0.5,0.5,0.8660254,0,0)"><tspan
+       transform="rotate(-30)"><tspan
          id="tspan4191"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:175.29269409px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:center;writing-mode:lr-tb;text-anchor:middle"
          y="-468.09314"
-         x="-415.96387"
+         x="-415.9639"
          sodipodi:role="line">Anúncio para</tspan><tspan
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:175.29269409px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:center;writing-mode:lr-tb;text-anchor:middle"
          y="-248.97726"
@@ -199,11 +195,10 @@
        x="493.0596"
        y="-910.62408" />
     <text
-       sodipodi:linespacing="125%"
        id="text4221"
        y="1896.5798"
        x="1090.3601"
-       style="font-style:normal;font-weight:normal;font-size:175.29269409px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          id="tspan4225"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:175.29269409px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Normal';text-align:center;writing-mode:lr-tb;text-anchor:middle"

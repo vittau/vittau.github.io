@@ -321,17 +321,22 @@
 				</section>
 
 				<section>
-					<h2>Centralidade (visualmente)</h2>
-					<p>Nesta imagem vemos as distâncias sociais entre grupos (e não os relacionamentos entre estados do modelo).</p>
-					<img src="img/centrality.png" height="200px" />
-					<p>O grupo com maior centralidade é o que possui menor distância média entre os outros grupos.</p>
+					<h2>Centralidade de proximidade normalizada</h2>
+					<p>
+						A <b>centralidade de proximidade normalizada</b> de um grupo $G$, é definida através da soma de distâncias de $G$ até todos os outros grupos, variando de $0$ a $1$:
+						\[
+						C_{M, w}(G) = \frac{\overline{\mathcal{G}_G} - 1}{\overline{\mathcal{G}_G} - 1 + \sum_{X \in \mathcal{G}_G} SD_{M, w}(G, X)}
+						\]
+					</p>
 				</section>
 
 				<section>
-					<h2>Centralidade de proximidade normalizada</h2>
-					<p>A centralidade de proximidade normalizada de um grupo $G$ em um modelo $M$ e estado $w$ é dada por:
+					<h2>Centralidade (visualmente)</h2>
+					<p>
+						Nesta imagem vemos as distâncias sociais entre grupos (e não os relacionamentos entre estados do modelo).
+						<img src="img/centrality.png" height="250px" />
 						\[
-						C_{M, w}(G) = \frac{\overline{\mathcal{G}_G} - 1}{\overline{\mathcal{G}_G} - 1 + \sum_{X \in \mathcal{G}_G} SD_{M, w}(G, X)}
+						C_{M, w}(A) = \frac{5}{5+1+1+2+1+3} = \frac{5}{13} \approx 0.385
 						\]
 					</p>
 				</section>

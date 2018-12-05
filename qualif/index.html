@@ -188,9 +188,9 @@
 						Inspirando-se nas ideias anteriores, a métrica de distância usada na definição das redes socais para PPAL são os interesses dos grupos.
 					</p>
 					<p>
-						Para isso, definimos a <b>matriz de interesses</b>:
+						Definimos os <b>interesses</b> a partir da <b>matriz de interesses</b>:
 						\[
-						\mathcal{I}_{M, w}(G) = \{p_j \mid g_i = G \ \text{and} \ \mathcal{I}_{M, w}^{i, j} = True\}
+						I_{M, w}(G) = \{p \mid \mathcal{I}_{M, w}[G, p] = True\}
 						\]
 						Exemplo:
 						<table class="interests">
@@ -252,9 +252,10 @@
 					<p>
 						A <b>distância social</b> de um grupo $A$ para um grupo $B$ é:
 						\[
-						SD_{M, w}(A, B) = \lvert \mathcal{I}_{M, w}(A) \rvert - \lvert \mathcal{I}_{M, w}(A) \cap \mathcal{I}_{M, w}(B)\rvert
+						SD_{M, w}(A, B) = \lvert I(A) \cup I(B) \rvert - \lvert I(A) \cap I(B) \rvert
 						\]
 					</p>
+					<!-- M,w omitidos por falta de espaço -->
 					<p style="margin-top: 60px;">
 						Evaluação do <b>operador de camada social</b> $\odot_{G'}^{A,n} \varphi$:
 						\[
@@ -390,7 +391,7 @@
 					<h2>Um padrão para especificação</h2>
 					<p>
 						<ul>
-							<li>Padrão JSON para especificação de modelos;</li>
+							<li>Uma sintaxe para especificação de modelos;</li>
 							<li>Modelos iniciais a partir de parâmetros:
 								<ul>
 									<li>Número de proposições distintas;</li>

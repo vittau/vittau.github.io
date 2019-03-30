@@ -1,0 +1,46 @@
+@import url(beige.css);
+
+.reveal {
+	font-size: 36px;
+}
+
+.reveal h1 {
+	font-size: 3em;
+	text-shadow: unset;
+}
+
+.reveal table thead tr {
+	border-bottom: 1px solid;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.reveal table tbody tr:nth-child(odd) {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.reveal table tbody tr:nth-child(even) {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.reveal table th,
+.reveal table td {
+	text-align: center;
+	border: none
+}
+
+.reveal section img {
+	margin: 15px 0px;
+	background: unset;
+	border: unset;
+	box-shadow: unset;
+}
+
+.reveal table.interests {
+	font-size: 0.7em;
+	font-style: italic;
+}
+
+.reveal table.interests th,
+.reveal table.interests td {
+	padding: 0.1em 0.1em 0.1em 0.1em;
+}

@@ -1,5 +1,5 @@
-http://www.vitorpmach.com
-http://www.vitorpmach.com/blog
-http://www.vitorpmach.com/darkenizer
-http://www.vitorpmach.com/Edools-RPS-XML
-http://www.vitorpmach.com/geradoresoterico
+http://www.vitormach.dev
+http://www.vitormach.dev/blog
+http://www.vitormach.dev/darkenizer
+http://www.vitormach.dev/Edools-RPS-XML
+http://www.vitormach.dev/geradoresoterico

@@ -698,10 +698,6 @@ ul.social-buttons li a {
 	transition: all .3s;
 }
 
-ul.social-buttons li a svg {
-  margin: 0 1px 1px 0;
-}
-
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {

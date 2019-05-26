@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Summary of "Dynamic Epistemic Logics of Diffusion and Prediction in Social Networks"</title>
+
+  <meta name="description" content="Summary of " Dynamic Epistemic Logics of Diffusion and Prediction in Social Networks"">
+  <meta name="author" content="Vitor Machado">
+  <meta name="theme-color" content="#f7f2d3">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/my-beige.css" id="theme">
+
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+
+  <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+      <section>
+        <h1>Dynamic Epistemic Logics<br />of Diffusion and Prediction<br />in Social Networks</h1>
+        <h2>Baltag A., Christoff Z., Rendsvig R., Smets S.</h2>
+        <h3>Studia Logica (2019) 107: 489–531</h3>
+        <h3>Summary by Vitor Machado</h3>
+      </section>
+
+      <section>
+
+        <section>
+          <h2>Condensed Abstract</h2>
+          <p>
+            <ul>
+              <li><strong>Threshold models:</strong></li>
+              <ul>
+                <li>used to study the diffusion of opinions, new technologies, infections, or behaviors in social networks;</li>
+                <li>consist of a network graph of agents connected by a social relationship and a threshold value which regulates the diffusion process;</li>
+                <li>agents adopt a new behavior/product/opinion when the proportion of their neighbors who have already adopted it meets the threshold;</li>
+                <li>develop dynamically towards a guaranteed fixed point.</li>
+              </ul>
+              <li><strong>Epistemic dimension:</strong></li>
+              <ul>
+                <li>investigate how information about more distant neighbors’ behavior allows agents to anticipate changes in behavior of their closer neighbors.</li>
+              </ul>
+            </ul>
+          </p>
+        </section>
+
+      </section>
+
+      <section>
+        <h2>Goals</h2>
+        <p>This paper has two goals:
+          <ul>
+            <li><strong>First goal</strong>: propose logics for reasoning about threshold models and their dynamics;</li>
+            <li><strong>Second goal</strong>: investigate how the agents’ knowledge affects such dynamics.</li>
+          </ul>
+        </p>
+      </section>
+
+      <section>
+        <h2>Threshold-Limited Influence</h2>
+        <p><strong>Threshold-limited influence</strong> relies on an imitation or conformity pressure effect: agents adopt a behavior/product/opinion/fashion whenever a critical fraction of their neighbors in the network have adopted it already.</p>
+        <p>So-called <strong>threshold models</strong>, having gained early, wide-spread attention, are used precisely to represent the dynamics of diffusion under threshold-limited influence</p>
+      </section>
+
+      <section>
+        <h2>Logic Overview</h2>
+        <p>The logical setting introduced is "minimal": <strong>propositional logic</strong> is used to specify both the network structure and the agents behavior, and a <strong>single dynamic modality</strong> is used to represent the threshold-limited influence.</p>
+        <p>Moreover, while others focus on the limit thresholds of 100% (all neighbors) and non-0% (at least one neighbor), here they allow for <strong>any (uniform) adoption threshold</strong>, as is standard within the literature on threshold models.</p>
+        <p>The paper also shows how the logic captures the relationship between <strong>clusters</strong> and diffusion of a behavior to the whole network.</p>
+      </section>
+
+      <section>
+        <h2>Network</h2>
+        <p><strong>Definition:</strong> a <strong>network</strong> is a pair $(\mathcal{A}, N)$ where $\mathcal{A}$ is a non-empty finite set of agents, and the function $N : \mathcal{A} \rightarrow \mathcal{P}(\mathcal{A})$ assigns a set $N(a)$ to each $a \in \mathcal{A}$.</p>
+        <p>It is <strong>irreflexive</strong> (an agent is not a friend of itself), <strong>symmetric</strong> (friends are friends of each other) and <strong>serial</strong> (no agent in the network has no friends).</p>
+      </section>
+
+      <section>
+        <h2>Threshold Model</h2>
+        <p><strong>Definition:</strong> a <strong>threshold model</strong> is a tuple $\mathcal{M} = (\mathcal{A}, N, B, \theta)$ where $(\mathcal{A}, N)$ is a network, $B \in \mathcal{A}$ is a <strong>behavior</strong> and $\theta \in [0, 1]$ is a uniform <strong>adoption threshold</strong>.</p>
+        <p>It is assumed throughout the paper that both the network structure and the adoption threshold <strong>stay constant</strong> under updates. Therefore, the spread of the behavior (i.e., the extension of B) at ensuing time steps may be calculated using the fixed threshold and network structure.</p>
+      </section>
+
+      <section>
+        <h2>Threshold Model Update</h2>
+        <p>An updated threshold model $\mathcal{M}' = (\mathcal{A}, N, B', \theta)$, where $B'$ is given by:
+          \[
+          B' = B \cup \left\{ a \in \mathcal{A} : \frac{\lvert N(a) \cap B \rvert}{\lvert N(a) \rvert} \geq \theta \right\}
+          \]
+        </p>
+        <p>A <strong>diffusion sequence</strong> $\mathcal{S}_\mathcal{M}$ is the sequence of threshold models $\mathcal{M}_0, \mathcal{M}_1, \mathcal{M}_2, \dots$ such that, for any $n \in \mathbb{N}$, $\mathcal{M}_n = (\mathcal{A}, N, B_n, \theta)$ where $B_n$ is given by:
+          \[
+          B_0 = B \ \text{and} \ B_{n+1} = B_n'
+          \]
+          The paper shows that any such diffusion process reaches a <strong>fixed point</strong>.
+        </p>
+      </section>
+
+      <section>
+        <h2>Unadoption</h2>
+        <p>An alternate diffusion model is given, which also allows Unadoption by capturing a conservative tie-breaking rule:
+          \[
+          B' = \left\{ a : \frac{\lvert N(a) \cap B \rvert}{\lvert N(a) \rvert} > \theta \right\} \cup \left\{ a : \frac{\lvert N(a) \cap B \rvert}{\lvert N(a) \rvert} = \theta \ \text{and} \ a \in B \right\}
+          \]
+        </p>
+        <p>Since this does not cause $B$ to inflate, this alternative rule allows the possibility of <strong>loops</strong> in behavior, i.e. where $B = B'' \neq B'$. Notice that a diffusion sequence with this model <strong>does not necessarily reach a fixed point</strong>.</p>
+      </section>
+
+      <section>
+        <h2>Logic</h2>
+        <p>The language $\mathcal{L}_{[]}$ is an extension of propositional logic, given by:
+          \[
+          \varphi := N_{ab} \mid \beta_a \mid \neg \varphi \mid \varphi \land \varphi \mid [adopt]\varphi
+          \]
+          where atoms are given by $\Phi = \{ N_{ab} : a, b \in \mathcal{A} \} \cup \{ \mathcal{B}_a : a \in \mathcal{A} \}$.
+        </p>
+        <p>The formulas of $\mathcal{L}$ are those of $\mathcal{L}_{[]}$ that do not involve the $[adopt]$-modality.</p>
+      </section>
+
+      <section>
+        <h2>Truth Clauses</h2>
+        <p>Conventional formulas are evaluated in the standard way. Others, as follows:
+          <ul>
+            <li>$\mathcal{M} \models \beta_a \leftrightarrow a \in B$;</li>
+            <li>$\mathcal{M} \models N_{ab} \leftrightarrow b \in N(a)$;</li>
+            <li>$\mathcal{M} \models [adopt] \varphi \leftrightarrow \mathcal{M}' \models \varphi$, where $\mathcal{M}'$ is the updated threshold model.</li>
+          </ul>
+        </p>
+      </section>
+
+      <section>
+        <h2>Abbreviations</h2>
+        <p>Consider the recursive abbreviation $[adopt]^n \varphi$:
+          \[
+          [adopt]^0 \varphi := \varphi\\
+          [adopt]^{n+1} \varphi := [adopt][adopt]^n \varphi
+          \]
+        </p>
+        <p>And also the abbreviation $\beta_N(a) \geq \theta$, expressing that the proportion of agent $a$'s neighbours who adopted the behavior is equal to or above the threshold $\theta$:
+          \[
+          \beta_N(a) \geq \theta := \bigvee_{\mathcal{G} \subseteq \mathcal{N} \subseteq \mathcal{A} : \frac{\lvert \mathcal{G} \rvert}{\lvert \mathcal{N} \rvert} \geq \theta} \left(\bigwedge_{b \in \mathcal{N}}N_{ab} \land \bigwedge_{b \not\in \mathcal{N}}\neg N_{ab} \land \bigwedge_{b \in \mathcal{G}} \beta_b \right)
+          \]
+        </p>
+      </section>
+
+      <section>
+        <h2>Cascades</h2>
+        <p>An agent adopting a new behavior may influence some of her neighbors to adopt it at the next moment, which in turn may cause further agents to adopt it, and so on. Such a chain reaction is termed a <strong>cascade</strong> in the literature, and a cascade is said to be <strong>complete</strong> when it <strong>results into a state where all agents have adopted the new behavior</strong>.</p>
+        <p>The sentence abbreviated by $cascade$ expresses that all agents will have adopted a behavior eventually:
+          \[
+          cascade := [adopt]^{\lvert \mathcal{A} \rvert - 1} \bigwedge_{a \in \mathcal{A}} \beta_a
+          \]
+        </p>
+      </section>
+
+      <section>
+        <h2>Clusters</h2>
+        <p>Strongly connected groups of agents are more resilient to external influence. Briefly put, dense components of a network may prevent complete cascades and the denser a group, the better it resists change induced from the outside</p>
+        <p>A <strong>cluster</strong> of density $d$ is any group $C \subseteq \mathcal{A}$ such that for all $a \in C$, $ \frac{\lvert N(a) \cap C \rvert}{\lvert N(a) \rvert} \geq d$.</p>
+      </section>
+
+      <section>
+        <h2>Clusters (example)</h2>
+        <img src="img/cluster.png" height="150px" />
+        <p><small>A social network with a cluster of density $\frac{2}{3}$</small></p>
+        <p>Notice that any network will contain at least one cluster of density $1$, namely the group $\mathcal{A}$, and that each singleton $\{a\} \subseteq \mathcal{A}$ is a cluster of density $0$ (by irreflexivity).</p>
+      </section>
+
+      <section>
+        <h2>The Cluster Theorem</h2>
+        <p>
+          Given a threshold model $\mathcal{M}$ with threshold $\theta \neq 0$ and a set $B \subseteq \mathcal{A}$ of agents who have adopted, all agents will eventually adopt if and only if there does not exist a cluster of density greater than $1 - \theta$ in $\mathcal{A} \setminus B$.
+        </p>
+        <p>The theorem can be encoded in $\mathcal{L}_{[]}$ in the following way:
+          \[
+          \mathcal{M} \models cascade \leftrightarrow \neg \exists C_{\geq 1 - \theta} \neg \beta
+          \]
+          where $\exists C_{\geq 1 - \theta} \neg \beta$ is an abbreviation, which characterizes the existence of a cluster of density $d$ among agents who have not adopted:
+          \[
+          \bigvee_{C \subseteq \mathcal{A}} \bigwedge_{a \in C} \bigvee_{\mathcal{G} \subseteq \mathcal{N} \subseteq \mathcal{A} : \frac{\lvert \mathcal{G} \cap C\rvert}{\lvert \mathcal{N} \rvert} \geq d} \left(\bigwedge_{b \in \mathcal{N}}N_{ab} \land \bigwedge_{b \not\in \mathcal{N}}\neg N_{ab} \land \bigwedge_{b \in \mathcal{G}} \beta_b \right)
+          \]
+        </p>
+      </section>
+
+      <section>
+        <h1>Work in progress...</h1>
+      </section>
+
+    </div>
+
+  </div>
+
+  <!-- Randomize slide background colors -->
+  <script src="js/Please-compressed.js"></script>
+  <script type="text/javascript">
+    var elements = document.querySelectorAll('section');
+    Array.prototype.forEach.call(elements, function (el, i) {
+      el.setAttribute('data-background', Please.make_color({ saturation: .05, value: 1 }));
+    });
+  </script>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      slideNumber: true,
+      history: true,
+      center: true,
+      hideAddressBar: true,
+
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+      transitionSpeed: 'slow',
+
+      math: {
+        mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js',
+        config: 'TeX-AMS_HTML-full'
+      },
+
+      // Optional reveal.js plugins
+      dependencies: [
+        { src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+        { src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+        { src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/math/math.js', async: true }
+      ]
+    });
+
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-71214783-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+
+</html>

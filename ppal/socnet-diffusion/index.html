@@ -63,7 +63,7 @@
               </ul>
               <li><strong>Epistemic dimension:</strong></li>
               <ul>
-                <li>investigate how information about more distant neighbors’ behavior allows agents to anticipate changes in behavior of their closer neighbors.</li>
+                <li>investigate how information about more distant neighbors' behavior allows agents to anticipate changes in behavior of their closer neighbors.</li>
               </ul>
             </ul>
           </p>
@@ -76,7 +76,7 @@
         <p>This paper has two goals:
           <ul>
             <li><strong>First goal</strong>: propose logics for reasoning about threshold models and their dynamics;</li>
-            <li><strong>Second goal</strong>: investigate how the agents’ knowledge affects such dynamics.</li>
+            <li><strong>Second goal</strong>: investigate how the agents' knowledge affects such dynamics.</li>
           </ul>
         </p>
       </section>
@@ -208,7 +208,76 @@
       </section>
 
       <section>
-        <h1>Work in progress...</h1>
+        <h2>Generalizations</h2>
+        <p>It's possible to define the threshold $\theta$ not as a constant but as a function assigning a <strong>particular threshold to each agent</strong>, i.e., set $\theta : \mathcal{A} \rightarrow [0,1]$, and replace $\theta$ by $\theta(a)$ in the definition of the update.</p>
+        <p>It's also possible to generalize the logic to capture <strong>several behaviors</strong>. Let $\mathcal{B}$ be a finite set of behaviors $\mathcal{B} = \{B_1, B_2, \dots, B_n\}$ and define $\theta : \mathcal{A} \times \mathcal{B} \rightarrow [0,1]$.</p>
+      </section>
+
+      <section>
+        <h2>Epistemic Threshold Models</h2>
+        <img src="img/epistemic.png" height="150px" />
+        <p><small>A situation of uncertainty. Agent $a$ cannot tell whether world $w$ or world $v$ is the actual one.</small></p>
+        <p>The paper extends the standard threshold models with an <strong>epistemic dimension</strong> and define a refined adoption policy where agents' behavior change depends on their knowledge of others' behavior.</p>
+      </section>
+
+      <section>
+        <h2>Sight</h2>
+        <p>We will say that an agent has <strong>sight</strong> $n$ when it can "see" at least $n$ agents away, i.e., when the agent knows at least both the network structure and the behavior of all agents within distance $n$.</p>
+        <p>Let be given an ETM $\mathcal{M} = (\mathcal{W}, \mathcal{A}, N, B, \theta, \{\sim_a\}_{a \in \mathcal{A}})$ and let $n \in \mathbb{N}$. Define $N^n : \mathcal{W} \rightarrow \mathcal{A} \rightarrow \mathcal{P}(\mathcal{A})$ (n-reachable) as follows, for any $w \in \mathcal{W}$ and any $a, b, c \in \mathcal{A}$:</p>
+        <p>
+          <ul>
+            <li>$N^0(w)(a) = \{a\}$
+            </li>
+            <li>$N^{n+1}(w)(a) = N^n(w)(a) \cup \\ \{b \in \mathcal{A} : \exists c \in N^n(w)(a) \ \text{and} \ b \in N(w)(c)\}$
+            </li>
+          </ul>
+        </p>
+      </section>
+
+      <section>
+        <h2>Informed Update</h2>
+        <p>The (n sight) <strong>informed adoption update</strong> of $\mathcal{M}$ produces results in an ETM $\mathcal{M}^i = (\mathcal{W}, \mathcal{A}, N, B^i, \theta, \{\sim_a^i\}_{a \in \mathcal{A}})$:</p>
+        <p>
+          <ul>
+            <li>$B^i(w) = B(w) \cup \left\{ a \in \mathcal{A} : \forall v \sim_a w \frac{\lvert N(v)(a) \cap B(v) \rvert}{\lvert N(v)(a) \rvert} \geq \theta \right\}$
+            </li>
+            <li>$w \sim_a^i w' \leftrightarrow w \sim_a w' \ \text{and} \\ \forall b \in N^n(w)(a) : b \in B^i(w) \Leftrightarrow b \in B^i(w')$
+            </li>
+          </ul>
+        </p>
+      </section>
+
+      <section>
+        <h2>Distant Knowledge is Redundant</h2>
+        <p>The paper concludes that the standard threshold models make the <strong>implicit epistemic assumption</strong> that agents know their neighborhood and its behavior.</p>
+        <p>Another conclusion is that <strong>knowledge about more distant agents is redundant</strong> as it will not affect behavior.</p>
+      </section>
+
+      <section>
+        <h2>Distant Knowledge is Redundant (cont.)</h2>
+        <p>Let $\mathcal{M}$ be an ETM and $w \in \mathcal{W}$. Let $\mathcal{M}^i$ be the informed update, and $\mathcal{M}(w)$ the state-generated model of $\mathcal{M}$ (equivalent standard threshold model for the state $w$). Let $\mathcal{M}^i(w)$ be the state-generated model of $\mathcal{M}^i$ and let $\mathcal{M}(w)'$ be the standard threshold update of $\mathcal{M}(w)$. Then:</p>
+        <p>if $\mathcal{M}$ has sight $n \geq 1$ then $\mathcal{M}^i(w) = \mathcal{M}(w)'$</p>
+      </section>
+
+      <section>
+        <h2>Sight 0</h2>
+        <div style="display: flex; align-items:center;">
+          <img src="img/sight-0.png" height="350px" />
+          <p style="flex:1; margin-right: 10px;">A diffusion process "slowed down" by the uncertainty of agent $b$, with threshold $\theta = \frac{1}{2}$. Consider the situation in world $w$: agent $a$ has adopted, but agent $b$ does not know it. Therefore, agent $b$ will not adopt immediately.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Cluster Theorem Revisited</h2>
+        <div style="display: flex; align-items:center;">
+          <img src="img/blocked.png" height="116.6px" style="margin-right: 10px;" />
+          <p style="flex:1;">The lack of knowledge may for instance block a cascade, despite the absence of a cluster-obstacle. Note that under the non-epistemic threshold update, or if agent $b$ knew that $a$ has adopted, the situation depicted in state $w$ would evolve into a complete cascade.</p>
+        </div>
+      </section>
+
+      <section>
+        <h1>Chapters 4, 5 and 6 in the future...</h1>
+        <img src="img/loading.gif" height="150px" />
       </section>
 
     </div>
@@ -216,7 +285,7 @@
   </div>
 
   <!-- Randomize slide background colors -->
-  <script src="js/Please-compressed.js"></script>
+  <script src=" js/Please-compressed.js"> </script>
   <script type="text/javascript">
     var elements = document.querySelectorAll('section');
     Array.prototype.forEach.call(elements, function (el, i) {

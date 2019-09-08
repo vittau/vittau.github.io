@@ -8,9 +8,8 @@ img: lemobs-thumbnail.png
 thumbnail: lemobs-thumbnail.png
 alt: Lemobs
 project-start-date: October 2017
-project-end-date: Ongoing
+project-end-date: December 2017
 client: Lemobs
 category: Developer
 description: Startup company focused on government-related projects, and mid to large sized IT business solutions.
-
 ---

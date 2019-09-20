@@ -14,7 +14,7 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg104"
-   inkscape:version="0.92.1 r15371"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="logo.svg">
   <defs
      id="defs98" />
@@ -26,14 +26,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="-1549.8074"
+     inkscape:cx="-2076.9503"
      inkscape:cy="796.1247"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="2498"
+     inkscape:window-width="2560"
      inkscape:window-height="1057"
-     inkscape:window-x="54"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
   <metadata
@@ -53,7 +53,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       transform="matrix(0.5978685,0,0,0.5978685,-202.71974,530.01413)"
+       transform="matrix(0.5978685,0,0,0.5978685,-198.18403,464.09506)"
        id="g170"
        inkscape:export-xdpi="123.81"
        inkscape:export-ydpi="123.81">
@@ -228,5 +228,100 @@
          x="82.453316"
          id="tspan4545"
          sodipodi:role="line">machado</tspan></text>
+    <text
+       id="text855"
+       y="241.71419"
+       x="57.910698"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.9218235px;line-height:1.25;font-family:Iosevka;-inkscape-font-specification:'Iosevka, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#851e3e;fill-opacity:1;stroke:none;stroke-width:0.54804552"
+       xml:space="preserve"
+       inkscape:export-xdpi="28.779276"
+       inkscape:export-ydpi="28.779276"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.9218235px;font-family:Iosevka;-inkscape-font-specification:'Iosevka, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#851e3e;fill-opacity:1;stroke-width:0.54804552"
+         y="241.71419"
+         x="57.910698"
+         id="tspan853"
+         sodipodi:role="line"><tspan
+   id="tspan851"
+   style="font-weight:bold;fill:#851e3e;fill-opacity:1;stroke-width:0.54804552">vitor</tspan> machado</tspan></text>
+    <g
+       transform="matrix(0.26041658,0,0,0.26041658,25.519423,88.34624)"
+       id="g918"
+       inkscape:export-xdpi="28.779276"
+       inkscape:export-ydpi="28.779276">
+      <rect
+         y="544.30261"
+         x="-50.363056"
+         height="45.303913"
+         width="29.689459"
+         id="rect868"
+         style="opacity:1;fill:#061e3e;fill-opacity:1;stroke:none;stroke-width:0.51315111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         style="opacity:1;fill:#251e3e;fill-opacity:1;stroke:none;stroke-width:0.51315111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect870"
+         width="29.689459"
+         height="45.303913"
+         x="-20.827539"
+         y="544.30261" />
+      <rect
+         y="544.30261"
+         x="8.7079773"
+         height="45.303913"
+         width="29.689459"
+         id="rect872"
+         style="opacity:1;fill:#451e3e;fill-opacity:1;stroke:none;stroke-width:0.51315111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         style="opacity:1;fill:#651e3e;fill-opacity:1;stroke:none;stroke-width:0.51315111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect874"
+         width="29.689459"
+         height="45.303913"
+         x="38.243492"
+         y="544.30261" />
+      <path
+         inkscape:connector-curvature="0"
+         id="rect876"
+         transform="scale(0.26458333)"
+         d="m 256.17188,2057.207 v 171.2266 H 367.80273 V 2057.207 Z"
+         style="opacity:1;fill:#851e3e;fill-opacity:1;stroke:none;stroke-width:1.93946874;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <g
+       inkscape:export-ydpi="520.19"
+       inkscape:export-xdpi="520.19"
+       id="g930"
+       transform="matrix(0.08817068,0,0,0.28741069,29.246926,112.78716)">
+      <rect
+         style="opacity:1;fill:#061e3e;fill-opacity:1;stroke:none;stroke-width:0.51315111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect920"
+         width="29.689459"
+         height="45.303913"
+         x="-50.363056"
+         y="544.30261" />
+      <rect
+         y="544.30261"
+         x="-20.827539"
+         height="45.303913"
+         width="29.689459"
+         id="rect922"
+         style="opacity:1;fill:#251e3e;fill-opacity:1;stroke:none;stroke-width:0.51315111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <rect
+         style="opacity:1;fill:#451e3e;fill-opacity:1;stroke:none;stroke-width:0.51315111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect924"
+         width="29.689459"
+         height="45.303913"
+         x="8.7079773"
+         y="544.30261" />
+      <rect
+         y="544.30261"
+         x="38.243492"
+         height="45.303913"
+         width="29.689459"
+         id="rect926"
+         style="opacity:1;fill:#651e3e;fill-opacity:1;stroke:none;stroke-width:0.51315111;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         style="opacity:1;fill:#851e3e;fill-opacity:1;stroke:none;stroke-width:1.93946874;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 256.17188,2057.207 v 171.2266 H 367.80273 V 2057.207 Z"
+         transform="scale(0.26458333)"
+         id="path928"
+         inkscape:connector-curvature="0" />
+    </g>
   </g>
 </svg>

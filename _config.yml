@@ -1,10 +1,13 @@
-url: http://www.vitormach.dev
-baseurl:
+url: "https://www.vitormach.dev"
+baseurl: "/"
 
 # Site settings
 title: Vitor Machado
+author: Vitor Machado
 email: vmachado@cos.ufrj.br
 description: "Vitor Machado's personal homepage."
+keywords: "tech,developer,software,work,academic,personal,blog"
+image: "/favicon.png"
 
 # Color settings (hex-codes without the leading hash-tag)
 color:

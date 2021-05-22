@@ -7,6 +7,7 @@
 body {
 	overflow-x: hidden;
 	font-family: "Lato", sans-serif;
+  font-display: swap;
 	background-color: #{{ site.color.background }};
 	color: #{{ site.color.secondary-dark }};
 }
@@ -55,6 +56,7 @@ h5,
 h6 {
 	text-transform: lowercase;
 	font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-display: swap;
 	font-weight: 700;
 }
 
@@ -70,6 +72,7 @@ h6 {
 	border-color: #{{ site.color.primary }};
 	text-transform: lowercase;
 	font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-display: swap;
 	font-weight: 700;
 	color: #fff;
 	background-color: #{{ site.color.primary }};
@@ -121,6 +124,7 @@ fieldset[disabled] .btn-primary.active {
 	border-radius: 3px;
 	text-transform: lowercase;
 	font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-display: swap;
 	font-size: 18px;
 	font-weight: 700;
 	color: #fff;
@@ -174,6 +178,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .navbar-brand {
 	font-family: "Handlee", cursive;
+  font-display: swap;
 	font-size: 2em;
 	line-height: 1em;
 	color: black;
@@ -212,6 +217,7 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .nav li a {
 	text-transform: lowercase;
 	font-family: "Lato", sans-serif;
+  font-display: swap;
 	font-weight: 400;
 	letter-spacing: 1px;
 	color: black;
@@ -291,6 +297,7 @@ section h3.section-subheading {
 	margin-bottom: 75px;
 	text-transform: none;
 	font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-display: swap;
 	font-size: 16px;
 	font-style: italic;
 	font-weight: 400;
@@ -365,6 +372,7 @@ section h3.section-subheading {
 #portfolio .portfolio-item .portfolio-caption p {
 	margin: 0;
 	font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-display: swap;
 	font-size: 16px;
 	font-style: italic;
 }
@@ -639,6 +647,7 @@ section#contact .form-control:focus {
 section#contact::-webkit-input-placeholder {
 	text-transform: lowercase;
 	font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-display: swap;
 	font-weight: 700;
 	color: #bbb;
 }
@@ -646,6 +655,7 @@ section#contact::-webkit-input-placeholder {
 section#contact:-moz-placeholder {
 	text-transform: lowercase;
 	font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-display: swap;
 	font-weight: 700;
 	color: #bbb;
 }
@@ -653,6 +663,7 @@ section#contact:-moz-placeholder {
 section#contact::-moz-placeholder {
 	text-transform: lowercase;
 	font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-display: swap;
 	font-weight: 700;
 	color: #bbb;
 }
@@ -660,6 +671,7 @@ section#contact::-moz-placeholder {
 section#contact:-ms-input-placeholder {
 	text-transform: lowercase;
 	font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-display: swap;
 	font-weight: 700;
 	color: #bbb;
 }
@@ -676,6 +688,7 @@ footer {
 footer span.themeurl {
 	font-size: 0.7em;
 	font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-display: swap;
 	line-height: 1;
 }
 
@@ -735,6 +748,7 @@ ul.social-buttons li a:active {
 .portfolio-modal .modal-content p.item-intro {
 	margin: 20px 0 30px;
 	font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-display: swap;
 	font-size: 16px;
 	font-style: italic;
 }

@@ -19,8 +19,8 @@
   <meta content="{{ site.image | absolute_url }}" property="og:image" />
 
   <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-  <link href="{{ "/style.css" | prepend: site.baseurl }}" rel="preload" as="style" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="{{ "/style.css" | prepend: site.baseurl }}"></noscript>
+  <!-- <link href="{{ "/style.css" | prepend: site.baseurl }}" rel="preload" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ "/style.css" | prepend: site.baseurl }}"></noscript> -->
 
   <!-- Custom Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="preload" as="style" onload="this.rel='stylesheet'">
@@ -41,4 +41,8 @@
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
+  <style type="text/css">
+    {% include css/bootstrap.min.css %}
+    {% include css/agency.css %}
+  </style>
 </head>

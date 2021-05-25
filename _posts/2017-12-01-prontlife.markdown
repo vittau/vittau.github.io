@@ -8,9 +8,8 @@ img: prontlife-thumbnail.png
 thumbnail: prontlife-thumbnail.png
 alt: ProntLife
 project-start-date: December 2017
-project-end-date: Ongoing
+project-end-date: May 2021
 client: ProntLife
-category: Developer
+category: Tech lead
 description: Medical management software, built over the OpenEHR platform for flexible and interoperable e-health systems.
-
 ---

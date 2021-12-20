@@ -1,0 +1,15 @@
+---
+title: Passei Direto
+subtitle: Passei Direto
+layout: default
+modal-id: 5
+date: 2021-09-16
+img: pd-thumbnail.png
+thumbnail: pd-thumbnail.png
+alt: Passei Direto
+project-start-date: November 2021
+project-end-date: Ongoing
+client: Passei Direto
+category: Senior software engineer
+description: Passei Direto is a platform for students, with over 31 million users and 13 million exams, video classes and Q&As materials.
+---

@@ -2,7 +2,7 @@
 title: CAPGov
 subtitle: Centro de Apoio a Políticas de Governo
 layout: default
-modal-id: 2
+modal-id: 1
 date: 2014-11-01
 img: capgov-thumbnail.png
 thumbnail: capgov-thumbnail.png

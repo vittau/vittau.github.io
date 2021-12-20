@@ -2,7 +2,7 @@
 title: ProntLife
 subtitle: Health Intelligence
 layout: default
-modal-id: 4
+modal-id: 3
 date: 2017-12-01
 img: prontlife-thumbnail.png
 thumbnail: prontlife-thumbnail.png

@@ -2,13 +2,13 @@
 title: Vortigo
 subtitle: Vortigo | Inspiring Digital
 layout: default
-modal-id: 5
+modal-id: 4
 date: 2021-05-24
 img: vortigo-thumbnail.png
 thumbnail: vortigo-thumbnail.png
 alt: Vortigo
 project-start-date: May 2021
-project-end-date: Ongoing
+project-end-date: October 2021
 client: Vortigo
 category: Frontend engineer
 description: Inspiring digital transformation for companies and startups.

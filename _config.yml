@@ -34,9 +34,6 @@ social:
   - title: linkedin
     url: https://www.linkedin.com/in/vitormach
     fa: fab fa-linkedin
-  - title: twitter
-    url: https://twitter.com/VittauMach
-    fa: fab fa-twitter
 
 # Build settings
 markdown: kramdown

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Isa e Vitor ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      height: 100vh;
+      /* Full viewport height */
+    }
+
+    #banner {
+      width: 100%;
+      max-width: 576px;
+      /* Maximum width is 756px */
+      height: auto;
+      /* Maintain aspect ratio */
+      max-height: 432px;
+      /* Maximum height is 432px */
+      object-fit: cover;
+      /* Ensures the image scales properly */
+      display: block;
+      margin: 0 auto;
+      /* Centers the image horizontally */
+    }
+
+    #content {
+      flex: 1;
+      /* Takes up the remaining space */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1em;
+    }
+
+    h1 {
+      font-size: 3em;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin-top: 0.5em;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <img id="banner" src="img/isavitor.jpg" alt="Isa e Vitor">
+  <div id="content">
+    <h1 id="counter">Isa e Vitor</h1>
+    <p id="message"></p>
+    <img src="img/lovecat.gif" alt="Love Cat" style="margin-top: 1em; width: 100px; height: auto;">
+  </div>
+  <script>
+    const startDate = new Date('2025-06-03T00:00:00');
+    const today = new Date();
+    const differenceInTime = today - startDate;
+    const differenceInDays = Math.floor(differenceInTime / (1000 * 60 * 60 * 24)) + 1; // Include start date
+
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const counterText = isMobile
+      ? `Isa e Vitor<br/>${differenceInDays} dias ❤️`
+      : `Isa e Vitor: ${differenceInDays} dias ❤️`;
+
+    document.getElementById('counter').innerHTML = counterText;
+
+    const hours = today.getHours();
+    const dayOfWeek = today.getDay(); // 0 = Sunday, 6 = Saturday
+    let message;
+
+    if (hours >= 4 && hours < 12) {
+      message = "Tenha um ótimo dia minha fofa! 🌅";
+    } else if (hours >= 12 && hours < 18) {
+      if (dayOfWeek === 0 || dayOfWeek === 6) {
+        message = "Tenha uma ótima tarde minha querida! 🌞";
+      } else {
+        message = "Tenha um ótimo dia de trabalho Isa! 🖋️";
+      }
+    } else {
+      message = "Tenha uma ótima noite minha linda! 🌙";
+    }
+
+    document.getElementById('message').textContent = message;
+  </script>
+</body>
+
+</html>

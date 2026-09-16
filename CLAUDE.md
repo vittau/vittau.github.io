@@ -63,7 +63,7 @@ Se for editar o include por script, **não ancore no primeiro `<svg` do arquivo*
 
 **JS.** `js/main.js`, ~250 linhas, sem dependências: tema (com script bloqueante no `<head>` para não piscar), menu mobile, scrollspy, reveal on scroll, a malha de pontos em canvas do hero e a rotação dos balões do retrato. Tudo degrada sem JS e desliga sob `prefers-reduced-motion`.
 
-**Imagens.** `img/photo.webp` no hero (paisagem, recortada em círculo) e `img/photo-about.webp` no About (retrato 3:4). Sem encoder WebP na máquina (`sips`, ImageIO, `cwebp` e ImageMagick não servem): a conversão foi feita com o Chrome headless, desenhando o PNG num `<canvas>` e lendo `toDataURL('image/webp', 0.82)`.
+**Imagens.** `img/photo.webp` no hero (quadrada, recortada em círculo) e `img/photo-about.webp` no About (retrato 3:4). Sem encoder WebP na máquina (`sips`, ImageIO, `cwebp` e ImageMagick não servem): a conversão foi feita com o Chrome headless, desenhando o PNG num `<canvas>` e lendo `toDataURL('image/webp', 0.82)`.
 
 **Fontes.** Poppins auto-hospedada em `fonts/` — 3 pesos × 2 subsets (latin e latin-ext), `woff2`. O `unicode-range` faz o navegador baixar só o subset que a página usa.
 

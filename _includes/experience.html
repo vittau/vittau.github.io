@@ -1,28 +1,48 @@
-<!-- Portfolio Grid Section -->
-<section id="portfolio">
+<!-- Secao Works. Um card por arquivo em _posts/, mais recente primeiro. -->
+<section class="section" id="works">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading">Experience</h2>
-        <h3 class="section-subheading text-muted">My work experience.</h3>
-      </div>
+    <div class="section-head section-head--center reveal">
+      <h2>Works</h2>
+      <p>Where I have been and what I built there.</p>
     </div>
-    <div class="row">
+
+    <ul class="works__grid">
       {% for post in site.posts %}
-      <div class="col-md-3 col-sm-6 portfolio-item">
-        <a href="#portfolioModal{{ post.modal-id }}" class="portfolio-link" data-toggle="modal">
-          <div class="portfolio-hover">
-            <div class="portfolio-hover-content">
-              <i class="fas fa-search-plus fa-3x"></i>
-            </div>
-          </div>
-          <img src="img/portfolio/{{ post.thumbnail }}" class="img-responsive" alt="">
-        </a>
-        <div class="portfolio-caption">
-          <h4>{{ post.title }}</h4>
+      <li class="work surface reveal">
+        {% if post.thumbnail %}
+        <img class="work__thumb" src="{{ "/img/portfolio/" | append: post.thumbnail | relative_url }}"
+             alt="{{ post.alt | default: post.title }}" loading="lazy" width="400" height="225">
+        {% else %}
+        <!-- sem logo disponivel: marca tipografica no lugar da imagem -->
+        <span class="work__thumb work__thumb--text" aria-hidden="true">{{ post.client | default: post.title }}</span>
+        {% endif %}
+
+        <div class="work__body">
+          <h3>{{ post.title }}</h3>
+          <p class="work__meta"><strong>{{ post.category }}</strong> &middot; {{ post.project-start-date }} &ndash; {{ post.project-end-date }}</p>
+          <p class="work__desc">{{ post.description }}</p>
+
+          {% if post.highlights %}
+          <ul class="work__highlights">
+            {% for item in post.highlights %}<li>{{ item }}</li>{% endfor %}
+          </ul>
+          {% endif %}
+
+          {% if post.stack %}
+          <ul class="work__tags">
+            {% for item in post.stack %}<li class="tag">{{ item }}</li>{% endfor %}
+          </ul>
+          {% endif %}
+
+          {% if post.url %}
+          <a class="work__link" href="{{ post.url }}" target="_blank" rel="noopener">
+            Visit
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-out"></use></svg>
+          </a>
+          {% endif %}
         </div>
-      </div>
+      </li>
       {% endfor %}
-    </div>
+    </ul>
   </div>
 </section>

@@ -1,17 +1,38 @@
-<footer>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6">
-				<span class="themeurl">Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and <a href="https://pages.github.com/" target="_blank">GitHub</a>.<br>Theme based on <a href="http://y7kim.github.io/agency-jekyll-theme/" target="_blank">Agency</a>.</span>
-			</div>
-			<div class="col-md-6">
-				<ul class="list-inline social-buttons">
-					{% for network in site.social %}
-					<li><a href="{{ network.url }}" target="_blank"><i class="{{ network.fa }}"></i></a>
-					</li>
-					{% endfor %}
-				</ul>
-			</div>
-		</div>
-	</div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <a class="brand" href="#top">
+        <span class="brand__mark">&lt;/&gt;</span>vitor<span class="brand__dot">.</span>
+      </a>
+
+      <ul class="footer__social">
+        {% for network in site.social %}
+        <li>
+          <a class="icon-btn" href="{{ network.url }}" target="_blank" rel="noopener" title="{{ network.title }}">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#{{ network.icon }}"></use></svg>
+            <span class="sr-only">{{ network.title }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <ul class="footer__nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#tech">Tech</a></li>
+        <li><a href="#works">Works</a></li>
+        <li><a href="#academic">Academic</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="{{ "/blog" | relative_url }}">Blog</a></li>
+      </ul>
+    </div>
+
+    <p class="footer__legal">
+      &copy; {{ site.time | date: "%Y" }} {{ site.author }}.
+      Built with <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a>,
+      hosted on <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>.<br>
+      Layout inspired by
+      <a href="https://www.behance.net/gallery/193147621/Personal-Portfolio-Page-Web-Design" target="_blank" rel="noopener">Giselle Santos&rsquo; portfolio concept</a>.
+      Technology logos from <a href="https://devicon.dev/" target="_blank" rel="noopener">Devicon</a> (MIT).
+    </p>
+  </div>
 </footer>

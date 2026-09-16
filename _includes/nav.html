@@ -1,0 +1,46 @@
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- sentinela de 1px: quando sai da viewport, a navbar ganha sombra -->
+<div class="nav-sentinel" aria-hidden="true"></div>
+
+<div class="nav">
+  <div class="container">
+    <nav class="nav__inner" aria-label="Main">
+      <a class="brand" href="#top">
+        <span class="brand__mark">&lt;/&gt;</span>vitor<span class="brand__dot">.</span>
+      </a>
+
+      <ul class="nav__links" id="nav-links">
+        <li><a class="nav__link" href="#top">Home</a></li>
+        <li><a class="nav__link" href="#about">About</a></li>
+        <li><a class="nav__link" href="#tech">Tech</a></li>
+        <li><a class="nav__link" href="#works">Works</a></li>
+        <li><a class="nav__link" href="#academic">Academic</a></li>
+        <li><a class="nav__link" href="#contact">Contact</a></li>
+        <li><a class="nav__link" href="{{ "/blog" | relative_url }}">Blog</a></li>
+      </ul>
+
+      <div class="nav__aside">
+        <div class="nav__social">
+          {% for network in site.social %}{% if network.nav %}
+          <a class="icon-btn" href="{{ network.url }}" target="_blank" rel="noopener" title="{{ network.title }}">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="#{{ network.icon }}"></use></svg>
+            <span class="sr-only">{{ network.title }}</span>
+          </a>
+          {% endif %}{% endfor %}
+        </div>
+
+        <button class="theme-toggle" id="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Switch to dark theme">
+          <svg class="icon theme-toggle__sun" aria-hidden="true" focusable="false"><use href="#i-sun"></use></svg>
+          <svg class="icon theme-toggle__moon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg>
+        </button>
+
+        <button class="nav__burger" id="nav-burger" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-menu"></use></svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<div class="nav__backdrop" id="nav-backdrop"></div>

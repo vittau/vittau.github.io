@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="no-js">
 
 {% include head.html %}
 
+<body id="top">
 
-<body id="page-top" class="index">
+  {% include icons.html %}
+  {% include tech-sprite.html %}
+  {% include nav.html %}
 
-	{% include header.html %}
-	{% include knowledge.html %}
-	{% include experience.html %}
-	{% include academic.html %}
-	{% include footer.html %}
-	{% include modals.html %}
-	{% include js.html %}
+  <main id="main">
+    {% include hero.html %}
+    {% include about.html %}
+    {% include knowledge.html %}
+    {% include experience.html %}
+    {% include academic.html %}
+    {% include contact.html %}
+  </main>
+
+  {% include footer.html %}
+  {% include js.html %}
 
 </body>
 

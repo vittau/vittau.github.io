@@ -1,43 +1,27 @@
-<!-- Services Section -->
-<section id="services">
+<!-- Secao Technologies. Dados em _data/tech.yml, arte em _includes/tech-sprite.html. -->
+<section class="section" id="tech">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading">Knowledge</h2>
-        <h3 class="section-subheading text-muted">Stuff I know about.</h3>
-      </div>
+    <div class="section-head section-head--center reveal">
+      <h2>Technologies</h2>
+      <p>The stack I build with, day to day.</p>
     </div>
-    <div class="row text-center">
-      <div class="col-md-4 fa-4x">
-        <span class="fa-layers fa-fw">
-          <i class="fas fa-circle text-primary" data-fa-transform="grow-12"></i>
-          <i class="fas fa-globe fa-inverse"></i>
-        </span>
-        <h4 class="service-heading">Languages</h4>
-        <p class="text-muted">
-          Brazilian Portuguese is my native language. I have good English reading/writing skills (TOEFL ITP: 667/677), and reasonable speaking. By the way, check out my <a href="/blog" target="_blank">blog</a>!
-        </p>
-      </div>
-      <div class="col-md-4 fa-4x">
-        <span class="fa-layers fa-fw">
-          <i class="fas fa-circle text-primary" data-fa-transform="grow-12"></i>
-          <i class="fas fa-laptop-code fa-inverse"></i>
-        </span>
-        <h4 class="service-heading">Developer skills</h4>
-        <p class="text-muted">
-          I have extensive experience with JavaScript and TypeScript, Node.js, React, React Native, Angular, and other frameworks. I also use Java stacks, JSP (Hibernate) and JAX-RS. I've also used C/C++, PHP, and Python. I have extensive SQL (mostly PostgreSQL) knowledge. I've done testing with Mocha, Jest, TestNG, JUnit and Selenium WebDriver/GRID. I'm used to virtualization (VirtualBox, Vagrant), containerization (Docker), and Mac, Windows and Linux environments.
-        </p>
-      </div>
-      <div class="col-md-4 fa-4x">
-        <span class="fa-layers fa-fw">
-          <i class="fas fa-circle text-primary" data-fa-transform="grow-12"></i>
-          <i class="fas fa-camera-retro fa-inverse"></i>
-        </span>
-        <h4 class="service-heading">Photo & design</h4>
-        <p class="text-muted">
-          I know my way with a camera. I shoot RAW and post-process with Adobe Lightroom and sometimes GIMP. I can do some pretty decent vector art as well using Inkscape. You can find my photos <a href="https://www.flickr.com/photos/vitormach/" target="_blank">here</a> and <a href="https://instagram.com/vitor.p.mach/" target="_blank">here</a>.
-        </p>
-      </div>
+
+    {% for group in site.data.tech.groups %}
+    <div class="tech__group reveal">
+      <p class="eyebrow tech__label">{{ group.label }}</p>
+      <ul class="tech__grid">
+        {% for item in group.items %}
+        <li class="tech__item">
+          <span class="tech__tile{% if item.mono %} tech__tile--mono{% endif %}">
+            <svg aria-hidden="true" focusable="false">
+              <use href="#tech-{{ item.id }}"></use>
+            </svg>
+          </span>
+          <span class="tech__name">{{ item.name }}</span>
+        </li>
+        {% endfor %}
+      </ul>
     </div>
+    {% endfor %}
   </div>
 </section>

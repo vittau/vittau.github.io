@@ -1,0 +1,21 @@
+---
+title: Passei Direto
+layout: default
+date: 2021-11-01
+modal-id: 5
+thumbnail: pd-thumbnail.png
+alt: Passei Direto
+category: Tech lead &middot; Engineering manager
+project-start-date: November 2021
+project-end-date: August 2025
+client: Passei Direto
+url: https://www.passeidireto.com
+description: A social learning platform with over 20 million study materials, part of Universo Online (UOL). Tech lead across teams of up to 10 people.
+highlights:
+  - LLM-based question and answer generation from study materials (OpenAI, Azure, Mistral)
+  - Semantic SEO — structured data built from DBpedia entities over a SPARQL endpoint
+  - Internal linking hierarchy on Next.js, fed by Elasticsearch recommendations
+  - Rebuilt study material viewer with infinite scroll and variable paywall rules
+  - A/B testing framework on CloudFront and Lambda@Edge, backed by Flagr
+stack: [Next.js, TypeScript, Elasticsearch, OpenAI, AWS, RabbitMQ]
+---

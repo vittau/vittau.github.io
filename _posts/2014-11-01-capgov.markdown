@@ -1,15 +1,18 @@
 ---
 title: CAPGov
-subtitle: Centro de Apoio a Políticas de Governo
 layout: default
-modal-id: 1
 date: 2014-11-01
-img: capgov-thumbnail.png
+modal-id: 1
 thumbnail: capgov-thumbnail.png
 alt: CAPGov
+category: Software developer &rarr; Tech lead
 project-start-date: November 2014
-project-end-date: October 2017
+project-end-date: December 2017
 client: CAPGov
-category: Developer
-description: I work in government-related projects, which involve (but are not limited to) data mining, quality analysis, database migration and management, and some web designing.
+description: A university-based laboratory that builds systems for the Brazilian government. Started as a developer and went on to lead a small team.
+highlights:
+  - JavaEE and JSF project development, tested with Selenium WebDriver
+  - PostgreSQL statistics analysis and query optimisation
+  - In-house project, team and time management platform in Angular and Node (Express, Sequelize)
+stack: [Angular, Node.js, Express, Sequelize, JavaEE, PostgreSQL]
 ---

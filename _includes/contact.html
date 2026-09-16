@@ -1,0 +1,28 @@
+<section class="section contact grad-bg" id="contact">
+  <div class="container">
+    <div class="contact__grid">
+      <div class="reveal">
+        <div class="section-head" style="margin-bottom: var(--sp-4)">
+          <h2>Let&rsquo;s work together!</h2>
+        </div>
+        <p class="prose">
+          Want to talk about an opportunity, a project, or something I wrote? Send me a
+          message &mdash; I read everything that arrives.
+        </p>
+      </div>
+
+      <ul class="contact__links reveal">
+        {% for network in site.social %}
+        <li>
+          <a class="contact__link" href="{{ network.url }}" target="_blank" rel="noopener">
+            <span class="icon-btn">
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#{{ network.icon }}"></use></svg>
+            </span>
+            {{ network.handle }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

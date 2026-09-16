@@ -38,3 +38,7 @@ social:
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+# Files not published to the site
+exclude:
+  - CLAUDE.md

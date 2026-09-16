@@ -9,7 +9,7 @@ category: Tech lead &middot; Engineering manager
 project-start-date: November 2021
 project-end-date: August 2025
 client: Passei Direto
-url: https://www.passeidireto.com
+link: https://www.passeidireto.com
 description: A social learning platform with over 20 million study materials, part of Universo Online (UOL). Tech lead across teams of up to 10 people.
 highlights:
   - LLM-based question and answer generation from study materials (OpenAI, Azure, Mistral)

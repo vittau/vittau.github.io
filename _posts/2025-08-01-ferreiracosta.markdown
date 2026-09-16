@@ -15,5 +15,5 @@ highlights:
   - Synchronisation process between PostgreSQL and Oracle instances
   - Leading the adoption of agentic AI development (Claude, Codex, OpenCode) across engineering, shaping upstream and downstream frameworks
 stack: [PostgreSQL, Oracle, AWS RDS, Architecture]
-url: https://www.ferreiracosta.com
+link: https://www.ferreiracosta.com
 ---

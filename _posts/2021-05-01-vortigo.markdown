@@ -1,0 +1,18 @@
+---
+title: Vortigo / OnePercent
+layout: default
+date: 2021-05-01
+modal-id: 4
+thumbnail: vortigo-thumbnail.png
+alt: Vortigo
+category: Senior software developer
+project-start-date: May 2021
+project-end-date: October 2021
+client: Vortigo / OnePercent
+description: A carbon credits and blockchain solutions company. Senior full-stack developer in a team of up to 6 people.
+highlights:
+  - React-based white-label storefront for NFT assets
+  - Entirely backed by Firebase — Firestore, Cloud Functions and Authentication
+  - Material UI front-end with dynamic updates driven by a Redux Saga flow
+stack: [React, Firebase, Redux Saga, Material UI]
+---

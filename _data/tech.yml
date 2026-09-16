@@ -1,0 +1,46 @@
+# Grid da secao Technologies. Derivado de cv.tex, priorizando o que esta em uso.
+# 'id' aponta para um <symbol id="tech-{id}"> em img/tech-sprite.svg.
+# 'mono: true' marca a arte preto-e-branco, que herda a cor do texto em vez da
+# cor da marca — sem isso ela sumiria em um dos dois temas.
+
+groups:
+  - label: Languages &amp; frameworks
+    items:
+      - { name: TypeScript,   id: ts }
+      - { name: JavaScript,   id: js }
+      - { name: React,        id: react }
+      - { name: Next.js,      id: nextjs, mono: true }
+      - { name: Node.js,      id: node }
+      - { name: Express,      id: express, mono: true }
+      - { name: Angular,      id: angular }
+      - { name: Java,         id: java }
+      - { name: Hibernate,    id: hibernate }
+      - { name: Python,       id: python }
+      - { name: GraphQL,      id: graphql }
+
+  - label: Data, cloud &amp; infra
+    items:
+      - { name: PostgreSQL,     id: postgresql }
+      - { name: MySQL,          id: mysql }
+      - { name: Elasticsearch,  id: elastic }
+      - { name: RabbitMQ,       id: rabbitmq }
+      - { name: AWS,            id: aws }
+      - { name: Azure,          id: azure }
+      - { name: Firebase,       id: firebase }
+      - { name: Docker,         id: docker }
+      - { name: Pulumi,         id: pulumi }
+      - { name: GitHub Actions, id: gha }
+
+  - label: Testing, AI &amp; tooling
+    items:
+      - { name: Jest,         id: jest }
+      - { name: Playwright,   id: playwright }
+      - { name: Mocha,        id: mocha }
+      - { name: Selenium,     id: selenium }
+      - { name: k6,           id: k6 }
+      - { name: NumPy,        id: numpy }
+      - { name: scikit-learn, id: sklearn }
+      - { name: Git,          id: git }
+      - { name: Jira,         id: jira }
+      - { name: Inkscape,     id: inkscape, mono: true }
+      - { name: GIMP,         id: gimp }

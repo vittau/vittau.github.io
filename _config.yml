@@ -1,39 +1,67 @@
 url: "https://www.vitormach.dev"
-baseurl: "/"
+baseurl: ""   # site na raiz do dominio proprio (CNAME). Com "/" os filtros de URL
+              # produzem "//img/..." — que o navegador le como protocolo-relativo.
 
 # Site settings
 title: Vitor Machado
 author: Vitor Machado
-email: vmachado@cos.ufrj.br
-description: "Vitor Machado's personal homepage."
-keywords: "tech,developer,software,work,academic,personal,blog"
+email: vitor.p.mach@gmail.com
+description: "Software architect and Doctor of Systems Engineering and Computer Science. Ten years building web products end to end."
+keywords: "software architect,tech lead,typescript,react,next.js,node,aws,artificial intelligence,temporal logic,rio de janeiro"
 image: "/favicon.png"
 
-# Color settings (hex-codes without the leading hash-tag)
+# Color settings (hex-codes without the leading hash-tag).
+# Trocar estes valores repinta o site inteiro: _includes/css/main.css os le via Liquid.
+# Os *-rgb sao o mesmo valor em decimal, usados nos rgba(); mantenha-os em sincronia
+# com o hex ao lado (o filtro hex_to_rgb nao roda no GitHub Pages, por isso sao explicitos).
 color:
-  background: fcfcfc
-  navbar: eeeeee
-  primary: 851e3e
-  secondary: 651e3e
-  secondary-dark: 333
+  # marca
+  primary: CC6868                  # coral: destaque, bordas, icones, item ativo
+  primary-rgb: "204, 104, 104"
+  primary-ink-light: A94442        # coral escurecido: texto/link no tema claro (AA 4.83:1)
+  primary-solid-light: B5514F      # coral escurecido: fundo de botao com texto branco (AA 4.94:1)
+  primary-ink-dark: D98080         # coral clareado: texto/link no tema escuro, inclusive
+                                   # sobre superficies translucidas (AA 5.3:1)
+  secondary: 7C4B83                # roxo: botao secundario, halo do retrato
+  secondary-rgb: "124, 75, 131"
+  # tema escuro
+  dark-bg: 1B1B2B
+  dark-grad-from: 232437
+  dark-grad-to: 563C4D
+  dark-text: FFFFFF
+  dark-text-muted: BABABA
+  # tema claro
+  light-bg: E7E9F3
+  light-grad-from: CBCEF1
+  light-grad-to: EDCFD8
+  light-text: 3D3D3D
+  light-text-muted: 5A5A66
 
-# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+# Redes sociais. 'icon' e o id de um <symbol> em _includes/icons.html.
+# 'handle' aparece na secao Contact; 'nav: true' repete o link na navbar.
 social:
-  - title: flickr
-    url: https://www.flickr.com/photos/vitormach
-    fa: fab fa-flickr
-  - title: unsplash
-    url: https://unsplash.com/@vitormach
-    fa: fab fa-unsplash
-  - title: instagram
-    url: https://www.instagram.com/vitor.p.mach
-    fa: fab fa-instagram
-  - title: github
+  - title: GitHub
+    handle: "@vittau"
     url: https://github.com/vittau
-    fa: fab fa-github
-  - title: linkedin
+    icon: i-github
+    nav: true
+  - title: LinkedIn
+    handle: in/vitormach
     url: https://www.linkedin.com/in/vitormach
-    fa: fab fa-linkedin
+    icon: i-linkedin
+    nav: true
+  - title: Flickr
+    handle: "@vitormach"
+    url: https://www.flickr.com/photos/vitormach
+    icon: i-flickr
+  - title: Unsplash
+    handle: "@vitormach"
+    url: https://unsplash.com/@vitormach
+    icon: i-unsplash
+  - title: Instagram
+    handle: "@vitor.p.mach"
+    url: https://www.instagram.com/vitor.p.mach
+    icon: i-instagram
 
 # Build settings
 markdown: kramdown
@@ -42,3 +70,4 @@ permalink: pretty
 # Files not published to the site
 exclude:
   - CLAUDE.md
+  - DESIGN.md

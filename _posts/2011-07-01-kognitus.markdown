@@ -1,0 +1,16 @@
+---
+title: Kognitus
+layout: default
+date: 2011-07-01
+modal-id: 2
+thumbnail: kognitus-thumbnail.png
+alt: Kognitus
+category: Intern
+project-start-date: July 2011
+project-end-date: March 2012
+client: Kognitus
+description: A Brazilian startup specialised in automated computer vision solutions.
+highlights:
+  - Cognex In-Sight hardware and software for vision inspection systems
+stack: [Computer vision, Cognex In-Sight]
+---

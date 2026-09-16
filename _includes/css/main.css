@@ -378,24 +378,36 @@ body.is-locked { overflow: hidden; }
   margin-bottom: calc(var(--nav-h) * -1 - var(--sp-4));
 }
 .nav__inner {
+  position: relative;
+  isolation: isolate;
   display: flex;
   align-items: center;
   gap: var(--sp-5);
   height: var(--nav-h);
   padding: 0 var(--sp-3) 0 var(--sp-5);
   border-radius: var(--r-pill);
-  background: var(--surface);
   border: 1px solid var(--surface-border);
+  box-shadow: none;
+  transition: box-shadow var(--dur-base) var(--ease);
+}
+/* Vidro do header num ::before, nao no proprio .nav__inner: backdrop-filter
+   faz do elemento um containing block para descendentes position:fixed, e
+   .nav__links (o painel deslizante no mobile) e um desses descendentes. Um
+   pseudo-elemento nao tem filhos reais, entao nao sequestra esse fixed. */
+.nav__inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--surface);
   backdrop-filter: blur(16px);
-  transition: background-color var(--dur-base) var(--ease),
-              box-shadow var(--dur-base) var(--ease);
+  transition: background-color var(--dur-base) var(--ease);
 }
-.nav.is-scrolled .nav__inner {
-  background: var(--surface-strong);
-  box-shadow: var(--shadow-card);
-}
+.nav.is-scrolled .nav__inner { box-shadow: var(--shadow-card); }
+.nav.is-scrolled .nav__inner::before { background: var(--surface-strong); }
 @supports not (backdrop-filter: blur(1px)) {
-  .nav__inner, .chip, .surface, .btn--secondary { background: var(--surface-strong); }
+  .nav__inner::before, .chip, .surface, .btn--secondary { background: var(--surface-strong); }
 }
 
 .brand {
@@ -881,11 +893,6 @@ html.no-js .reveal { opacity: 1; transform: none; }
   .nav__aside { margin-left: auto; padding-left: 0; border-left: 0; }
   .nav__social { display: none; }
 
-  /* IMPORTANTE: backdrop-filter faz do elemento um containing block para
-     descendentes position:fixed — com ele ligado, o painel deslizante ficaria
-     preso dentro da barra. No mobile trocamos o blur por um fundo opaco. */
-  .nav__inner { backdrop-filter: none; background: var(--surface-strong); }
-  .nav.is-scrolled .nav__inner { background: var(--surface-strong); }
   .nav__burger {
     display: grid;
     place-items: center;

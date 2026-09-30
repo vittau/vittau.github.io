@@ -109,6 +109,7 @@ Motion
 | Componente | Especificação |
 |---|---|
 | **Marca** | Losango ◇ (`#i-diamond`, o operador modal "possivelmente") em coral + "vitor machado" em serifa. No hover gira 45° e vira □ ("necessariamente"). |
+| **Favicon** | O ◇ da marca com um nó no centro (um nó da rede do hero), em coral `#E08A7E` sobre carvão `#141316`, num quadrado de cantos arredondados. O blog usa o mesmo desenho invertido: terracota `#AD4F38` sobre papel. Fonte em `favicon.svg` (32×32); `favicon.ico` com 16/32/48px, sendo o de 16 **desenhado à parte** (traço 1.75 num grid de 16, senão o losango embaça na aba); `favicon.png` 256px (também o `og:image`); `apple-touch-icon.png` 180px sem cantos arredondados (o iOS arredonda). Gerados do SVG no Chrome headless com fundo transparente. Não há `<link>` para o SVG de propósito: o navegador o preferiria ao .ico e usaria a versão sem ajuste em 16px. |
 | **Navbar** | Pill flutuante, sticky a `--sp-4` do topo, transparente sobre o hero; ao rolar (`.is-scrolled`) ganha `--glass` com `backdrop-filter`, borda e `--shadow`. Abaixo de **900px** vira hambúrguer com painel de `min(82vw, 340px)` e links em serifa grande. |
 | **Cabeçalho de seção** (`.shead`) | `.kicker` em mono ("01 — ABOUT") + uma **frase** em serifa como `h2`, não um rótulo genérico. `.shead--split` põe o rótulo numa coluna estreita e a frase na larga. |
 | **Botões** (`.btn`) | `--primary` (`--accent-solid`, sombra coral) e `--ghost` (contorno `--line-strong`). Pill; hover eleva 2px e a seta anda 3px. |

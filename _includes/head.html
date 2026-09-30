@@ -16,8 +16,11 @@
   <meta content="{{ site.image | absolute_url }}" property="og:image">
   <meta name="twitter:card" content="summary">
 
-  <link rel="icon" sizes="16x16 32x32" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="256x256" href="favicon.png">
+  <!-- Favicon: o losango da marca (◇) com um no no centro. O .ico leva 16/32/48
+       (o de 16 desenhado a parte, com traco mais grosso); fonte em favicon.svg. -->
+  <link rel="icon" sizes="16x16 32x32 48x48" href="{{ "/favicon.ico" | relative_url }}">
+  <link rel="icon" type="image/png" sizes="256x256" href="{{ "/favicon.png" | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ "/apple-touch-icon.png" | relative_url }}">
 
   <!-- Texto (Geist) e titulos (Newsreader 500) aparecem acima da dobra; os demais
        arquivos sao buscados sob demanda pelo unicode-range declarado em main.css. -->

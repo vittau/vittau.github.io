@@ -4,6 +4,8 @@ layout: default
 date: 2011-07-01
 modal-id: 2
 thumbnail: kognitus-thumbnail.png
+logo-ratio: 3.728      # largura/altura do PNG recortado
+logo-scale: 1.0       # compensa a densidade de tinta (1 = neutro)
 alt: Kognitus
 category: Intern
 project-start-date: July 2011

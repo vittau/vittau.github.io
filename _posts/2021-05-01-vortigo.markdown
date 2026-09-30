@@ -4,6 +4,8 @@ layout: default
 date: 2021-05-01
 modal-id: 4
 thumbnail: vortigo-thumbnail.png
+logo-ratio: 1.631      # largura/altura do PNG recortado
+logo-scale: 1.16       # compensa a densidade de tinta (1 = neutro)
 alt: Vortigo
 category: Senior software developer
 project-start-date: May 2021

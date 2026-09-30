@@ -1,27 +1,43 @@
-<!-- Secao Technologies. Dados em _data/tech.yml, arte em _includes/tech-sprite.html. -->
+<!-- Secao Stack. Dados em _data/tech.yml, arte em _includes/tech-sprite.html. -->
 <section class="section" id="tech">
   <div class="container">
-    <div class="section-head section-head--center reveal">
-      <h2>Technologies</h2>
-      <p>The stack I build with, day to day.</p>
+    <header class="shead shead--split reveal">
+      <p class="kicker"><span class="kicker__idx">02</span>Stack</p>
+      <h2>What I build with, today.</h2>
+    </header>
+
+    {% assign tech = site.data.tech %}
+    <div class="bento">
+      <article class="bento__ai reveal" style="--i: 0">
+        <p class="kicker">Now</p>
+        <h3>{{ tech.ai.title }}</h3>
+        <p>{{ tech.ai.text }}</p>
+        <ul class="tags">
+          {% for item in tech.ai.tags %}<li class="tag">{{ item }}</li>{% endfor %}
+        </ul>
+      </article>
+
+      {% for item in tech.featured %}
+      <div class="bento__tile reveal" style="--i: {{ forloop.index }}">
+        <svg class="bento__logo{% if item.mono %} is-mono{% endif %}" aria-hidden="true" focusable="false">
+          <use href="#tech-{{ item.id }}"></use>
+        </svg>
+        <p class="bento__name">{{ item.name }}</p>
+        {% if item.note %}<p class="bento__note">{{ item.note }}</p>{% endif %}
+      </div>
+      {% endfor %}
     </div>
 
-    {% for group in site.data.tech.groups %}
-    <div class="tech__group reveal">
-      <p class="eyebrow tech__label">{{ group.label }}</p>
-      <ul class="tech__grid">
-        {% for item in group.items %}
-        <li class="tech__item">
-          <span class="tech__tile{% if item.mono %} tech__tile--mono{% endif %}">
-            <svg aria-hidden="true" focusable="false">
-              <use href="#tech-{{ item.id }}"></use>
-            </svg>
-          </span>
-          <span class="tech__name">{{ item.name }}</span>
+    <div class="toolbox reveal">
+      <p class="kicker">Also in the toolbox</p>
+      <ul class="toolbox__list">
+        {% for item in tech.more %}
+        <li class="toolbox__item">
+          <svg class="{% if item.mono %}is-mono{% endif %}" aria-hidden="true" focusable="false"><use href="#tech-{{ item.id }}"></use></svg>
+          {{ item.name }}
         </li>
         {% endfor %}
       </ul>
     </div>
-    {% endfor %}
   </div>
 </section>

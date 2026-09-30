@@ -6,18 +6,22 @@
 <div class="nav">
   <div class="container">
     <nav class="nav__inner" aria-label="Main">
-      <a class="brand" href="#top">
-        <span class="brand__mark">&lt;/&gt;</span>vitor<span class="brand__dot">.</span>
+      <a class="brand" href="#top" aria-label="Vitor Machado, back to top">
+        <svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#i-diamond"></use></svg>
+        <span>vitor machado</span>
       </a>
 
       <ul class="nav__links" id="nav-links">
-        <li><a class="nav__link" href="#top">Home</a></li>
         <li><a class="nav__link" href="#about">About</a></li>
-        <li><a class="nav__link" href="#tech">Tech</a></li>
-        <li><a class="nav__link" href="#works">Works</a></li>
+        <li><a class="nav__link" href="#tech">Stack</a></li>
+        <li><a class="nav__link" href="#works">Experience</a></li>
         <li><a class="nav__link" href="#academic">Academic</a></li>
         <li><a class="nav__link" href="#contact">Contact</a></li>
-        <li><a class="nav__link" href="{{ "/blog" | relative_url }}">Blog</a></li>
+        <li>
+          <a class="nav__link" href="{{ "/blog" | relative_url }}">
+            Blog<svg class="icon nav__out" aria-hidden="true" focusable="false"><use href="#i-arrow-out"></use></svg>
+          </a>
+        </li>
       </ul>
 
       <div class="nav__aside">

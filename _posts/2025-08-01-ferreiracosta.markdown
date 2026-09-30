@@ -4,6 +4,8 @@ layout: default
 date: 2025-08-01
 modal-id: 6
 thumbnail: ferreiracosta-thumbnail.png
+logo-ratio: 2.672      # largura/altura do PNG recortado
+logo-scale: 0.93       # compensa a densidade de tinta (1 = neutro)
 alt: Ferreira Costa
 category: Software Architect
 project-start-date: August 2025

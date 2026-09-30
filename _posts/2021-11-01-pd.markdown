@@ -4,6 +4,8 @@ layout: default
 date: 2021-11-01
 modal-id: 5
 thumbnail: pd-thumbnail.png
+logo-ratio: 5.105      # largura/altura do PNG recortado
+logo-scale: 1.06       # compensa a densidade de tinta (1 = neutro)
 alt: Passei Direto
 category: Tech lead &middot; Engineering manager
 project-start-date: November 2021

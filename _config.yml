@@ -14,31 +14,30 @@ image: "/favicon.png"
 # Trocar estes valores repinta o site inteiro: _includes/css/main.css os le via Liquid.
 # Os *-rgb sao o mesmo valor em decimal, usados nos rgba(); mantenha-os em sincronia
 # com o hex ao lado (o filtro hex_to_rgb nao roda no GitHub Pages, por isso sao explicitos).
+# Contraste medido de cada par de texto: DESIGN.md secao 2.2.
 color:
-  # marca
-  primary: CC6868                  # coral: destaque, bordas, icones, item ativo
+  # marca: um unico acento, coral
+  primary: CC6868                  # coral: decoracao, bordas, nos, item ativo
   primary-rgb: "204, 104, 104"
-  primary-ink-light: A94442        # coral escurecido: texto/link no tema claro (AA 4.83:1)
-  primary-solid-light: B5514F      # coral escurecido: fundo de botao com texto branco (AA 4.94:1)
-  primary-ink-dark: D98080         # coral clareado: texto/link no tema escuro, inclusive
-                                   # sobre superficies translucidas (AA 5.3:1)
-  secondary: 7C4B83                # roxo: botao secundario, halo do retrato
-  secondary-rgb: "124, 75, 131"
-  # tema escuro
-  dark-bg: 1B1B2B
-  dark-grad-from: 232437
-  dark-grad-to: 563C4D
-  dark-text: FFFFFF
-  dark-text-muted: BABABA
-  # tema claro
-  light-bg: E7E9F3
-  light-grad-from: CBCEF1
-  light-grad-to: EDCFD8
-  light-text: 3D3D3D
-  light-text-muted: 5A5A66
+  primary-ink-light: A5492F        # terracota: texto/link no tema claro (AA 5.1:1)
+  primary-solid-light: AD4F38      # terracota: fundo de botao com texto branco (AA 5.3:1)
+  primary-ink-dark: E08A7E         # coral clareado: texto/link no tema escuro (AA 7.2:1)
+  # tema escuro: carvao quente
+  dark-bg: 141316
+  dark-bg-rgb: "20, 19, 22"
+  dark-surface: 1D1B20
+  dark-text: F2EEE8
+  dark-text-muted: A8A198
+  # tema claro: papel
+  light-bg: F4F0E8
+  light-bg-rgb: "244, 240, 232"
+  light-surface: FBF9F5
+  light-text: 26231F
+  light-text-muted: 5F5850
 
 # Redes sociais. 'icon' e o id de um <symbol> em _includes/icons.html.
 # 'handle' aparece na secao Contact; 'nav: true' repete o link na navbar.
+# 'photo: true' marca as redes de fotografia, listadas a parte ("Elsewhere") no Contact.
 social:
   - title: GitHub
     handle: "@vittau"
@@ -54,14 +53,17 @@ social:
     handle: "@vitormach"
     url: https://www.flickr.com/photos/vitormach
     icon: i-flickr
+    photo: true
   - title: Unsplash
     handle: "@vitormach"
     url: https://unsplash.com/@vitormach
     icon: i-unsplash
+    photo: true
   - title: Instagram
     handle: "@vitor.p.mach"
     url: https://www.instagram.com/vitor.p.mach
     icon: i-instagram
+    photo: true
 
 # Build settings
 markdown: kramdown

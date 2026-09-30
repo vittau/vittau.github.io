@@ -1,0 +1,18 @@
+# Fotos do proprio Vitor (unsplash.com/@vitormach), usadas no About e no Contact.
+# Cada 'file' tem duas larguras em img/photos/, geradas a partir do original do
+# Unsplash (ver DESIGN.md secao 6): <file>-640/-1200.webp na galeria e
+# <file>-1280/-2400.webp na panoramica do Contact.
+# 'shape' escolhe o recorte na galeria: tall, wide ou square.
+
+gallery:
+  - { file: niemeyer,     shape: tall,   alt: "The curved underside of the Oscar Niemeyer Museum against a pale sky" }
+  - { file: ferris-wheel, shape: wide,   alt: "A ferris wheel and green fountains lit up at night over a lake" }
+  - { file: shuttle,      shape: square, alt: "A toy space shuttle resting among cacti on dry soil" }
+  - { file: greenhouse,   shape: wide,   alt: "A glass greenhouse lit in pink and green at night, behind a field of flowers" }
+  - { file: blossom,      shape: tall,   alt: "Pink cherry blossoms against a blue sky" }
+
+contact:
+  file: rio
+  alt: "Rio de Janeiro seen from Corcovado: Sugarloaf Mountain, Botafogo Bay and the city below"
+  caption: "Rio de Janeiro, from Corcovado"
+  url: https://unsplash.com/photos/fCYOscVzQV8

@@ -1,43 +1,60 @@
 <section class="section" id="about">
   <div class="container">
-    <div class="about__grid reveal">
-      <img class="about__photo" src="{{ "/img/photo-about.webp" | relative_url }}"
-           alt="Vitor Machado" width="260" height="340" loading="lazy">
+    <div class="about__grid">
+      <header class="shead reveal">
+        <p class="kicker"><span class="kicker__idx">01</span>About</p>
+        <h2>Ten years on the web, a doctorate in logic, and a camera never far away.</h2>
+      </header>
 
-      <div>
-        <div class="section-head" style="margin-bottom: var(--sp-5)">
-          <h2>About me</h2>
-        </div>
-
-        <p class="prose">
-          I have spent about ten years building software, almost all of it on the web. Today I am
-          a software architect at
-          <a href="https://www.ferreiracosta.com" target="_blank" rel="noopener">Ferreira Costa</a>,
-          Brazil&rsquo;s second-largest home improvement retailer, where I lead the adoption of
-          agentic AI development &mdash; Claude, Codex, OpenCode and agentic orchestration with
-          ADEs like Orca &mdash; and help shape the upstream and downstream frameworks other teams
-          build on. Before that I spent nearly four years as tech lead and engineering manager at
+      <div class="about__text">
+        <p class="prose reveal" style="--i: 1">
+          Most of my career has been on the web. Before
+          <a href="https://www.ferreiracosta.com" target="_blank" rel="noopener">Ferreira Costa</a>
+          &mdash; Brazil&rsquo;s second-largest home improvement retailer, where I also help shape
+          the upstream and downstream frameworks other teams build on &mdash; I spent nearly four
+          years as tech lead and engineering manager at
           <a href="https://www.passeidireto.com" target="_blank" rel="noopener">Passei Direto</a>,
           a learning platform with more than 20 million study materials, and led a team of
           fourteen at a health tech startup through the pandemic.
         </p>
-        <p class="prose">
+        <p class="prose reveal" style="--i: 2">
           My doctorate is in Artificial Intelligence at PESC/COPPE (UFRJ), on temporal logics for
-          social networks &mdash; the work was published in the
+          social networks, published in the
           <a href="https://doi.org/10.1093/logcom/exac023" target="_blank" rel="noopener">Journal of Logic and Computation</a>.
-          Brazilian Portuguese is my native language and my English is advanced in writing and
-          speaking (TOEFL ITP: 667/677). Away from the keyboard I shoot RAW and draw vector art;
-          some of it ends up on
-          <a href="https://www.flickr.com/photos/vitormach/" target="_blank" rel="noopener">Flickr</a>
-          and <a href="https://unsplash.com/@vitormach" target="_blank" rel="noopener">Unsplash</a>.
+          Brazilian Portuguese is my native language; my English is advanced in writing and
+          speaking (TOEFL ITP 667/677). Away from the keyboard I shoot RAW and draw vector art.
         </p>
 
-        <ul class="about__stats">
-          <li class="chip">10 years shipping software</li>
-          <li class="chip">DSc &middot; Artificial Intelligence</li>
-          <li class="chip">Published in J. Logic &amp; Computation</li>
-        </ul>
+        <dl class="stats">
+          <div class="stats__item reveal" style="--i: 3"><dt>10+</dt><dd>years shipping software</dd></div>
+          <div class="stats__item reveal" style="--i: 4"><dt>14</dt><dd>engineers led through the pandemic</dd></div>
+          <div class="stats__item reveal" style="--i: 5"><dt>DSc</dt><dd>in Artificial Intelligence, UFRJ</dd></div>
+        </dl>
       </div>
+    </div>
+
+    <!-- Galeria: fotos do proprio Vitor, dados em _data/photos.yml -->
+    <div class="gallery">
+      <div class="gallery__head reveal">
+        <p class="kicker">Away from the keyboard</p>
+        {% for network in site.social %}{% if network.title == "Unsplash" %}
+        <a class="link-arrow" href="{{ network.url }}" target="_blank" rel="noopener">
+          More on Unsplash
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-out"></use></svg>
+        </a>
+        {% endif %}{% endfor %}
+      </div>
+      <ul class="gallery__rail">
+        {% for photo in site.data.photos.gallery %}
+        <li class="gallery__item gallery__item--{{ photo.shape }} reveal reveal--wipe" style="--i: {{ forloop.index0 }}">
+          <img src="{{ "/img/photos/" | append: photo.file | append: "-640.webp" | relative_url }}"
+               srcset="{{ "/img/photos/" | append: photo.file | append: "-640.webp" | relative_url }} 640w,
+                       {{ "/img/photos/" | append: photo.file | append: "-1200.webp" | relative_url }} 1200w"
+               sizes="(max-width: 600px) 72vw, (max-width: 1140px) 30vw, 340px"
+               alt="{{ photo.alt }}" width="640" height="360" loading="lazy" decoding="async">
+        </li>
+        {% endfor %}
+      </ul>
     </div>
   </div>
 </section>

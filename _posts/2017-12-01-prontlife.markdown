@@ -4,6 +4,8 @@ layout: default
 date: 2017-12-01
 modal-id: 3
 thumbnail: prontlife-thumbnail.png
+logo-ratio: 3.883      # largura/altura do PNG recortado
+logo-scale: 1.0       # compensa a densidade de tinta (1 = neutro)
 alt: ProntLife
 category: Tech lead
 project-start-date: December 2017

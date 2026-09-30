@@ -1,63 +1,81 @@
 <section class="section" id="academic">
   <div class="container">
-    <div class="section-head section-head--center reveal">
-      <h2>Academic</h2>
-      <p>Degrees, theses and what came out of them.</p>
+    <header class="shead shead--split reveal">
+      <p class="kicker"><span class="kicker__idx">04</span>Academic</p>
+      <h2>From a P2P protocol to temporal logics for social networks.</h2>
+    </header>
+
+    <div class="academia">
+      <article class="degree degree--feature reveal" style="--i: 0">
+        <p class="degree__years">2016 &ndash; 2023</p>
+        <p class="kicker">Doctorate &middot; GPA A</p>
+        <h3>Systems Engineering and Computer Science, DSc</h3>
+        <p class="prose">
+          <a href="http://www.cos.ufrj.br/" target="_blank" rel="noopener">PESC/COPPE</a>,
+          Federal University of Rio de Janeiro, in the Artificial Intelligence concentration area.
+          Dissertation: <em>Temporal logic for social networks</em>.
+        </p>
+        <a class="cite" href="https://doi.org/10.1093/logcom/exac023" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-paper"></use></svg>
+          <span>
+            <span class="cite__venue">Journal of Logic and Computation</span>
+            <span class="cite__ref">vol. 32, issue 6, Sep 2022, pp. 1088&ndash;1108 &middot; doi:10.1093/logcom/exac023</span>
+          </span>
+        </a>
+      </article>
+
+      <aside class="talks reveal" style="--i: 1">
+        <p class="kicker">Talks &amp; slides</p>
+        <ul class="talks__list">
+          <li>
+            <a href="{{ "/ppal/qualif/" | relative_url }}">
+              <span class="talks__title">DSc qualifying exam</span>
+              <span class="talks__meta">Doctorate &middot; PT</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ "/ppal/socnet-diffusion/" | relative_url }}">
+              <span class="talks__title">Dynamic epistemic logics of diffusion in social networks</span>
+              <span class="talks__meta">Reading notes &middot; EN</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ "/ppal/socnet/" | relative_url }}">
+              <span class="talks__title">PPAL applied to social networks</span>
+              <span class="talks__meta">Seminar &middot; PT</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ "/ppal/masters/" | relative_url }}">
+              <span class="talks__title">Populational Announcement Logic</span>
+              <span class="talks__meta">MSc defense &middot; PT</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <article class="degree reveal" style="--i: 2">
+        <p class="degree__years">2013 &ndash; 2016</p>
+        <p class="kicker">Master&rsquo;s &middot; GPA A</p>
+        <h3>Systems Engineering and Computer Science, MSc</h3>
+        <p class="prose">
+          <a href="http://www.cos.ufrj.br/" target="_blank" rel="noopener">PESC/COPPE</a>, UFRJ.
+          Thesis: <em>Populational Announcement Logic (PPAL)</em>, a fuzzy dynamic epistemic
+          logic &mdash; code <a href="https://github.com/vittau/PPAL" target="_blank" rel="noopener">on GitHub</a>.
+          Published at <abbr title="Encontro Nacional de Intelig&ecirc;ncia Artificial e Computacional">ENIAC</abbr> 2015.
+        </p>
+      </article>
+
+      <article class="degree reveal" style="--i: 3">
+        <p class="degree__years">2008 &ndash; 2014</p>
+        <p class="kicker">Bachelor&rsquo;s &middot; GPA 8.0</p>
+        <h3>Computer Science, BSc</h3>
+        <p class="prose">
+          <a href="http://www.dcc.ufrj.br/" target="_blank" rel="noopener">Computer Science Department</a>,
+          <a href="https://www.ufrj.br/" target="_blank" rel="noopener">Federal University of Rio de Janeiro</a>.
+          Thesis: <em>PushPeer P2P Protocol</em>, a peer-to-peer protocol with caching.
+        </p>
+      </article>
     </div>
-
-    <ul class="timeline">
-      <li class="timeline__item reveal">
-        <span class="timeline__node" aria-hidden="true">DSc</span>
-        <div class="timeline__card surface">
-          <p class="eyebrow timeline__period">2016 &ndash; 2023 &middot; GPA A</p>
-          <h3>Systems Engineering and Computer Science, DSc</h3>
-          <p class="prose">
-            Doctorate at
-            <a href="http://www.cos.ufrj.br/" target="_blank" rel="noopener">PESC/COPPE</a>,
-            Federal University of Rio de Janeiro, in the Artificial Intelligence concentration
-            area. Dissertation: <em>Temporal logic for social networks</em>.
-          </p>
-          <p class="work__meta" style="margin-top: var(--sp-3)">
-            Published in <strong>Journal of Logic and Computation</strong>, vol. 32, issue 6,
-            Sep 2022, pp. 1088&ndash;1108 &middot;
-            <a href="https://doi.org/10.1093/logcom/exac023" target="_blank" rel="noopener">10.1093/logcom/exac023</a>
-          </p>
-        </div>
-      </li>
-
-      <li class="timeline__item reveal">
-        <span class="timeline__node" aria-hidden="true">MSc</span>
-        <div class="timeline__card surface">
-          <p class="eyebrow timeline__period">2013 &ndash; 2016 &middot; GPA A</p>
-          <h3>Systems Engineering and Computer Science, MSc</h3>
-          <p class="prose">
-            Master&rsquo;s at
-            <a href="http://www.cos.ufrj.br/" target="_blank" rel="noopener">PESC/COPPE</a>,
-            Federal University of Rio de Janeiro, in the Artificial Intelligence concentration
-            area. Thesis: <em>Populational Announcement Logic (PPAL)</em>, a fuzzy dynamic
-            epistemic logic &mdash; code
-            <a href="https://github.com/vittau/PPAL" target="_blank" rel="noopener">on GitHub</a>.
-          </p>
-          <p class="work__meta" style="margin-top: var(--sp-3)">
-            Published at <strong>ENIAC</strong> &mdash; Encontro Nacional de Intelig&ecirc;ncia
-            Artificial e Computacional, 2015
-          </p>
-        </div>
-      </li>
-
-      <li class="timeline__item reveal">
-        <span class="timeline__node" aria-hidden="true">BSc</span>
-        <div class="timeline__card surface">
-          <p class="eyebrow timeline__period">2008 &ndash; 2014 &middot; GPA 8.0</p>
-          <h3>Computer Science, BSc</h3>
-          <p class="prose">
-            Bachelor&rsquo;s at the
-            <a href="http://www.dcc.ufrj.br/" target="_blank" rel="noopener">Computer Science Department</a>
-            of the <a href="https://www.ufrj.br/" target="_blank" rel="noopener">Federal University of Rio de Janeiro</a>.
-            Thesis: <em>PushPeer P2P Protocol</em>, a peer-to-peer protocol with caching.
-          </p>
-        </div>
-      </li>
-    </ul>
   </div>
 </section>

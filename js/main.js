@@ -95,7 +95,7 @@
   var sections = navLinks
     .map(function (a) {
       var id = a.getAttribute('href').slice(1);
-      var el = id === 'top' ? document.getElementById('home') : document.getElementById(id);
+      var el = document.getElementById(id);
       return el ? { el: el, link: a } : null;
     })
     .filter(Boolean);
@@ -128,152 +128,298 @@
     Array.prototype.forEach.call(revealables, function (el) { reveal.observe(el); });
   }
 
-  /* --- Baloes do retrato -----------------------------------------------------
-   * Cada balao fica visivel de 4 a 6 segundos, some, e reaparece em outra das
-   * seis posicoes com outra tecnologia. Os tres ciclos sao independentes e
-   * comecam desencontrados, para nunca trocarem todos ao mesmo tempo.
+
+  /* --- Nos da linha do tempo -------------------------------------------------
+   * Cada emprego acende o seu no quando o topo cruza o meio da tela, junto com o
+   * preenchimento coral do trilho (animacao ligada a rolagem, no CSS).
    */
-  var chips = Array.prototype.slice.call(document.querySelectorAll('.portrait__chip'));
+  var jobs = document.querySelectorAll('.job');
 
-  if (chips.length && !reduceMotion.matches) {
-    var TECHS = [
-      'TypeScript', 'React', 'React Native', 'Next.js', 'Node.js', 'AWS',
-      'PostgreSQL', 'Elasticsearch', 'GraphQL', 'Java', 'Python', 'Docker',
-      'Playwright', 'Jest', 'RabbitMQ', 'Azure', 'Agentic AI'
-    ];
-    var POSITIONS = 6;
-    var FADE = 500;           // casa com --dur-slow
-    var MIN_HOLD = 4000;
-    var MAX_HOLD = 6000;
-
-    // o que ja esta na tela nao deve ser sorteado de novo
-    var usedPos = chips.map(function (c) { return Number(c.dataset.pos); });
-    var usedTech = chips.map(function (c) { return c.textContent.trim(); });
-
-    function pick(list, taken) {
-      var free = list.filter(function (v) { return taken.indexOf(v) === -1; });
-      return free[Math.floor(Math.random() * free.length)];
-    }
-
-    function cycle(chip, slot) {
-      var hold = MIN_HOLD + Math.random() * (MAX_HOLD - MIN_HOLD);
-
-      setTimeout(function () {
-        chip.classList.add('is-out');
-
-        setTimeout(function () {
-          var allPos = [];
-          for (var i = 0; i < POSITIONS; i++) allPos.push(i);
-
-          // enquanto este balao esta invisivel, ele nao disputa posicao nem texto
-          var othersPos = usedPos.filter(function (_, i) { return i !== slot; });
-          var othersTech = usedTech.filter(function (_, i) { return i !== slot; });
-
-          var nextPos = pick(allPos, othersPos.concat([usedPos[slot]]));
-          var nextTech = pick(TECHS, othersTech.concat([usedTech[slot]]));
-
-          usedPos[slot] = nextPos;
-          usedTech[slot] = nextTech;
-
-          chip.dataset.pos = String(nextPos);
-          chip.textContent = nextTech;
-          chip.classList.remove('is-out');
-
-          cycle(chip, slot);
-        }, FADE);
-      }, hold);
-    }
-
-    chips.forEach(function (chip, slot) {
-      // desencontra o inicio de cada ciclo
-      setTimeout(function () { cycle(chip, slot); }, slot * 1600);
-    });
+  if (reduceMotion.matches || !('IntersectionObserver' in window)) {
+    Array.prototype.forEach.call(jobs, function (el) { el.classList.add('is-lit'); });
+  } else {
+    var lit = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-lit');
+        obs.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -48% 0px' });
+    Array.prototype.forEach.call(jobs, function (el) { lit.observe(el); });
   }
 
-  /* --- Malha de pontos do hero ----------------------------------------------
-   * Decorativa. Pausa quando o hero sai da viewport ou a aba fica oculta, e
-   * desenha um unico quadro estatico sob prefers-reduced-motion.
+  /* --- Rede do hero: um modelo SIR -----------------------------------------
+   * Decorativa, e um easter egg sem legenda na pagina: uma epidemia SIR num grafo
+   * aleatorio de vizinhos mais proximos (o artigo do doutorado discute uma
+   * variacao do SIR). Cada no e Suscetivel (ponto neutro), Infectado (coral,
+   * com pulso) ou Recuperado (anel neutro, imune). A cada passo, cada infectado
+   * contagia cada vizinho suscetivel com probabilidade BETA e se recupera com
+   * probabilidade GAMMA. Quando nao resta infectado, a epidemia acabou: o estado
+   * fica um instante na tela, se desfaz e outra comeca num no diferente.
+   * Pausa fora da viewport ou com a aba oculta; sob prefers-reduced-motion
+   * desenha um unico quadro, com uma epidemia ja em andamento.
    */
-  var canvas = document.getElementById('mesh');
+  var canvas = document.getElementById('net');
   if (!canvas || !canvas.getContext) return;
 
   var ctx = canvas.getContext('2d');
   var hero = canvas.parentElement;
-  var points = [];
+  var STEP = 420;          // ms entre passos da epidemia
+  var TRAVEL = 0.8;        // fracao do passo que o contagio leva para cruzar a aresta
+  var BETA = 0.55;         // chance de contagio por aresta, por passo
+  var GAMMA = 0.4;         // chance de recuperacao por passo (~2,5 passos infectado)
+  var RECOVER = 400;       // ms da transicao visual infectado -> recuperado
+  var PULSE = 900;         // ms do pulso ao ser infectado
+  var HOLD = 700;          // ms com o saldo final na tela
+  var FADE = 800;          // ms para desfazer antes da proxima
+
+  var nodes = [];
+  var edges = [];
+  var adj = [];
+  var phase = 'spread';
+  var phaseAt = 0;
+  var lastStep = 0;
   var frame = null;
   var visible = true;
-  var LINK_DIST = 130;
+  var W = 0;
+  var H = 0;
+  var dpr = 1;
+  var inkRGB = '255, 255, 255';
+  var coralRGB = '204, 104, 104';
 
-  function ink() {
-    return getComputedStyle(root).getPropertyValue('--mesh-ink').trim() || '255, 255, 255';
+  function readColors() {
+    var cs = getComputedStyle(root);
+    inkRGB = cs.getPropertyValue('--net-ink').trim() || inkRGB;
+    coralRGB = cs.getPropertyValue('--brand-coral-rgb').trim() || coralRGB;
   }
 
-  function resize() {
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    var w = hero.offsetWidth;
-    var h = hero.offsetHeight;
-    canvas.width = w * dpr;
-    canvas.height = h * dpr;
+  // grade com jitter: espalha os nos sem aglomerados nem buracos grandes
+  function build() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = hero.offsetWidth;
+    H = hero.offsetHeight;
+    canvas.width = Math.round(W * dpr);
+    canvas.height = Math.round(H * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-    var count = Math.min(56, Math.round((w * h) / 26000));
-    points = [];
-    for (var i = 0; i < count; i++) {
-      points.push({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.22,
-        vy: (Math.random() - 0.5) * 0.22
+    var target = Math.max(22, Math.min(86, Math.round((W * H) / 15000)));
+    var cols = Math.max(4, Math.round(Math.sqrt(target * W / H)));
+    var rows = Math.max(4, Math.round(target / cols));
+    var cw = W / cols;
+    var ch = H / rows;
+    var i, j;
+
+    nodes = [];
+    for (i = 0; i < rows; i++) {
+      for (j = 0; j < cols; j++) {
+        nodes.push({
+          x0: (j + 0.5 + (Math.random() - 0.5) * 0.7) * cw,
+          y0: (i + 0.5 + (Math.random() - 0.5) * 0.7) * ch,
+          ph: Math.random() * Math.PI * 2,
+          at: null,        // instante da infeccao (null: suscetivel). Pode ser negativo:
+                           // o paciente zero nasce 'no passado' para ja aparecer aceso
+          from: -1,        // de quem veio o contagio
+          rec: null        // instante da recuperacao (null: ainda nao)
+        });
+      }
+    }
+
+    // cada no liga aos 3 vizinhos mais proximos, sem arestas longas demais
+    var maxD = Math.max(cw, ch) * 1.9;
+    var seen = {};
+    edges = [];
+    adj = nodes.map(function () { return []; });
+    nodes.forEach(function (a, ai) {
+      var near = nodes
+        .map(function (b, bi) { return { bi: bi, d: Math.hypot(a.x0 - b.x0, a.y0 - b.y0) }; })
+        .filter(function (o) { return o.bi !== ai && o.d < maxD; })
+        .sort(function (p, q) { return p.d - q.d; })
+        .slice(0, 3);
+      near.forEach(function (o) {
+        var key = ai < o.bi ? ai + '-' + o.bi : o.bi + '-' + ai;
+        if (seen[key]) return;
+        seen[key] = true;
+        edges.push([ai, o.bi]);
+        adj[ai].push(o.bi);
+        adj[o.bi].push(ai);
       });
+    });
+  }
+
+  // O paciente zero nasce do lado do retrato, onde a mascara do CSS deixa a rede
+  // visivel, mas nunca atras da foto: la a epidemia comecaria escondida.
+  function behindPortrait(n) {
+    var img = hero.querySelector('.portrait');
+    if (!img) return false;
+    var h = hero.getBoundingClientRect();
+    var r = img.getBoundingClientRect();
+    var m = 12;
+    return n.x0 > r.left - h.left - m && n.x0 < r.right - h.left + m &&
+           n.y0 > r.top - h.top - m && n.y0 < r.bottom - h.top + m;
+  }
+
+  function seed(now) {
+    nodes.forEach(function (n) { n.at = null; n.from = -1; n.rec = null; });
+    var pool = nodes
+      .map(function (n, i) { return i; })
+      .filter(function (i) {
+        var n = nodes[i];
+        return n.x0 > W * 0.5 && n.y0 > H * 0.12 && n.y0 < H * 0.8 && !behindPortrait(n);
+      });
+    var s = pool.length ? pool[Math.floor(Math.random() * pool.length)] : 0;
+    nodes[s].at = now - STEP * TRAVEL;   // ja nasce infectado e aceso
+    phase = 'spread';
+    phaseAt = now;
+    lastStep = now;
+  }
+
+  // Um passo da epidemia. So quem ja estava infectado antes do passo contagia ou
+  // se recupera: um recem-infectado passa pelo menos um passo inteiro doente.
+  function advance(now) {
+    var sick = [];
+    nodes.forEach(function (n, i) { if (n.at !== null && n.rec === null) sick.push(i); });
+
+    sick.forEach(function (u) {
+      adj[u].forEach(function (v) {
+        if (nodes[v].at !== null || Math.random() > BETA) return;
+        nodes[v].at = now;
+        nodes[v].from = u;
+      });
+    });
+    sick.forEach(function (u) {
+      if (Math.random() < GAMMA) nodes[u].rec = now;
+    });
+
+    // Sem nenhum infectado vizinho de um suscetivel, a epidemia ja acabou: em vez
+    // de esperar cada um se recuperar no sorteio, todos se recuperam agora, num
+    // leque curto para nao apagarem ao mesmo tempo.
+    var alive = nodes.some(function (n, i) {
+      return n.at !== null && n.rec === null &&
+        adj[i].some(function (v) { return nodes[v].at === null; });
+    });
+    if (!alive) {
+      nodes.forEach(function (n) {
+        if (n.at !== null && n.rec === null) n.rec = now + Math.random() * STEP;
+      });
+      phase = 'hold';
+      phaseAt = now + STEP + RECOVER;
     }
   }
 
-  function draw() {
-    var w = canvas.width / (Math.min(window.devicePixelRatio || 1, 2));
-    var h = canvas.height / (Math.min(window.devicePixelRatio || 1, 2));
-    var rgb = ink();
+  function tick(now) {
+    if (phase === 'spread' && now - lastStep >= STEP) { lastStep = now; advance(now); }
+    else if (phase === 'hold' && now - phaseAt >= HOLD) { phase = 'fade'; phaseAt = now; }
+    else if (phase === 'fade' && now - phaseAt >= FADE) { seed(now); }
+  }
 
-    ctx.clearRect(0, 0, w, h);
+  function draw(now, still) {
+    var fade = phase === 'fade' ? Math.max(0, 1 - (now - phaseAt) / FADE) : 1;
+    var t = still ? 0 : now / 1000;
+    var travel = STEP * TRAVEL;
+    var i;
 
-    for (var i = 0; i < points.length; i++) {
-      var p = points[i];
-      for (var j = i + 1; j < points.length; j++) {
-        var q = points[j];
-        var dx = p.x - q.x;
-        var dy = p.y - q.y;
-        var dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist > LINK_DIST) continue;
-        ctx.strokeStyle = 'rgba(' + rgb + ',' + (0.16 * (1 - dist / LINK_DIST)).toFixed(3) + ')';
+    ctx.clearRect(0, 0, W, H);
+
+    // posicao atual: cada no respira alguns pixels em torno da posicao base
+    for (i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      n.x = n.x0 + Math.sin(t * 0.35 + n.ph) * 4;
+      n.y = n.y0 + Math.cos(t * 0.3 + n.ph * 1.3) * 4;
+      // 0 = infectado, 1 = recuperado; a transicao dura RECOVER ms
+      n.r = n.rec === null ? 0 : (still ? 1 : Math.min(1, Math.max(0, (now - n.rec) / RECOVER)));
+    }
+
+    // arestas neutras
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(' + inkRGB + ', .09)';
+    ctx.beginPath();
+    edges.forEach(function (e) {
+      ctx.moveTo(nodes[e[0]].x, nodes[e[0]].y);
+      ctx.lineTo(nodes[e[1]].x, nodes[e[1]].y);
+    });
+    ctx.stroke();
+
+    // cadeia de contagio: forte enquanto o infectado esta doente, um rastro
+    // fraco depois que ele se recupera, e o contagio viajando na ponta
+    for (i = 0; i < nodes.length; i++) {
+      var v = nodes[i];
+      if (v.from < 0) continue;
+      var u = nodes[v.from];
+      var k = still ? 1 : Math.min(1, (now - v.at) / travel);
+      var x = u.x + (v.x - u.x) * k;
+      var y = u.y + (v.y - u.y) * k;
+      var alpha = (0.55 - 0.4 * v.r) * fade;
+      ctx.strokeStyle = 'rgba(' + coralRGB + ',' + alpha.toFixed(3) + ')';
+      ctx.lineWidth = 1.25;
+      ctx.beginPath();
+      ctx.moveTo(u.x, u.y);
+      ctx.lineTo(x, y);
+      ctx.stroke();
+      if (k < 1) {
+        ctx.fillStyle = 'rgba(' + coralRGB + ', .95)';
+        ctx.beginPath();
+        ctx.arc(x, y, 2.2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    // nos: S ponto neutro; I coral com pulso ao ser infectado; R anel neutro
+    for (i = 0; i < nodes.length; i++) {
+      var m = nodes[i];
+      var litAt = m.at === null ? 0 : m.at + (m.from < 0 ? 0 : travel);
+      var hit = m.at !== null && (still || now >= litAt);
+
+      if (!hit) {
+        ctx.fillStyle = 'rgba(' + inkRGB + ', .26)';
+        ctx.beginPath();
+        ctx.arc(m.x, m.y, 1.6, 0, Math.PI * 2);
+        ctx.fill();
+        continue;
+      }
+
+      var age = still ? 9999 : now - litAt;
+      if (age < PULSE) {
+        var q = age / PULSE;
+        ctx.strokeStyle = 'rgba(' + coralRGB + ',' + ((1 - q) * 0.5 * fade).toFixed(3) + ')';
         ctx.lineWidth = 1;
         ctx.beginPath();
-        ctx.moveTo(p.x, p.y);
-        ctx.lineTo(q.x, q.y);
+        ctx.arc(m.x, m.y, 3 + q * 18, 0, Math.PI * 2);
         ctx.stroke();
       }
-      ctx.fillStyle = 'rgba(' + rgb + ',.35)';
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, 1.6, 0, Math.PI * 2);
-      ctx.fill();
+
+      // infectado: disco coral, que se apaga conforme o no se recupera
+      if (m.r < 1) {
+        ctx.fillStyle = 'rgba(' + coralRGB + ',' + ((0.95 * (1 - m.r)) * fade).toFixed(3) + ')';
+        ctx.beginPath();
+        ctx.arc(m.x, m.y, 3, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      // recuperado: anel neutro, imune; volta a ser ponto no fade final
+      if (m.r > 0) {
+        ctx.strokeStyle = 'rgba(' + inkRGB + ',' + (0.5 * m.r * fade).toFixed(3) + ')';
+        ctx.lineWidth = 1.25;
+        ctx.beginPath();
+        ctx.arc(m.x, m.y, 3.2, 0, Math.PI * 2);
+        ctx.stroke();
+        if (fade < 1) {
+          ctx.fillStyle = 'rgba(' + inkRGB + ',' + (0.26 * (1 - fade)).toFixed(3) + ')';
+          ctx.beginPath();
+          ctx.arc(m.x, m.y, 1.6, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
     }
   }
 
-  function step() {
-    var w = hero.offsetWidth;
-    var h = hero.offsetHeight;
-    for (var i = 0; i < points.length; i++) {
-      var p = points[i];
-      p.x += p.vx;
-      p.y += p.vy;
-      if (p.x < 0 || p.x > w) p.vx *= -1;
-      if (p.y < 0 || p.y > h) p.vy *= -1;
-    }
-    draw();
-    frame = requestAnimationFrame(step);
+  function loop(now) {
+    tick(now);
+    draw(now, false);
+    frame = requestAnimationFrame(loop);
   }
 
   function play() {
     if (frame || reduceMotion.matches) return;
-    frame = requestAnimationFrame(step);
+    frame = requestAnimationFrame(loop);
   }
 
   function pause() {
@@ -282,10 +428,27 @@
     frame = null;
   }
 
-  resize();
-  draw();
+  // Quadro unico: uma epidemia de alguns passos, com infectados e recuperados.
+  // Sorteia de novo (ate 8 vezes) se ela morrer cedo demais para aparecer.
+  function still() {
+    var now = performance.now();
+    for (var tries = 0; tries < 8; tries++) {
+      seed(now);
+      for (var s = 0; s < 6 && phase === 'spread'; s++) advance(now);
+      var hit = nodes.filter(function (n) { return n.at !== null; }).length;
+      if (hit >= 8) break;
+    }
+    phase = 'spread';   // no quadro estatico nao ha fade
+    draw(now, true);
+  }
 
-  if (!reduceMotion.matches) {
+  readColors();
+  build();
+
+  if (reduceMotion.matches) {
+    still();
+  } else {
+    seed(performance.now());
     play();
 
     if ('IntersectionObserver' in window) {
@@ -300,13 +463,31 @@
     });
   }
 
+  // o tema muda as cores da rede
+  new MutationObserver(function () {
+    readColors();
+    if (reduceMotion.matches) still();
+  }).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
+    readColors();
+    if (reduceMotion.matches) still();
+  });
+
   var resizeTimer;
+  var lastW = window.innerWidth;
   window.addEventListener('resize', function () {
+    // no mobile a barra de endereco muda a altura a cada rolagem; so a largura
+    // justifica refazer o grafo
+    if (window.innerWidth === lastW) return;
+    lastW = window.innerWidth;
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function () { resize(); draw(); }, 150);
+    resizeTimer = setTimeout(function () {
+      build();
+      if (reduceMotion.matches) still(); else seed(performance.now());
+    }, 150);
   });
 
   reduceMotion.addEventListener('change', function () {
-    if (reduceMotion.matches) { pause(); draw(); } else { play(); }
+    if (reduceMotion.matches) { pause(); still(); } else { seed(performance.now()); play(); }
   });
 })();

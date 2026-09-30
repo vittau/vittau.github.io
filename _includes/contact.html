@@ -1,28 +1,56 @@
-<section class="section contact grad-bg" id="contact">
+<!-- Secao Contact. Sem e-mail de proposito: o canal principal e o LinkedIn.
+     Foto do proprio Vitor, dados em _data/photos.yml. -->
+{% assign bg = site.data.photos.contact %}
+<section class="contact" id="contact">
+  <figure class="contact__photo">
+    <img src="{{ "/img/photos/" | append: bg.file | append: "-1280.webp" | relative_url }}"
+         srcset="{{ "/img/photos/" | append: bg.file | append: "-1280.webp" | relative_url }} 1280w,
+                 {{ "/img/photos/" | append: bg.file | append: "-2400.webp" | relative_url }} 2400w"
+         sizes="100vw" alt="{{ bg.alt }}" width="2400" height="1005" loading="lazy" decoding="async">
+    <figcaption>
+      <a href="{{ bg.url }}" target="_blank" rel="noopener">{{ bg.caption }} &middot; photo by me</a>
+    </figcaption>
+  </figure>
+
   <div class="container">
-    <div class="contact__grid">
-      <div class="reveal">
-        <div class="section-head" style="margin-bottom: var(--sp-4)">
-          <h2>Let&rsquo;s work together!</h2>
-        </div>
-        <p class="prose">
-          Want to talk about an opportunity, a project, or something I wrote? Send me a
-          message &mdash; I read everything that arrives.
+    <div class="contact__inner">
+      <header class="shead reveal">
+        <p class="kicker"><span class="kicker__idx">05</span>Contact</p>
+        <h2>Let&rsquo;s talk.</h2>
+        <p class="shead__sub">
+          An opportunity, a project, or something I wrote &mdash; the best way to reach me is a
+          message on LinkedIn. I read everything that arrives.
         </p>
+      </header>
+
+      <div class="contact__actions reveal" style="--i: 1">
+        {% for network in site.social %}{% if network.title == "LinkedIn" %}
+        <a class="btn btn--primary" href="{{ network.url }}" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#{{ network.icon }}"></use></svg>
+          Message me on LinkedIn
+        </a>
+        {% endif %}{% endfor %}
+        {% for network in site.social %}{% if network.title == "GitHub" %}
+        <a class="btn btn--ghost" href="{{ network.url }}" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#{{ network.icon }}"></use></svg>
+          {{ network.handle }} on GitHub
+        </a>
+        {% endif %}{% endfor %}
       </div>
 
-      <ul class="contact__links reveal">
-        {% for network in site.social %}
-        <li>
-          <a class="contact__link" href="{{ network.url }}" target="_blank" rel="noopener">
-            <span class="icon-btn">
+      <div class="elsewhere reveal" style="--i: 2">
+        <p class="kicker">Elsewhere, mostly photos</p>
+        <ul class="elsewhere__list">
+          {% for network in site.social %}{% if network.photo %}
+          <li>
+            <a href="{{ network.url }}" target="_blank" rel="noopener">
               <svg class="icon" aria-hidden="true" focusable="false"><use href="#{{ network.icon }}"></use></svg>
-            </span>
-            {{ network.handle }}
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
+              {{ network.title }}
+            </a>
+          </li>
+          {% endif %}{% endfor %}
+        </ul>
+      </div>
     </div>
   </div>
 </section>

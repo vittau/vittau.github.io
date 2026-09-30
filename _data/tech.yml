@@ -1,46 +1,39 @@
-# Grid da secao Technologies. Derivado de cv.tex, priorizando o que esta em uso.
-# 'id' aponta para um <symbol id="tech-{id}"> em img/tech-sprite.svg.
+# Secao Stack. Tres niveis, do mais para o menos relevante ao mercado hoje:
+#   ai       - cartao de texto em destaque (nao ha logo de IA no Devicon);
+#   featured - tiles grandes, o nucleo do que uso no dia a dia;
+#   more     - linha compacta com logo pequeno.
+# 'id' aponta para um <symbol id="tech-{id}"> em _includes/tech-sprite.html.
 # 'mono: true' marca a arte preto-e-branco, que herda a cor do texto em vez da
 # cor da marca — sem isso ela sumiria em um dos dois temas.
+# 'note' e uma linha curta sob o nome do tile em destaque.
 
-groups:
-  - label: Languages &amp; frameworks
-    items:
-      - { name: TypeScript,   id: ts }
-      - { name: JavaScript,   id: js }
-      - { name: React,        id: react }
-      - { name: Next.js,      id: nextjs, mono: true }
-      - { name: Node.js,      id: node }
-      - { name: Express,      id: express, mono: true }
-      - { name: Angular,      id: angular }
-      - { name: Java,         id: java }
-      - { name: Hibernate,    id: hibernate }
-      - { name: Python,       id: python }
-      - { name: GraphQL,      id: graphql }
+ai:
+  title: Agentic AI development
+  text: >-
+    Leading the adoption of coding agents across engineering — Claude Code, Codex and
+    OpenCode, orchestrated with ADEs like Orca — and shipping LLM features in production
+    with OpenAI, Azure and Mistral models.
+  tags: [Claude Code, Codex, OpenCode, Orca, OpenAI, Mistral]
 
-  - label: Data, cloud &amp; infra
-    items:
-      - { name: PostgreSQL,     id: postgresql }
-      - { name: MySQL,          id: mysql }
-      - { name: Elasticsearch,  id: elastic }
-      - { name: RabbitMQ,       id: rabbitmq }
-      - { name: AWS,            id: aws }
-      - { name: Azure,          id: azure }
-      - { name: Firebase,       id: firebase }
-      - { name: Docker,         id: docker }
-      - { name: Pulumi,         id: pulumi }
-      - { name: GitHub Actions, id: gha }
+featured:
+  - { name: TypeScript, id: ts,         note: "Every layer" }
+  - { name: Node.js,    id: node,       note: "APIs, workers" }
+  - { name: React,      id: react,      note: "Web and native" }
+  - { name: Next.js,    id: nextjs,     note: "SSR, SEO", mono: true }
+  - { name: AWS,        id: aws,        note: "Lambda, RDS, Edge" }
+  - { name: PostgreSQL, id: postgresql, note: "Modeling, tuning" }
+  - { name: Docker,     id: docker,     note: "Local to prod" }
+  - { name: Python,     id: python,     note: "Data, ML" }
 
-  - label: Testing, AI &amp; tooling
-    items:
-      - { name: Jest,         id: jest }
-      - { name: Playwright,   id: playwright }
-      - { name: Mocha,        id: mocha }
-      - { name: Selenium,     id: selenium }
-      - { name: k6,           id: k6 }
-      - { name: NumPy,        id: numpy }
-      - { name: scikit-learn, id: sklearn }
-      - { name: Git,          id: git }
-      - { name: Jira,         id: jira }
-      - { name: Inkscape,     id: inkscape, mono: true }
-      - { name: GIMP,         id: gimp }
+more:
+  - { name: GraphQL,        id: graphql }
+  - { name: Elasticsearch,  id: elastic }
+  - { name: RabbitMQ,       id: rabbitmq }
+  - { name: Pulumi,         id: pulumi }
+  - { name: GitHub Actions, id: gha }
+  - { name: Playwright,     id: playwright }
+  - { name: Jest,           id: jest }
+  - { name: Angular,        id: angular }
+  - { name: Azure,          id: azure }
+  - { name: Firebase,       id: firebase }
+  - { name: Git,            id: git }

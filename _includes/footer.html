@@ -1,38 +1,20 @@
 <footer class="footer">
-  <div class="container">
-    <div class="footer__top">
-      <a class="brand" href="#top">
-        <span class="brand__mark">&lt;/&gt;</span>vitor<span class="brand__dot">.</span>
-      </a>
-
-      <ul class="footer__social">
-        {% for network in site.social %}
-        <li>
-          <a class="icon-btn" href="{{ network.url }}" target="_blank" rel="noopener" title="{{ network.title }}">
-            <svg class="icon" aria-hidden="true" focusable="false"><use href="#{{ network.icon }}"></use></svg>
-            <span class="sr-only">{{ network.title }}</span>
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
-
-      <ul class="footer__nav">
-        <li><a href="#about">About</a></li>
-        <li><a href="#tech">Tech</a></li>
-        <li><a href="#works">Works</a></li>
-        <li><a href="#academic">Academic</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="{{ "/blog" | relative_url }}">Blog</a></li>
-      </ul>
-    </div>
+  <div class="container footer__inner">
+    <a class="brand" href="#top" aria-label="Vitor Machado, back to top">
+      <svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#i-diamond"></use></svg>
+      <span>vitor machado</span>
+    </a>
 
     <p class="footer__legal">
       &copy; {{ site.time | date: "%Y" }} {{ site.author }}.
       Built with <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a>,
-      hosted on <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>.<br>
-      Layout inspired by
-      <a href="https://www.behance.net/gallery/193147621/Personal-Portfolio-Page-Web-Design" target="_blank" rel="noopener">Giselle Santos&rsquo; portfolio concept</a>.
-      Technology logos from <a href="https://devicon.dev/" target="_blank" rel="noopener">Devicon</a> (MIT).
+      hosted on <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>.
+      Photos by me; technology logos from <a href="https://devicon.dev/" target="_blank" rel="noopener">Devicon</a> (MIT).
     </p>
+
+    <a class="footer__top" href="#top">
+      Back to top
+      <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg>
+    </a>
   </div>
 </footer>

@@ -4,6 +4,8 @@ layout: default
 date: 2014-11-01
 modal-id: 1
 thumbnail: capgov-thumbnail.png
+logo-ratio: 0.526      # largura/altura do PNG recortado
+logo-scale: 0.92       # compensa a densidade de tinta (1 = neutro)
 alt: CAPGov
 category: Software developer &rarr; Tech lead
 project-start-date: November 2014

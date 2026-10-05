@@ -12,7 +12,11 @@
     </button>
   </header>
   <main id="main" class="legal__wrap legal__content">
+    <!-- Contatos legais precisam ser legíveis sem JavaScript: o par email_off desliga
+         a ofuscação de e-mail do Cloudflare só neste trecho. -->
+    <!--email_off-->
     {{ content }}
+    <!--/email_off-->
   </main>
   <footer class="legal__footer legal__wrap">
     <a href="{{ "/" | relative_url }}">Back to Vitor Machado’s home page</a>

@@ -1,0 +1,32 @@
+/* Standalone legal prose; palette and type come from the shared site tokens. */
+.legal__wrap {
+  width: min(62ch, calc(100% - 2 * var(--gutter)));
+  margin-inline: auto;
+}
+.legal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding-block: var(--sp-6);
+  border-bottom: 1px solid var(--line);
+}
+.legal__header .theme-toggle { flex-shrink: 0; }
+.legal__content { padding-block: var(--sp-7); overflow-wrap: break-word; }
+.legal__content h1,
+.legal__content h2 { font-family: var(--font-serif); font-synthesis: none; }
+.legal__content h1 { font-size: var(--fs-h2); margin-bottom: var(--sp-5); }
+.legal__content h2 { font-size: var(--fs-h3); margin-block: var(--sp-7) var(--sp-4); }
+.legal__content p + p { margin-top: var(--sp-5); }
+.legal__content h1 + p { color: var(--text-muted); font-size: var(--fs-sm); }
+.legal__content a,
+.legal__footer a {
+  color: var(--accent-ink);
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+.legal__footer {
+  padding-block: var(--sp-5) var(--sp-7);
+  border-top: 1px solid var(--line);
+  font-size: var(--fs-sm);
+}

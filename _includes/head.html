@@ -46,5 +46,6 @@
        Alternativa externa (desativada): style.css + _layouts/style.css. -->
   <style>
     {% include css/main.css %}
+    {% if page.layout == "legal" %}{% include css/legal.css %}{% endif %}
   </style>
 </head>

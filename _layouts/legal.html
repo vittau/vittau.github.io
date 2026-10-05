@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+{% include head.html %}
+<body class="legal">
+  {% include icons.html %}
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="legal__header legal__wrap">
+    <p class="kicker">Alchemy Rush! · Privacy Policy</p>
+    <button class="theme-toggle" id="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Switch to dark theme">
+      <svg class="icon theme-toggle__sun" aria-hidden="true" focusable="false"><use href="#i-sun"></use></svg>
+      <svg class="icon theme-toggle__moon" aria-hidden="true" focusable="false"><use href="#i-moon"></use></svg>
+    </button>
+  </header>
+  <main id="main" class="legal__wrap legal__content">
+    {{ content }}
+  </main>
+  <footer class="legal__footer legal__wrap">
+    <a href="{{ "/" | relative_url }}">Back to Vitor Machado’s home page</a>
+  </footer>
+  <script src="{{ "/js/main.js" | relative_url }}" defer></script>
+</body>
+</html>

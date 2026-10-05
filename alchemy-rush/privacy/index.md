@@ -4,7 +4,7 @@ title: Alchemy Rush! Privacy Policy
 effective_date: 2026-10-05
 permalink: /alchemy-rush/privacy/
 ---
-<!-- Source: /Users/vitor/git/alchemy-rush/docs/compliance/privacy-policy.md; edits belong there. -->
+<!-- Source: docs/compliance/privacy-policy.md in the Alchemy Rush! game repository; edits belong there. -->
 
 # Alchemy Rush! Privacy Policy
 

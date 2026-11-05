@@ -65,10 +65,12 @@ image: /img/micboost/social.png
 <section class="product-section" aria-labelledby="install">
   <p class="kicker">04 — Getting started</p>
   <div><h2 id="install">A few steps. A louder voice.</h2>
+    <p><strong>With Homebrew</strong>, one command installs MicBoost and BlackHole 2ch (it asks for your Mac password for BlackHole): <code>brew install --cask vittau/micboost/micboost</code>. Then follow steps 3 and 4 below. Update later with <code>brew upgrade --cask micboost</code>.</p>
+    <p><strong>Step by step:</strong></p>
     <ol>
       <li><strong>Install BlackHole 2ch.</strong> Get the installer from the <a href="https://existential.audio/blackhole/">BlackHole website</a> and run it. It asks for your Mac password. With Homebrew, you can use <code>brew install --cask blackhole-2ch</code>.</li>
       <li><strong>Download MicBoost.</strong> Get the MicBoost zip from the <a href="https://github.com/vittau/MicBoost/releases/latest">latest release</a>, double-click to unzip it, and drag <strong>MicBoost.app</strong> to Applications.</li>
-      <li><strong>Open MicBoost.</strong> It is not notarized, so macOS blocks its first launch. Open <strong>System Settings → Privacy &amp; Security</strong>, scroll to the message about MicBoost, click <strong>Open Anyway</strong>, then confirm with your password or Touch ID. Never turn off Mac security features to open an app.</li>
+      <li><strong>Open MicBoost.</strong> It is not notarized, so macOS blocks its first launch. Open <strong>System Settings → Privacy &amp; Security</strong>, scroll to the message about MicBoost, click <strong>Open Anyway</strong>, then confirm with your password or Touch ID. You do this again after each update. Never turn off Mac security features to open an app.</li>
       <li><strong>Allow microphone access</strong> when macOS asks.</li>
       <li>Click the menu bar icon, choose your microphone and turn the switch on. In your call app, choose <strong>BlackHole 2ch</strong> or the system default. MicBoost sets itself as the system microphone while on.</li>
       <li>Speak normally and adjust the slider while watching the <strong>Output</strong> bar. If <strong>Limiter active</strong> stays on, lower it a little. Close the menu; MicBoost keeps working. Turning it off or quitting restores your previous microphone.</li>
@@ -86,7 +88,7 @@ image: /img/micboost/social.png
     <details><summary>macOS will not open MicBoost. What do I do?</summary><p>Follow the Open Anyway steps under <a href="#install">Getting started</a>. MicBoost is not notarized; the first-launch block is expected.</p></details>
     <details><summary>Does MicBoost open at login?</summary><p>Yes, by default when it is in Applications. Turn off Open at login in Settings → General if you prefer.</p></details>
     <details><summary>What if Hear My Voice cannot use my output?</summary><p>Open Settings → Diagnostics and choose Copy report. Include that report when you <a href="https://github.com/vittau/MicBoost/issues">report the problem on GitHub</a>.</p></details>
-    <details><summary>How do I uninstall it?</summary><p>Choose Quit MicBoost so your previous microphone comes back, then drag MicBoost.app from Applications to the Trash. BlackHole stays installed because other apps may use it; its website has removal instructions.</p></details>
+    <details><summary>How do I uninstall it?</summary><p>Choose Quit MicBoost so your previous microphone comes back, then drag MicBoost.app from Applications to the Trash (or run <code>brew uninstall --cask micboost</code> if you installed it with Homebrew). BlackHole stays installed because other apps may use it; its website has removal instructions.</p></details>
   </div>
 </section>
 

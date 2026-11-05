@@ -195,3 +195,13 @@ as capturas do painel e EQ ficam lado a lado, com ajustes abaixo. Não há anima
 FAQ usa `details/summary` nativos. Capturas e cabeçalhos WebP em `img/micboost/` seguem
 tanto o tema do sistema quanto a escolha persistida pelo controle do site, inclusive sem JS.
 A imagem social PNG tem 1200×630, ícone do produto e paleta do site.
+
+Os quatro benefícios da seção 02 usam ilustrações SVG originais de 44×44px:
+microfone com níveis crescentes, escudo com teto de pico, janelas de conversa e fones.
+O sprite inline dedicado `_includes/micboost-icons.html` usa `.sprite` (sem
+`display:none`) e um único `defs` para os gradientes. As cores fixas são parte da
+arte do produto: azuis e verdes profundos em harmonia com o ícone do MicBoost, com
+glifos brancos e borda luminosa discreta; permanecem iguais nos dois temas.
+Os tiles têm cantos arredondados, são decorativos (`aria-hidden`) e não usam
+SF Symbols ou arte da Apple. Cada benefício tem coluna de 44px para o ícone e
+coluna de texto alinhada entre título e parágrafo, inclusive no mobile.

@@ -46,3 +46,9 @@
 .product h1, .product h2, .product h3 { font-family:var(--font-serif); font-weight:500; font-synthesis:none; }
 .product ol { list-style:decimal; }
 .product-section > .kicker { align-self:start; }
+
+/* Ícones decorativos originais; a coluna do texto continua igual nos quatro itens. */
+.product-benefit { display:grid; grid-template-columns:44px minmax(0,1fr); column-gap:var(--sp-3); align-content:start; }
+.product-benefit__icon { width:44px; height:44px; grid-column:1; grid-row:1 / span 2; }
+.product-benefit h3 { grid-column:2; min-height:44px; display:flex; align-items:center; }
+.product-benefit p { grid-column:2; }

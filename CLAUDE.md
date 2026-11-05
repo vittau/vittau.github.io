@@ -74,4 +74,6 @@ Se for editar o include por script, **não ancore no primeiro `<svg` do arquivo*
 
 **Outras seções do domínio não estão neste repo.** `/blog`, `/darkenizer` etc. (listados em `sitemap.txt`) são outros repositórios servidos sob o mesmo domínio via `CNAME`.
 
+**Cache do Cloudflare.** O domínio passa pelo Cloudflare, que guarda as páginas por até um dia (`cache-control: max-age=86400`). Depois de cada publicação, quando o build do GitHub Pages terminar (`gh api repos/vittau/vittau.github.io/pages/builds/latest` com `status: built` no commit publicado), limpe o cache das URLs alteradas (páginas e imagens; o prefixo inteiro, como `/micboost/`, quando o plano permitir) e confira com `curl -sI` que a resposta nova está sendo entregue.
+
 **Analytics.** GA4 (`G-NSNV8ZR1NV`) inline em `_includes/js.html`.

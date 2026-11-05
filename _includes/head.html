@@ -3,18 +3,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{% if page.title and page.title != site.title %}{{ page.title }} &middot; {{ site.title }}{% else %}{{ site.title }} &middot; Software architect{% endif %}</title>
-  <meta name="description" content="{{ site.description }}">
+  <meta name="description" content="{{ page.description | default: site.description }}">
   <meta name="keywords" content="{{ site.keywords }}">
   <meta name="author" content="{{ site.author }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
   <meta content="website" property="og:type">
   <meta content="{{ site.title }}" property="og:site_name">
-  <meta content="{{ site.title }}" property="og:title">
-  <meta content="{{ site.description }}" property="og:description">
-  <meta content="{{ site.url }}" property="og:url">
-  <meta content="{{ site.image | absolute_url }}" property="og:image">
-  <meta name="twitter:card" content="summary">
+  <meta content="{{ page.title | default: site.title }}" property="og:title">
+  <meta content="{{ page.description | default: site.description }}" property="og:description">
+  <meta content="{% if page.layout == "product" %}{{ page.url | absolute_url }}{% else %}{{ site.url }}{% endif %}" property="og:url">
+  <meta content="{{ page.image | default: site.image | absolute_url }}" property="og:image">
+  <meta name="twitter:card" content="{% if page.layout == "product" %}summary_large_image{% else %}summary{% endif %}">
+  {% if page.layout == "product" %}
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MicBoost — make your microphone louder on Mac">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ page.description }}">
+  <meta name="twitter:image" content="{{ page.image | absolute_url }}">
+  <meta name="twitter:image:alt" content="MicBoost — make your microphone louder on Mac">
+  {% endif %}
 
   <!-- Favicon: o losango da marca (◇) com um no no centro. O .ico leva 16/32/48
        (o de 16 desenhado a parte, com traco mais grosso); fonte em favicon.svg. -->
@@ -46,6 +55,7 @@
        Alternativa externa (desativada): style.css + _layouts/style.css. -->
   <style>
     {% include css/main.css %}
+    {% if page.layout == "product" %}{% include css/product.css %}{% endif %}
     {% if page.layout == "legal" %}{% include css/legal.css %}{% endif %}
   </style>
 </head>

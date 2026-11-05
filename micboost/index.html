@@ -1,0 +1,101 @@
+---
+layout: product
+title: "MicBoost — Make your microphone louder on Mac"
+description: "Increase mic volume on Mac with MicBoost, a free menu bar microphone booster and voice EQ for Zoom, Teams, Google Meet and Discord. macOS 14+, Apple Silicon and Intel."
+image: /img/micboost/social.png
+---
+<section class="product-hero" aria-labelledby="product-title">
+  <div>
+    <p class="kicker">A little lift for your voice</p>
+    <h1 id="product-title">MicBoost</h1>
+    <p class="lead">Make your microphone louder on Mac — and your voice clearer in Zoom, Microsoft Teams, Google Meet, Discord and recordings.</p>
+    <div class="product-actions">
+      <a class="btn btn--primary" href="https://github.com/vittau/MicBoost/releases/latest">Download for macOS</a>
+      <a class="btn btn--ghost" href="https://github.com/vittau/MicBoost">View on GitHub</a>
+    </div>
+    <p class="product-meta">Free &amp; open source · macOS 14+ · Apple Silicon &amp; Intel</p>
+  </div>
+  <div class="product-art">
+    <img class="theme-light" src="{{ '/img/micboost/header-light.webp' | relative_url }}" width="1480" height="520" alt="MicBoost microphone icon with ascending volume bars and the MicBoost name">
+    <img class="theme-dark" src="{{ '/img/micboost/header-dark.webp' | relative_url }}" width="1480" height="520" alt="MicBoost microphone icon with ascending volume bars and the MicBoost name">
+  </div>
+</section>
+
+<section class="product-section" aria-labelledby="screenshots">
+  <p class="kicker">01 — In the menu bar</p>
+  <div><h2 id="screenshots">Your voice, within reach.</h2>
+    <div class="product-shots">
+      {% assign shots = "panel,eq,settings" | split: "," %}
+      {% for shot in shots %}
+      <figure>
+        {% case shot %}
+        {% when "panel" %}{% assign alt = "MicBoost menu with its on/off switch, volume slider, input and output meters, and microphone selection" %}{% assign caption = "A simple slider to increase mic volume." %}{% assign w = 640 %}{% assign h = 668 %}
+        {% when "eq" %}{% assign alt = "MicBoost equalizer expanded below the microphone controls, with bass, mids and treble adjustments" %}{% assign caption = "Shape your voice with the equalizer." %}{% assign w = 640 %}{% assign h = 1318 %}
+        {% when "settings" %}{% assign alt = "MicBoost settings window showing audio preferences and its Diagnostics and About sections" %}{% assign caption = "Settings when you need them." %}{% assign w = 1080 %}{% assign h = 2076 %}
+        {% endcase %}
+        <img class="theme-light" loading="lazy" src="{{ '/img/micboost/' | append: shot | append: '-light.webp' | relative_url }}" width="{{ w }}" height="{{ h }}" alt="{{ alt }}">
+        <img class="theme-dark" loading="lazy" src="{{ '/img/micboost/' | append: shot | append: '-dark.webp' | relative_url }}" width="{{ w }}" height="{{ h }}" alt="{{ alt }}">
+        <figcaption>{{ caption }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="product-section" aria-labelledby="benefits">
+  <p class="kicker">02 — What it does</p>
+  <div><h2 id="benefits">Be heard. Sound like yourself.</h2>
+    <div class="product-grid">
+      <div><h3>Lift a quiet microphone</h3><p>Make it up to 16 times louder with one slider. The voice preset removes low rumble and adds clarity; adjust bass, mids and treble if you like.</p></div>
+      <div><h3>Keep loud moments in check</h3><p>Laugh, cough or clap: MicBoost holds the level down automatically to prevent distortion. The “Limiter active” badge tells you when.</p></div>
+      <div><h3>Use your usual apps</h3><p>Works with any call or recording app, including FaceTime and QuickTime. One switch gives your microphone back to the system; MicBoost recovers when your Mac wakes or you reconnect a microphone.</p></div>
+      <div><h3>Hear your own voice</h3><p>Turn on Hear My Voice to listen through your speakers or headphones, including Bluetooth. Use headphones to avoid feedback. Monitoring starts off each time you open MicBoost.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="product-section" aria-labelledby="requirements">
+  <p class="kicker">03 — What you need</p>
+  <div><h2 id="requirements">Your Mac. One free driver.</h2>
+    <p>A Mac running <strong>macOS 14 Sonoma or later</strong>, with <strong>Apple Silicon or Intel</strong>.</p>
+    <p><strong>BlackHole 2ch</strong> is a free audio driver, installed separately. MicBoost sends your improved voice to it, and your apps listen to it like a microphone.</p>
+  </div>
+</section>
+
+<section class="product-section" aria-labelledby="install">
+  <p class="kicker">04 — Getting started</p>
+  <div><h2 id="install">A few steps. A louder voice.</h2>
+    <ol>
+      <li><strong>Install BlackHole 2ch.</strong> Get the installer from the <a href="https://existential.audio/blackhole/">BlackHole website</a> and run it. It asks for your Mac password. With Homebrew, you can use <code>brew install --cask blackhole-2ch</code>.</li>
+      <li><strong>Download MicBoost.</strong> Get the MicBoost zip from the <a href="https://github.com/vittau/MicBoost/releases/latest">latest release</a>, double-click to unzip it, and drag <strong>MicBoost.app</strong> to Applications.</li>
+      <li><strong>Open MicBoost.</strong> It is not notarized, so macOS blocks its first launch. Open <strong>System Settings → Privacy &amp; Security</strong>, scroll to the message about MicBoost, click <strong>Open Anyway</strong>, then confirm with your password or Touch ID. Never turn off Mac security features to open an app.</li>
+      <li><strong>Allow microphone access</strong> when macOS asks.</li>
+      <li>Click the menu bar icon, choose your microphone and turn the switch on. In your call app, choose <strong>BlackHole 2ch</strong> or the system default. MicBoost sets itself as the system microphone while on.</li>
+      <li>Speak normally and adjust the slider while watching the <strong>Output</strong> bar. If <strong>Limiter active</strong> stays on, lower it a little. Close the menu; MicBoost keeps working. Turning it off or quitting restores your previous microphone.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="product-section" aria-labelledby="faq">
+  <p class="kicker">05 — Good to know</p>
+  <div><h2 id="faq">A little help, if you need it.</h2>
+    <details><summary>Will it remove background noise?</summary><p>A louder microphone also makes background noise louder. Speak closer to the microphone or turn up its own volume knob first, if you can.</p></details>
+    <details><summary>Can I use AirPods or my iPhone?</summary><p>Bluetooth headsets work as both microphone and monitoring output, but sound worse while their microphone is in use. A USB or built-in microphone sounds better. The iPhone’s Continuity microphone adds noticeable delay of its own. A MacBook’s built-in microphone is off with the lid closed.</p></details>
+    <details><summary>People in my call cannot hear me. What should I check?</summary><p>Choose BlackHole 2ch or the system default in your call app and check that MicBoost is on. If sound stops, turn the switch off and on. Reconnect an unplugged microphone; MicBoost picks it up again.</p></details>
+    <details><summary>What if BlackHole or microphone access is missing?</summary><p>Install BlackHole 2ch using the steps above. If you just installed it, restart your Mac. For microphone access, click Open Privacy Settings in the app’s message and enable MicBoost; macOS may ask to reopen it.</p></details>
+    <details><summary>macOS will not open MicBoost. What do I do?</summary><p>Follow the Open Anyway steps under <a href="#install">Getting started</a>. MicBoost is not notarized; the first-launch block is expected.</p></details>
+    <details><summary>Does MicBoost open at login?</summary><p>Yes, by default when it is in Applications. Turn off Open at login in Settings → General if you prefer.</p></details>
+    <details><summary>What if Hear My Voice cannot use my output?</summary><p>Open Settings → Diagnostics and choose Copy report. Include that report when you <a href="https://github.com/vittau/MicBoost/issues">report the problem on GitHub</a>.</p></details>
+    <details><summary>How do I uninstall it?</summary><p>Choose Quit MicBoost so your previous microphone comes back, then drag MicBoost.app from Applications to the Trash. BlackHole stays installed because other apps may use it; its website has removal instructions.</p></details>
+  </div>
+</section>
+
+<section class="product-section" aria-labelledby="support">
+  <p class="kicker">06 — Support</p>
+  <div><h2 id="support">Free, and made in spare time.</h2><p>If MicBoost helps you, you can support its development.</p>
+    <div class="product-actions"><a class="btn btn--ghost" href="https://github.com/sponsors/vittau">GitHub Sponsors</a><a class="btn btn--ghost" href="https://www.buymeacoffee.com/vittau">Buy Me a Coffee</a></div>
+  </div>
+</section>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"MicBoost","operatingSystem":"macOS 14+","applicationCategory":"UtilitiesApplication","offers":{"@type":"Offer","price":0,"priceCurrency":"USD"},"url":"https://www.vitormach.dev/micboost/","downloadUrl":"https://github.com/vittau/MicBoost/releases/latest","license":"https://www.gnu.org/licenses/gpl-3.0.html","author":{"@type":"Person","name":"Vitor Machado"}}
+</script>

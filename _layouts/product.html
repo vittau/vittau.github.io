@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+{% include head.html %}
+<body class="product">
+  {% include icons.html %}
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="product-nav product-wrap">
+    <a href="{{ "/" | relative_url }}" class="product-brand"><svg class="icon" aria-hidden="true"><use href="#i-diamond"></use></svg> Vitor Machado</a>
+    <button class="theme-toggle" id="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Switch to dark theme">
+      <svg class="icon theme-toggle__sun" aria-hidden="true"><use href="#i-sun"></use></svg>
+      <svg class="icon theme-toggle__moon" aria-hidden="true"><use href="#i-moon"></use></svg>
+    </button>
+  </header>
+  <main id="main" class="product-wrap">{{ content }}</main>
+  <footer class="product-wrap product-footer">
+    <p>Made by Vitor Machado. Free software under <a href="https://github.com/vittau/MicBoost/blob/main/LICENSE">GPL-3.0</a>.</p>
+    <p>This project is developed and maintained with help from AI agents, under its human maintainer’s direction and review.</p>
+    <a href="{{ "/" | relative_url }}">Back to the home page</a>
+  </footer>
+  <script src="{{ "/js/main.js" | relative_url }}" defer></script>
+</body>
+</html>

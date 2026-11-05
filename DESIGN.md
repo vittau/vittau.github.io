@@ -181,3 +181,17 @@ Ao gerar ou editar HTML/CSS deste site:
 - **Componentes com estado vazio/alternativo precisam de fallback explícito:** emprego sem `thumbnail` some o cartão de logo; sem `stack:` some a linha de tags; sem `link:` some o "Visit"; tile sem `note` some a nota.
 - **Não publique o e-mail do Vitor** em lugar nenhum do site, mesmo com `site.email` no `_config.yml`.
 - **Teste em pelo menos 320, 375, 768, 900, 1024 e 1440px, nos dois temas**, e uma vez com `prefers-reduced-motion: reduce` e com JS desligado.
+
+## 7. Página do MicBoost
+
+A rota `/micboost/` usa `_layouts/product.html`, com o mesmo head, sprite de ícones,
+fontes, tokens e controle de tema da home. O head aceita título, descrição e imagem
+da página; páginas de produto têm Twitter Card grande e dimensões Open Graph.
+O conteúdo em inglês fica em `micboost/index.html`, incluindo JSON-LD SoftwareApplication.
+
+O CSS Liquid `_includes/css/product.css` compõe um hero em duas colunas e seções
+editoriais com rótulo estreito à esquerda. Abaixo de 768px, as seções viram uma coluna;
+as capturas do painel e EQ ficam lado a lado, com ajustes abaixo. Não há animações novas.
+FAQ usa `details/summary` nativos. Capturas e cabeçalhos WebP em `img/micboost/` seguem
+tanto o tema do sistema quanto a escolha persistida pelo controle do site, inclusive sem JS.
+A imagem social PNG tem 1200×630, ícone do produto e paleta do site.

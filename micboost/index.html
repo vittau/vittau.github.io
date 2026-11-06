@@ -31,7 +31,7 @@ image: /img/micboost/social.png
         {% case shot %}
         {% when "panel" %}{% assign alt = "MicBoost menu with its on/off switch, volume slider, input and output meters, and microphone selection" %}{% assign caption = "A simple slider to increase mic volume." %}{% assign w = 640 %}{% assign h = 668 %}
         {% when "eq" %}{% assign alt = "MicBoost equalizer expanded below the microphone controls, with bass, mids and treble adjustments" %}{% assign caption = "Shape your voice with the equalizer." %}{% assign w = 640 %}{% assign h = 1318 %}
-        {% when "settings" %}{% assign alt = "MicBoost settings window showing audio preferences and its Diagnostics and About sections" %}{% assign caption = "Settings when you need them." %}{% assign w = 1080 %}{% assign h = 2076 %}
+        {% when "settings" %}{% assign alt = "MicBoost settings window showing the General, Audio, Diagnostics and About sections" %}{% assign caption = "Settings when you need them." %}{% assign w = 1080 %}{% assign h = 2620 %}
         {% endcase %}
         <img class="theme-light" loading="lazy" src="{{ '/img/micboost/' | append: shot | append: '-light.webp' | relative_url }}" width="{{ w }}" height="{{ h }}" alt="{{ alt }}">
         <img class="theme-dark" loading="lazy" src="{{ '/img/micboost/' | append: shot | append: '-dark.webp' | relative_url }}" width="{{ w }}" height="{{ h }}" alt="{{ alt }}">
